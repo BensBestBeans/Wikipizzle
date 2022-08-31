@@ -7,22 +7,71 @@
   pointer-events: none;
 }
 
+.App-logo-still {
+  height: 40vmin;
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Header {
+  background-color: #ffffff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(32px + 2vmin);
+  color: black;
 }
+
+.Title {
+  margin-bottom: 0;
+  font-size: calc(26px + 2vmin);
+}
+ 
+.Subtitle {
+  font-weight: normal;
+  font-size: calc(10px + 1vmin);
+}
+
+.Article {
+  background-color: rgb(242, 242, 242);
+  text-align: left;
+  justify-content: left;
+
+  font-family: 'Times New Roman', Times, serif;
+
+  padding: 5px 20px 0px 20px;
+  margin: 1% 20% 0% 20%;
+  min-height: 400px;
+  color: black;
+}
+
+.Ins {
+  /* background-color: rgb(242, 242, 242); */
+
+  padding: 20px;
+  margin: 1% 20% 1% 20%;
+  
+  color: black;
+}
+
+/* h1, h2, h3, h4, p {
+  padding-top: 0;
+  padding-bottom: 20;
+  margin:0;
+} */
+
+/* .Article p {
+  padding: 0;
+  margin:0;
+} */
 
 .App-link {
   color: #61dafb;
@@ -35,4 +84,58 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button1 {
+  transition: all .15s;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+}
+
+.button1:hover {
+  font-size: 20px;
+}
+
+.button1:active {
+  color: #06f;
+}
+
+
+.button2 {
+  transition: all .15s;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  background-color: black;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+}
+
+.button2 {
+  color: white;
+  background-color: black;
+}
+
+.button2:hover {
+  font-size: 20px;
+}
+
+.button2:active {
+  color: #06f;
 }

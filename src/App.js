@@ -39,15 +39,84 @@ function getmd() {
   `
 }
 
-const md = getmd()
+const md = getmd();
+const mdtype = false;
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isToggleOn: true};
+    this.state = {page: 0};
+
 
     // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
+    this.guessed = this.guessed.bind(this);
+    this.home = this.home.bind(this);
+  }
+
+  head = (<div className="Header">
+  <h1 className="Title">Wikipizzle</h1>
+  <h3 className="Subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h3>
+</div>)
+
+  choose = (
+    // <body>
+    <div className="App">
+    <header> </header>
+    
+    {this.head}
+    
+      <div className='Article'> 
+      <ReactMarkdown>
+      {md}
+      </ReactMarkdown> 
+      </div>
+    
+    
+    <div className='Ins'> 
+    <div className='buttoncontainer'> <button class="button1" role="button" onClick={() => this.guessed(false)}><span>WIKIPEDIA</span></button> </div>
+    <div className='buttoncontainer'> <button class="button2" role="button" onClick={() => this.guessed(true)}><span>AI GENERATED</span></button> </div>
+    </div>
+    </div>
+    // </body>
+    );
+    
+    correct = (
+      <div className="App">
+      <header> </header>
+      {this.head}
+      <div className='Answerbox'>
+      something
+      </div>
+      <div className='Article'> something  </div>
+      <div className='Ins'>
+      <button class="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
+      </div>
+      </div>
+    );
+
+    incorrect = (
+      <div className="App">
+      <header> </header>
+      {this.head}
+      u hav been deciveveveve!!!
+      <div className='Article'> something </div>
+      <div className='Ins'>
+      <button class="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
+      </div>
+      </div>
+    );
+
+  guessed(x) {
+    if (x == mdtype) {
+      this.setState({page: 1});
+    } else {
+      this.setState({page: 2});
+    }
+  }
+
+  home() {
+    this.setState({page: 0})
   }
 
   handleClick() {
@@ -57,38 +126,9 @@ class App extends React.Component {
   }
 
   render () {
-    return (
-      <div className="App">
-        <header>
-          
-        </header>
-        <body>
-          <div className="Header">
-            <h1 className="Title">
-            Wikipizzle
-            </h1>
-            <h3 className="Subtitle">
-              Wikipedia or AI-Generated? Take a guess and test your gut!
-            </h3>
-          </div>
-
-          <div className='Article'> 
-          <ReactMarkdown>
-          {md}
-          </ReactMarkdown> 
-          </div>
-        </body>
-
-        <div className='Ins'>
-        <div className='buttoncontainer'>
-        <button class="button1" role="button"><span>WIKIPEDIA</span></button>
-        </div>
-        <div className='buttoncontainer'>
-        <button class="button2" role="button"><span>AI GENERATED</span></button> 
-        </div>
-        </div>
-      </div>
-    );
+    if (this.state.page == 0) return this.choose;
+    if (this.state.page == 1) return this.correct;
+    if (this.state.page == 2) return this.incorrect;
   }
 }
 

@@ -136,3 +136,9 @@
 .button1:active, .button2:active {
   color: #06f;
 }
+
+.Answerbox {
+  background-color: rgb(242, 242, 242);
+  padding: 5px 20px 0px 20px;
+  margin: 1% 22.5% 0% 22.5%;
+}

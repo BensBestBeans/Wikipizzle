@@ -40,18 +40,28 @@
   font-size: calc(10px + 1vmin);
 }
 
+.ArticleContainer {
+  margin: 1% 22.5% 0% 22.5%;
+  
+  min-height: 400px;
+  max-height: 450px;
+  overflow-y: auto;
+  
+}
+
 .Article {
+  
+  padding: 5px 20px 0px 20px;
   background-color: rgb(242, 242, 242);
+
+
+  /* background-color: rgb(242, 242, 242); */
   text-align: left;
   justify-content: left;
 
   font-family: 'Times New Roman', Times, serif;
 
-  padding: 5px 20px 0px 20px;
-  margin: 1% 22.5% 0% 22.5%;
-  min-height: 400px;
-  max-height: 450px;
-  overflow-y: auto;
+  
   color: black;
 }
 
@@ -137,8 +147,80 @@
   color: #06f;
 }
 
+.LeftWrapper {
+  /* padding: 10px 20px 10px 20px; */
+  margin: 0% 2.5% 0% 0%;
+
+  width: 47.5%;
+
+  text-align: left;
+
+  min-height: 400px;
+  max-height: 450px;
+
+  overflow-y: auto;
+
+  /* font-weight: 700;
+  font-size: 20px; */
+
+  /* display: inline-block; */
+  /* text-align: center; */
+}
+
+.AllWrapper {
+  /* display: inline-block; */
+  /* color: #06f;
+  font-weight: 900; */
+  margin: 1% 15% 0% 15%;
+  /* text-align: left; */
+
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+}
+
+.RightWrapper {
+  /* padding: 10px 20px 10px 20px; */
+  margin: 0% 0% 0% 2.5%;
+
+  width: 47.5%;
+
+  text-align: center;
+
+  min-height: 400px;
+  max-height: 450px;
+
+
+
+  background-color: rgb(242, 242, 242);
+  /* overflow-y: auto; */
+
+  /* font-weight: 700;
+  font-size: 20px; */
+
+  display: inline-block;
+  /* text-align: center; */
+}
+
 .Answerbox {
   background-color: rgb(242, 242, 242);
-  padding: 5px 20px 0px 20px;
-  margin: 1% 22.5% 0% 22.5%;
+  padding: 10px 20px 10px 20px;
+  /* margin: 1% 0% 0% 22.5%; */
+
+  /* width: 100%; */
+
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+
+.Padded {
+  padding: 20px 10px 20px 10px;
+  /* margin: 1% 0% 0% 22.5%; */
+
+  /* width: 25%; */
+
+  display: inline-block;
+  text-align: left;
+  font-size: 14px;
 }

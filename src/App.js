@@ -54,16 +54,16 @@ class App extends React.Component {
     this.home = this.home.bind(this);
   }
 
-  head = (<div className="header">
-  <h1 className="title">Wikipizzle</h1>
-  <h3 className="subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h3>
-</div>)
+  head = (
+  <div className="header">
+    {/* <h1 className="title">Wikipizzle</h1> */}
+    <h2 className="subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h2>
+  </div>
+)
 
   topbar = (
-    <div className='Logo'>
-      <img src={logo} alt='W' width='42'></img>
-        Wikipizzle
-        <hr></hr>
+    <div className="logo-header">
+      <img src={logo} alt=""/><h1>Wikipizzle</h1>
     </div>
   )
 

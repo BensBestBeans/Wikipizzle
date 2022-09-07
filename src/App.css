@@ -5,28 +5,42 @@
   src:url("LinLibertine_R.ttf");
 }
 
+body {
+  background-color: #F1F8FF;
+}
+
 .app {
   text-align: center;
 }
 
 .app-logo {
-  height: 40vmin;
   pointer-events: none;
 }
 
-.Logo {
-  color: #5851A2;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 42px;
-  font-weight: 500;
-  text-align: left;
-  margin: 0;
-  padding: 0;
+.logo-header {
+  height: 75px;
+  padding: 10px;
+  border-bottom: 2px solid #5851A2;
+  margin: 0 30px;
 }
 
-/* .LogoIm {
-  justify-content: left;
-} */
+.logo-header img {
+  padding-left: 30px;
+  height: 100%;
+  float: left;
+}
+
+.logo-header h1 {
+  display: inline;
+  float: left;
+  padding-left: 20px;
+
+  color: #5851A2;
+  font-weight: normal;
+  font-size: 2em;
+  font-family: Georgia,'Times New Roman', Times, serif;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .app-logo {
@@ -35,13 +49,14 @@
 }
 
 .header {
-  background-color: #ffffff;
-  font-family: Linux-Libertine, Georgia, 'Times New Roman', Times, serif;
-  display: flex;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: black;
+  font-style: italic;
+  font-size: 1em;
+  padding: 20px;
 }
 
 .title {
@@ -55,7 +70,7 @@
 }
 
 .article-container {
-  margin: 1% 15% 0% 15%;
+  margin: 0% 15% 0% 15%;
   min-height: 400px;
   max-height: 450px;
   overflow-y: auto;
@@ -63,11 +78,16 @@
 
 .article {
   padding: 5px 20px 0px 20px;
-  background-color: rgb(242, 242, 242);
+  /*background-color: rgb(242, 242, 242);*/
+  background-color: white;
   text-align: left;
   justify-content: left;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Arial;
   color: black;
+}
+
+.article h1, h2, h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .ins {
@@ -77,12 +97,6 @@
   color: black;
 }
 
-/* h1, h2, h3, h4, p {
-  padding-top: 0;
-  padding-bottom: 20;
-  margin:0;
-} 
-*/
 
 .app-link {
   color: #61dafb;

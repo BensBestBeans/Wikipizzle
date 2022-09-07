@@ -7,10 +7,19 @@
   pointer-events: none;
 }
 
-.App-logo-still {
-  height: 40vmin;
-  pointer-events: none;
+.Logo {
+  color: #5851A2;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 42px;
+  font-weight: 500;
+  text-align: left;
+  margin: 0;
+  padding: 0;
 }
+
+/* .LogoIm {
+  justify-content: left;
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

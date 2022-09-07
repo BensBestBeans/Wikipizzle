@@ -1,4 +1,6 @@
 @import url('http://fonts.cdnfonts.com/css/georgia');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
 
 @font-face {
   font-family: Linux-Libertine;
@@ -7,6 +9,10 @@
 
 body {
   background-color: #F1F8FF;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .app {
@@ -49,7 +55,6 @@ body {
 }
 
 .header {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -86,17 +91,12 @@ body {
   color: black;
 }
 
-.article h1, h2, h3 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
 .ins {
   /* background-color: rgb(242, 242, 242); */
   margin: 2% 27% 0% 27%;
   text-align:center;
   color: black;
 }
-
 
 .app-link {
   color: #61dafb;
@@ -159,9 +159,9 @@ body {
 
 .left-wrapper {
   /* padding: 10px 20px 10px 20px; */
-  margin: 0% 2.5% 0% 0%;
+  margin: 0% 5% 0% 0%;
 
-  width: 47.5%;
+  width: 60%;
 
   text-align: left;
 
@@ -181,7 +181,7 @@ body {
   /* display: inline-block; */
   /* color: #06f;
   font-weight: 900; */
-  margin: 1% 15% 0% 15%;
+  margin: 1% 10% 0% 10%;
   /* text-align: left; */
 
   display: flex;
@@ -190,14 +190,12 @@ body {
 }
 
 .right-wrapper {
-  /* padding: 10px 20px 10px 20px; */
-  margin: 0% 0% 0% 2.5%;
-  width: 47.5%;
+  width: 30%;
   text-align: center;
   min-height: 400px;
   max-height: 450px;
 
-  background-color: rgb(242, 242, 242);
+  background-color: white;
   /* overflow-y: auto; */
 
   /* font-weight: 700;
@@ -208,23 +206,28 @@ body {
 }
 
 .answer-box {
-  background-color: rgb(242, 242, 242);
-  padding: 10px 20px 10px 20px;
-  /* margin: 1% 0% 0% 22.5%; */
-
-  /* width: 100%; */
-
+  background-color:#5851A2;
+  color: white;
+  padding: 20px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1em;
   text-align: center;
+}
+
+.answer-box h2 {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.answer-box h2, .answer-box h3 {
+  margin: 0;
+  padding: 1px;
+  text-align: left;
 }
 
 .padded {
   padding: 20px 10px 20px 10px;
-  /* margin: 1% 0% 0% 22.5%; */
-
-  /* width: 25%; */
-
+  font-style: italic;
   display: inline-block;
   text-align: left;
   font-size: 14px;

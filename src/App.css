@@ -229,3 +229,41 @@ body {
   text-align: left;
   font-size: 14px;
 }
+
+
+.page-container {
+  height: 100vh;
+  
+}
+.page-container-head {
+  background-color: #5851A2;
+  height: 00%;
+  overflow: hidden;
+}
+
+.page-container-scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.page-container-guess {
+  background-color: #F1F8FF;
+  height: 92%;
+  overflow: hidden;
+}
+
+.page-container-switch {
+  background-color: #5851A2;
+  height: 8%;
+  overflow: hidden;
+}
+
+.page-container-switch-button {
+  
+}
+
+.page-container-explore {
+  height: 92%;
+  background-color: #3C386F;
+  overflow: hidden;
+}

@@ -229,7 +229,7 @@
 
 .page-container-scroll {
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .page-container-guess {
@@ -245,7 +245,7 @@
 }
 
 .page-container-switch-button {
-  
+
 }
 
 .page-container-explore {

@@ -47,11 +47,13 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {page: 0};
+    this.epic = 'TEXT TIME'
 
 
     // This binding is necessary to make `this` work in the callback
     this.guessed = this.guessed.bind(this);
     this.home = this.home.bind(this);
+    this.listenScrollEvent = this.listenScrollEvent.bind(this);
   }
 
   head = (<div className="header">
@@ -159,10 +161,48 @@ class App extends React.Component {
     }));
   }
 
+  listenScrollEvent = e => {
+    const elem = document.getElementById('scroll');
+
+    if (elem.scrollTop > elem.clientHeight/2) {
+      this.setState({page: 0});
+      // console.log("bot");
+    } else {
+      this.setState({page: 1});
+      // console.log("top");
+    }
+    // console.log("skrrrt");
+  }
+
+  componentDidMount() {
+    document.getElementById('scroll').addEventListener('scroll', this.listenScrollEvent);
+  }
+
+  scroll = () => {
+    if (this.state.page === 0) {
+      document.getElementById('guess').scrollIntoView({behavior: 'smooth'});
+    } else {
+      document.getElementById('explore').scrollIntoView({behavior: 'smooth'});
+    }
+    
+    
+  };
+
+  wholePage = (
+    <div className='page-container'>
+    <div className='page-container-head'> head </div>
+    <div className='page-container-scroll' id='scroll'>
+      <div className='page-container-guess' id='guess'> guess </div>
+      <div className='page-container-switch'> 
+        <button onClick={this.scroll}> switch </button>
+      </div>
+      <div className='page-container-explore' id='explore'> explore </div>
+    </div>
+    </div>
+  )
+
   render () {
-    if (this.state.page === 0) return this.choose;
-    if (this.state.page === 1) return this.correct;
-    if (this.state.page === 2) return this.incorrect;
+    return this.wholePage;
   }
 }
 

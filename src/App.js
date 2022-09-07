@@ -46,7 +46,7 @@ const mdtype = false;
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {page: 0};
+    this.state = {page: 0, mode: 'up'};
     this.epic = 'TEXT TIME'
 
 
@@ -54,6 +54,7 @@ class App extends React.Component {
     this.guessed = this.guessed.bind(this);
     this.home = this.home.bind(this);
     this.listenScrollEvent = this.listenScrollEvent.bind(this);
+    this.wholePage = this.wholePage.bind(this);
   }
 
   head = (
@@ -167,11 +168,9 @@ class App extends React.Component {
     const elem = document.getElementById('scroll');
 
     if (elem.scrollTop > elem.clientHeight/2) {
-      this.setState({page: 0});
-      // console.log("bot");
+      this.setState({mode: 'down'});
     } else {
-      this.setState({page: 1});
-      // console.log("top");
+      this.setState({mode: 'up'});
     }
     // console.log("skrrrt");
   }
@@ -181,30 +180,28 @@ class App extends React.Component {
   }
 
   scroll = () => {
-    if (this.state.page === 0) {
+    if (this.state.mode == 'down') {
       document.getElementById('guess').scrollIntoView({behavior: 'smooth'});
     } else {
       document.getElementById('explore').scrollIntoView({behavior: 'smooth'});
     }
-    
-    
   };
 
-  wholePage = (
+  wholePage = () => {return (
     <div className='page-container'>
     <div className='page-container-head'> head </div>
     <div className='page-container-scroll' id='scroll'>
-      <div className='page-container-guess' id='guess'> guess </div>
-      <div className='page-container-switch'> 
-        <button onClick={this.scroll}> switch </button>
+      <div className='page-container-guess' id='guess'> {this.choose} </div>
+      <div className='page-container-switch' onClick={this.scroll}> 
+        {(this.state.mode == 'up') ? <div className='page-container-switch-button'>⇕</div> :  <div className='page-container-switch-button'>⇕</div>}
       </div>
-      <div className='page-container-explore' id='explore'> explore </div>
+      <div className='page-container-explore' id='explore'> {this.incorrect} </div>
     </div>
     </div>
-  )
+  )};
 
   render () {
-    return this.wholePage;
+    return this.wholePage();
   }
 }
 

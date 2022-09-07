@@ -236,7 +236,6 @@ h1, h2, h3, h4, h5 {
 
 .page-container {
   height: 100vh;
-  
 }
 .page-container-head {
   background-color: #5851A2;
@@ -256,13 +255,24 @@ h1, h2, h3, h4, h5 {
 }
 
 .page-container-switch {
+  transition: all .15s;
   background-color: #5851A2;
   height: 8%;
   overflow: hidden;
+
+  font-size: 54px;
+  font-weight: 300;
+}
+
+.page-container-switch:hover {
+  font-weight: 500;
 }
 
 .page-container-switch-button {
-
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
 }
 
 .page-container-explore {

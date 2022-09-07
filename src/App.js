@@ -55,15 +55,22 @@ class App extends React.Component {
   }
 
   head = (<div className="header">
-  <div id="logo"><img src={logo}></img></div>
   <h1 className="title">Wikipizzle</h1>
   <h3 className="subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h3>
 </div>)
 
+  topbar = (
+    <div className='Logo'>
+      <img src={logo} alt='W' width='42'></img>
+        Wikipizzle
+        <hr></hr>
+    </div>
+  )
+
   choose = (
     // <body>
     <div className="app">
-    <header> </header>
+    <header> {this.topbar} </header>
     
     {this.head}
     
@@ -78,6 +85,7 @@ class App extends React.Component {
     <div className='button-container'> <button class="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
     <div className='button-container'> <button class="button2" role="button" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button> </div>
     </div>
+    <p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p>
     </div>
     // </body>
     );

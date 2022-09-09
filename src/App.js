@@ -64,18 +64,18 @@ class App extends React.Component {
   </div>
 )
 
-  topbar = (
+  topbar = () => {return (
     <div className="logo-header">
       <img src={logo} alt=""/><h1>Wikipizzle</h1>
     </div>
-  )
+  )};
 
   choose = (
     // <body>
     <div className="app">
-    <header> {this.topbar} </header>
+    {/* <header> {this.topbar()} </header> */}
     
-    {this.head}
+    {/* {this.head} */}
     
       <div className='article-container'><div className='article'> 
       <ReactMarkdown>
@@ -85,10 +85,9 @@ class App extends React.Component {
     
     
     <div className='ins'> 
-    <div className='button-container'> <button class="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
-    <div className='button-container'> <button class="button2" role="button" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button> </div>
+    <div className='button-container'> <button className="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
+    <div className='button-container'> <button className="button2" role="button" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button> </div>
     </div>
-    <p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p><p> asd </p>
     </div>
     // </body>
     );
@@ -102,14 +101,14 @@ class App extends React.Component {
       </div>
       <div className='article'> something  </div>
       <div className='ins'>
-      <button class="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
+      <button className="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
       </div>
       </div>
     );
 
-    incorrect = (
+    chosen = (
       <div className="app">
-      {this.head}
+      {/* {this.head} */}
 
       <div className='all-wrapper'>
         {/* epic so true! */}
@@ -137,7 +136,7 @@ class App extends React.Component {
       </div>
 
       <div className='ins'>
-      <button class="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
+      <button className="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
       </div>
       </div>
     );
@@ -187,15 +186,26 @@ class App extends React.Component {
     }
   };
 
+  guess = () => {
+    const out = this.topbar()
+
+    if (this.state.page == 0) {
+      return <>{out} {this.choose}</>;
+    } else {
+      return <>{out} {this.chosen}</>;
+    }
+  }
+
   wholePage = () => {return (
     <div className='page-container'>
-    <div className='page-container-head'> head </div>
+    <div className='page-container-head'> {this.topbar()} </div>
     <div className='page-container-scroll' id='scroll'>
-      <div className='page-container-guess' id='guess'> {this.choose} </div>
+      <div className='page-container-guess' id='guess'> {this.guess()} </div>
       <div className='page-container-switch' onClick={this.scroll}> 
-        {(this.state.mode == 'up') ? <div className='page-container-switch-button'>⇕</div> :  <div className='page-container-switch-button'>⇕</div>}
+        {/* {(this.state.mode == 'up') ? <div className='page-container-switch-button'>⇕</div> :  <div className='page-container-switch-button'>^v^v^</div>} */}
+        <div className='page-container-switch-button'>⇕</div>
       </div>
-      <div className='page-container-explore' id='explore'> {this.incorrect} </div>
+      <div className='page-container-explore' id='explore'> bot </div>
     </div>
     </div>
   )};

@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .app {
+  margin: 1% 0% 0% 0%;
   text-align: center;
 }
 
@@ -75,7 +76,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .article-container {
-  margin: 0% 15% 0% 15%;
+  margin: 0% 12% 0% 12%;
   min-height: 400px;
   max-height: 450px;
   overflow-y: auto;
@@ -238,8 +239,8 @@ h1, h2, h3, h4, h5 {
   height: 100vh;
 }
 .page-container-head {
-  background-color: #5851A2;
-  height: 00%;
+  background-color: #F1F8FF;
+  height: 0%;
   overflow: hidden;
 }
 

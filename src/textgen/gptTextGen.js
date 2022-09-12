@@ -2,6 +2,21 @@ import { Configuration, OpenAIApi } from "openai";
 import fs from "fs";
 import showdown from "showdown";
 
+const toTitleCase = (str) => {
+  return str
+    .split(" ")
+    .map((word) => {
+      return word[0].toUpperCase() + word.toLowerCase().slice(1);
+    })
+    .join(" ");
+};
+
+const format = (kw, text) =>
+  `${toTitleCase(kw)}\nFrom Wikipizzle, the free AI-pedia\n\n${text
+    .split("\n")
+    .slice(7)
+    .join("\n")}`;
+
 export async function generateMd(keyword) {
   const genNew = false;
   const properhard = true;
@@ -82,10 +97,11 @@ export async function generateMd(keyword) {
     if (fs.existsSync(keyword + ".md")) {
       fs.unlinkSync(keyword + ".md");
     }
+    done = format(keyword, done);
     fs.writeFileSync(keyword + ".md", done);
     return done;
   } else if (!genNew) {
-    return fs.readFileSync(keyword + ".md", "utf8");
+    return format(keyword, fs.readFileSync(keyword + ".md", "utf8"));
   }
 }
 
@@ -94,4 +110,5 @@ export async function generateHtml(keyword) {
   const converter = new showdown.Converter();
   const html = converter.makeHtml(text);
   fs.writeFileSync(keyword + ".html", html);
+  return html;
 }

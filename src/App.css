@@ -1,38 +1,61 @@
 @import url('http://fonts.cdnfonts.com/css/georgia');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @font-face {
   font-family: Linux-Libertine;
   src:url("LinLibertine_R.ttf");
 }
 
-body {
-  background-color: #F1F8FF;
+
+/* Custom Scrollbar --------------------*/
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Montserrat', sans-serif;
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* Main CSS -------------------- */
+body {
+/* background-color: black;
+color: white; */
+}
+
+p {
+  padding: 0;
+  margin: 0;
 }
 
 .app {
-  margin: 1% 0% 0% 0%;
+  margin: 0% 0% 0% 0%;
   text-align: center;
 }
 
+
+/* Header CSS -------------------- */ 
 .app-logo {
   pointer-events: none;
 }
 
 .logo-header {
-  height: 75px;
-  padding: 10px;
-  border-bottom: 2px solid #5851A2;
-  margin: 0 30px;
+  height: 60px;
+  padding: 5px;
+  /* border-bottom: 2px solid #5851A2; */
+  padding: 10px 30px;
 }
 
 .logo-header img {
-  padding-left: 30px;
+  padding-left: 20px;
   height: 100%;
   float: left;
 }
@@ -41,18 +64,10 @@ h1, h2, h3, h4, h5 {
   display: inline;
   float: left;
   padding-left: 20px;
-
   color: #5851A2;
   font-weight: normal;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: Georgia,'Times New Roman', Times, serif;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .header {
@@ -61,41 +76,63 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   color: black;
   font-style: italic;
-  font-size: 1em;
   padding: 20px;
 }
 
+
+@media (prefers-reduced-motion: no-preference) {
+  .app-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+ 
+
+/*
 .title {
   margin-bottom: 0;
   font-size: calc(28px + 1.5vmin);
-}
- 
+} */
+
+/* Header CSS --------------------*/
 .subtitle {
   font-weight: normal;
-  font-size: calc(12px + 0.5vmin);
+  font-size: 1.1em;
+  padding: 20px 0;
 }
 
 .article-container {
-  margin: 0% 12% 0% 12%;
-  min-height: 400px;
-  max-height: 450px;
-  background-color: white;
+  margin: 1% 10% 1% 10%;
+  min-height: 40vh;
+  max-height: 55vh;
+  /* background-color: rgb(237, 237, 237); */
   overflow-y: scroll;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 
 .article {
   padding: 5px 20px 0px 20px;
   /* height: 100%; */
-  /*background-color: rgb(242, 242, 242);*/
-  /* background-color: white; */
   text-align: left;
   justify-content: left;
-  font-family: Arial;
   /* color: black; */
 }
 
+.article p {
+  font-size: 1em;
+  padding: 10px 0 20px 0;
+}
+
+.article h1, .article h2 {
+  padding: 10px 0;
+  font-family: 'Georgia', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+
+
 .ins {
-  /* background-color: rgb(242, 242, 242); */
   margin: 2% 27% 0% 27%;
   text-align:center;
   color: black;
@@ -126,35 +163,28 @@ h1, h2, h3, h4, h5 {
   display: inline-block;
 
   transition: all .15s;
-  letter-spacing: -.8px;
   line-height: 24px;
 
+  background-color: #5851A2;
+  color: white;
   width: 200px;
 
   /* outline: 0; */
-  border: 2px solid #5851A2;
+  border: none;
   box-sizing: border-box;
   border-radius: 5px;
 
   /* margin:1em; */
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 1em;
+  font-weight: 500;
   height: 55px;
-}
-
-.button1 {
-  background-color: #5851A2;
-  color: white;
-}
-
-.button2 {
-  background-color: #5851A2;
-  color: white;
+  font-family: 'Georgia', sans-serif;
 }
 
 .button1:hover, .button2:hover {
   font-weight: 900;
-  letter-spacing: 0px;
+  cursor: pointer;
+  background: #7e77ce;
 }
 
 .button1:active, .button2:active {
@@ -263,7 +293,6 @@ h1, h2, h3, h4, h5 {
   font-size: 14px;
 }
 
-
 .page-container {
   height: 100vh;
 }
@@ -279,36 +308,35 @@ h1, h2, h3, h4, h5 {
 }
 
 .page-container-guess {
-  background-color: #F1F8FF;
+
   height: 92%;
   overflow: hidden;
 }
 
 .page-container-switch {
   transition: all .15s;
-  background-color: #F1F8FF;
+  background-color: #5851A2;
   
   height: 8%;
   overflow: hidden;
 
-  font-size: 24px;
+  font-size: 1.2em;
   font-weight: 300;
 }
 
 .page-container-switch:hover {
-  font-weight: 500;
+  font-weight: 600;
+  cursor: pointer;
+  background: #7e77ce;
 }
 
 .page-container-switch-button {
-  color: #5851A2;
+  color: white;
   text-align: center;
-  padding: 0px;
-  margin: 0px;
-
-  /* position: absolute; */
-  top: 50%;
-  transform: translateY(+75%);
+  margin: auto;
+  transform: translateY(+45%);
 }
+
 
 .page-container-explore {
   height: 92%;

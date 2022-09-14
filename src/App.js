@@ -5,28 +5,17 @@ import ReactMarkdown from 'react-markdown'
 
 function getmd() {
   return `# Lau Theorem
-  From Wikipedia, the free encyclopedia
+  From Wikipedia, the free encyclopedia.
   
   
   ## Introduction
   
-  In mathematics, the Lau theorem, named after Danish mathematician Poul Lau, states that every countable subset of a separable metric space is itself separable.
-  
+  In mathematics, the Lau theorem, named after Danish mathematician Poul Lau, states that every countable subset of a separable metric space is itself separable. Cras dictum orci interdum nibh laoreet, ac rutrum ipsum rutrum. Aenean aliquam velit eu purus aliquet pretium. In ut ipsum ut justo blandit tristique ac vel urna. Etiam molestie ligula sapien, nec pharetra enim suscipit et. Praesent ultrices velit id ligula lobortis consequat. Praesent id tortor lorem. Vivamus vestibulum metus dui, at efficitur metus egestas quis. Nullam malesuada justo enim, feugiat lobortis quam convallis ac. Nullam nec justo nunc. Duis rutrum felis a ultrices viverra. In luctus accumsan turpis, fermentum tincidunt erat auctor id. Mauris semper nunc quis massa suscipit placerat. Integer vel semper urna.
   
   ## Definition
   
-  A separable metric space is a metric space in which every countable subset is itself a metric space.
-  
-  
-  ## Example
-  
-  The set of rational numbers is a separable metric space, since the subset of rational numbers consisting of the natural numbers is a metric space.
-  
-  
-  ## Proof
-  
-  The proof is by contradiction. Suppose that there exists a separable metric space that does not contain every countable subset. Let S be a countable subset of that space. Since S is separable, there exists a sequence in S converging to some point x in S. Since x is not in S, there must exist a point y in S such that x and y are not in the same metric space. But this is a contradiction, since the metric spaces consisting of the rational numbers and the points x, y are the same.
-  
+  A separable metric space is a metric space in which every countable subset is itself a metric space. Cras dictum orci interdum nibh laoreet, ac rutrum ipsum rutrum. Aenean aliquam velit eu purus aliquet pretium. In ut ipsum ut justo blandit tristique ac vel urna. Etiam molestie ligula sapien, nec pharetra enim suscipit et. Praesent ultrices velit id ligula lobortis consequat. Praesent id tortor lorem.
+
   
   ## See also
   
@@ -99,7 +88,7 @@ class App extends React.Component {
       <div className='answer-box'>
       something
       </div>
-      <div className='article'> something  </div>
+      <div className='article'> something</div>
       <div className='ins'>
       <button className="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
       </div>
@@ -209,6 +198,12 @@ class App extends React.Component {
     }
   }
 
+  explore = () => (
+    <div>
+      sadboi hours
+    </div>
+  );
+
   wholePage = () => {return (
     <div className='page-container'>
     <div className='page-container-head'> {this.topbar()} </div>
@@ -218,7 +213,7 @@ class App extends React.Component {
         {(this.state.mode == 'up') ? <div className='page-container-switch-button'>Exploration Mode</div> :  <div className='page-container-switch-button'>Play Mode</div>}
         {/* <div className='page-container-switch-button'>⇕</div> */}
       </div>
-      <div className='page-container-explore' id='explore'> bot </div>
+      <div className='page-container-explore' id='explore'> {this.explore()} </div>
     </div>
     </div>
   )};

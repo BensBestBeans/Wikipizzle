@@ -56,8 +56,11 @@ class App extends React.Component {
   topbar = () => {return (
     <div className="logo-header">
       <img src={logo} alt=""/><h1>Wikipizzle</h1>
+      <div className='button-container'> <button className="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
     </div>
   )};
+
+
 
   choose = () => (
     // <body>
@@ -134,7 +137,7 @@ class App extends React.Component {
       </div> */}
 
       </div>
-
+      
       </div>
 
       {/* <div className='ins'>
@@ -143,9 +146,6 @@ class App extends React.Component {
       </div>
     );
 
-  learn = (
-    <div></div>
-  )
 
   guessed(x) {
     if (x == mdtype) {
@@ -184,7 +184,7 @@ class App extends React.Component {
     if (this.state.mode == 'down') {
       document.getElementById('guess').scrollIntoView({behavior: 'smooth'});
     } else {
-      document.getElementById('explore').scrollIntoView({behavior: 'smooth'});
+      document.getElementById('learn').scrollIntoView({behavior: 'smooth'});
     }
   };
 
@@ -200,9 +200,51 @@ class App extends React.Component {
 
   explore = () => (
     <div>
-      sadboi hours
+    <form id='explore-form'>
+    <div class='form'>
+        <label id='inputLable'>Input keywords:</label>
+        <input id='inputField' type='text' maxlength='50'></input>
     </div>
-  );
+    </form>
+    {/* function othername() {
+    var input = document.getElementById("userInput").value;
+    alert(input); */}
+
+    </div>
+    );
+
+
+  learn = () => (
+    <div className='learn-container'>
+      <div className="learn-intro">
+        <h1>What is Wikipizzle?</h1>
+        <p>Wikipizzle is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.</p>
+      </div>
+
+      <div className='learn-training'>
+        <h1>6 ways to spot a generated or fake article</h1>
+
+        <h2>1. Inconsistencies</h2>
+        <p>The two main inconsistencies to look out for are facts that contradicts itself throughout the article and headlines or titles that do not support the content and lack correlation</p>
+
+        <h2>2. Check the Vibes</h2>
+        <p>Does the tone of writing match the topic it is discussing?</p>
+        <p>Does a professional article contain large amounts of satire or parody? Does the Wikipedia article contain degrading, nonsensical, very baised or humorous content? There might be no harm intended, but it does have the potential to fool viewers. Apply common sense and look at the context.</p>
+        <p>Is the article informative or does it create more questions rather then answering them?</p>
+
+        <h2>3. Sloppy Writing</h2>
+        <p>Poor grammar, spelling mistakes</p>
+        <p>Stylistic choices, such as excessive capitalisation or the use of !!!, are a sign that the  </p>
+
+        <h2>4. Absence of quotes or sources</h2>
+        <p>The presence of quotes and sources might add an additional layer of integrity, potentially indicating more reliable information. External links to credible websites also boost the integrity of an article.</p>
+
+      </div>
+
+    </div>
+
+    );
+
 
   wholePage = () => {return (
     <div className='page-container'>
@@ -213,7 +255,7 @@ class App extends React.Component {
         {(this.state.mode == 'up') ? <div className='page-container-switch-button'>Exploration Mode</div> :  <div className='page-container-switch-button'>Play Mode</div>}
         {/* <div className='page-container-switch-button'>⇕</div> */}
       </div>
-      <div className='page-container-explore' id='explore'> {this.explore()} </div>
+      <div className='page-container-explore' id='learn'> {this.learn()} </div>
     </div>
     </div>
   )};

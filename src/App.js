@@ -216,14 +216,25 @@ class App extends React.Component {
 
   learn = () => (
     <div className='learn-container'>
-      <div className="learn-intro">
-        <h1>What is Wikipizzle?</h1>
-        <p>Wikipizzle is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.</p>
+
+      <div className='learn-flexbox'>
+        <div class="item learn-intro">
+            <h1>What is Wikipizzle?</h1>
+            <p>Wikipizzle is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+        <div class="item"><h1>6 ways to spot a generated or fake article</h1></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
       </div>
 
-      <div className='learn-training'>
-        <h1>6 ways to spot a generated or fake article</h1>
 
+      <div className='learn-training'>
         <h2>1. Inconsistencies</h2>
         <p>The two main inconsistencies to look out for are facts that contradicts itself throughout the article and headlines or titles that do not support the content and lack correlation</p>
 

@@ -42,12 +42,14 @@ class App extends React.Component {
   </div>
 )
 
-  topbar = () => {return (
+  topbar = () => (
     <div className="logo-header">
       <img src={logo} alt=""/><h1>Wikipizzle</h1>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
+      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'GES'})}><span>Quizzle</span> </button></div>
+      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'EXP'})}><span>Explore</span> </button></div>
+      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'LRN'})}><span>Learn more</span> </button></div>
     </div>
-  )};
+  )
 
 
 
@@ -56,7 +58,7 @@ class App extends React.Component {
     <div className="app">
     {/* <header> {this.topbar()} </header> */}
     
-    {this.head}
+    {/* {this.head} */}
     
       <div className='article-container'><div className='article'> 
       <ReactMarkdown>
@@ -166,7 +168,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    document.getElementById('scroll').addEventListener('scroll', this.listenScrollEvent);
+    // document.getElementById('scroll').addEventListener('scroll', this.listenScrollEvent);
   }
 
   scroll = () => {
@@ -179,12 +181,12 @@ class App extends React.Component {
   };
 
   guess = () => {
-    const out = this.topbar()
+    // const out = this.topbar()
 
     if (this.state.page == 0) {
-      return <>{out} {this.choose()}</>;
+      return <> {this.choose()}</>;
     } else {
-      return <>{out} {this.chosen()}</>;
+      return <> {this.chosen()}</>;
     }
   }
 
@@ -246,17 +248,30 @@ class App extends React.Component {
 
     );
 
+  getpage = () => {
+    switch (this.state.mode) {
+      case 'GES':
+        return <div className='page-container-guess' id='guess'> {this.guess()} </div>
+      case 'LRN':
+        return <div className='page-container-learn' id='learn'> {this.learn()} </div>
+      case 'EXP':
+        return <div className='page-container-explore' id='explore'> </div>
+      default:
+        return <></>
+    }
+  }
 
   wholePage = () => {return (
     <div className='page-container'>
     <div className='page-container-head'> {this.topbar()} </div>
     <div className='page-container-scroll' id='scroll'>
-      <div className='page-container-guess' id='guess'> {this.guess()} </div>
-      <div className='page-container-switch' onClick={this.scroll}> 
+      {this.getpage()}
+      
+      
+      
+      {/* <div className='page-container-switch' onClick={this.scroll}> 
         {(this.state.mode == 'up') ? <div className='page-container-switch-button'>Exploration Mode</div> :  <div className='page-container-switch-button'>Play Mode</div>}
-        {/* <div className='page-container-switch-button'>⇕</div> */}
-      </div>
-      <div className='page-container-explore' id='learn'> {this.learn()} </div>
+      </div> */}
     </div>
     </div>
   )};

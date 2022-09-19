@@ -31,6 +31,10 @@ body {
 color: white; */
 }
 
+h1, h2, h3 {
+
+}
+
 p {
   padding: 0;
   margin: 0;
@@ -297,7 +301,6 @@ p {
   height: 100vh;
 }
 .page-container-head {
-  background-color: #F1F8FF;
   height: 0%;
   overflow: hidden;
 }
@@ -340,6 +343,34 @@ p {
 
 .page-container-explore {
   height: 92%;
-  background-color: #F1F8FF;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+
+/* Learn Page CSS --------------------*/
+.learn-container {
+  width: 80%;
+  margin: 5% 10% 0 10%;
+
+}
+
+.learn-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  background-color: darkslategray;
+  width: 33.5%;
+  min-height: 100px;
+  margin-bottom: 1.5%;
+}
+
+.item:nth-child(1), .item:nth-child(2) {
+  width: 100%;
+}
+
+.item:nth-child(4),.item:nth-child(5),.item:nth-child(8),.item:nth-child(9), .item:nth-child(12) {
+  width: 65%;
 }

@@ -156,7 +156,7 @@ p {
 }
 
 .button-container {
-  width: 50%;
+  /* width: 50%; */
   margin: 0px;
   display: inline-block;
   text-align: center;
@@ -198,15 +198,10 @@ p {
 .right-wrapper {
   /* padding: 10px 20px 10px 20px; */
   margin: 0% 0% 0% 1%;
-
   width: 60%;
-
   text-align: left;
-
   height: 100%;
-
   overflow-y: hidden;
-
   /* font-weight: 700;
   font-size: 20px; */
 
@@ -230,7 +225,6 @@ p {
   font-weight: 900; */
   height: 500px;
   /* text-align: left; */
-
   display: flex;
   /* flex-direction: row; */
   justify-content: center;
@@ -240,7 +234,6 @@ p {
   width: 33%;
   text-align: center;
   height: 100%;
-
   margin: 0% 1% 0% 0%;
 
   /* background-color: white; */
@@ -255,7 +248,6 @@ p {
 
 .learn-more {
   height: 25%;
-
   background-color:#5851A2;
   color: white;
   border-radius: 5px;
@@ -318,10 +310,8 @@ p {
 .page-container-switch {
   transition: all .15s;
   background-color: #5851A2;
-  
   height: 8%;
   overflow: hidden;
-
   font-size: 1.2em;
   font-weight: 300;
 }
@@ -349,7 +339,6 @@ p {
 
 }
 
-
 /* Learn Page CSS --------------------*/
 .learn-container {
 
@@ -362,65 +351,75 @@ p {
 }
 
 .item {
-  background-color: darkslategray;
+  border: 1px solid black;
   width: 33.5%;
-  min-height: 100px;
+  min-height: 200px;
   margin-bottom: 1.5%;
 }
 
-.item:nth-child(1), .item:nth-child(2) {
-  width: 100%;
+.item h2 {
+  padding: 10px;
+  margin: 0;
 }
 
-.item:nth-child(4),.item:nth-child(5),.item:nth-child(8),.item:nth-child(9), .item:nth-child(12) {
+.item p {
+  padding: 10px;
+}
+
+/* .item:nth-child(1), .item:nth-child(2) {
+  width: 100%;
+} */
+
+.item:nth-child(2),.item:nth-child(3),.item:nth-child(6),.item:nth-child(7) {
   width: 65%;
 }
 
 
-/* Training*/
 
+/* Training Page ---------------------------------*/
 .blue-highlight {
-  background-color: #cad5e6;
+  background-color: lightblue;
 }
 
 .tutorial-one {
-  display: flex;
   flex-direction: column;
+  display: flex;
   height: 100%;
   min-height: 100%;
   flex-flow: column wrap;
 }
 
+
 .article1 {
-  order: 1;
-  flex: 1;
-  background-color: green;
+  /* flex:1;
+  order: 1; */
+  background-color: lightgray;
   width: calc(100% - 300px);
   flex: 0 0 100%;
 }
 
-.article p {
+.article1 p {
   display: block;
 }
 
 .box1 {
   order:2;
-  background-color: blue;
+  background-color: lightblue;
 }
 
 .box2 {
   order: 3;
-  background-color: red;
+  background-color: lightpink;
 }
 
 .box3 {
   order: 4;
-  background-color: purple;
+  background-color: lightgreen;
 }
 
 .box4 {
   order: 5;
-  background-color: pink;
+  background-color: yellow;
 }
 
 .box1,.box2, .box3, .box4 {

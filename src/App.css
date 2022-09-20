@@ -40,6 +40,11 @@ p {
   margin: 0;
 }
 
+.wrapper {
+  width: 80%;
+  margin: 2% 10% 0 10%;
+}
+
 .app {
   margin: 0% 0% 0% 0%;
   text-align: center;
@@ -91,11 +96,6 @@ p {
 }
  
 
-/*
-.title {
-  margin-bottom: 0;
-  font-size: calc(28px + 1.5vmin);
-} */
 
 /* Header CSS --------------------*/
 .subtitle {
@@ -224,11 +224,10 @@ p {
   width: 100%;
 }
 
-.all-wrapper {
+.chosen-container {
   /* display: inline-block; */
   /* color: #06f;
   font-weight: 900; */
-  margin: 1% 10% 0% 10%;
   height: 500px;
   /* text-align: left; */
 
@@ -300,6 +299,7 @@ p {
 .page-container {
   height: 100vh;
 }
+
 .page-container-head {
   height: 0%;
   overflow: hidden;
@@ -311,7 +311,6 @@ p {
 }
 
 .page-container-guess {
-
   height: 92%;
   overflow: hidden;
 }
@@ -349,8 +348,6 @@ p {
 
 /* Learn Page CSS --------------------*/
 .learn-container {
-  width: 80%;
-  margin: 5% 10% 0 10%;
 
 }
 
@@ -373,4 +370,56 @@ p {
 
 .item:nth-child(4),.item:nth-child(5),.item:nth-child(8),.item:nth-child(9), .item:nth-child(12) {
   width: 65%;
+}
+
+
+/* Training*/
+
+.blue-highlight {
+  background-color: #cad5e6;
+}
+
+.tutorial-one {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  flex-flow: column wrap;
+}
+
+.article1 {
+  order: 1;
+  flex: 1;
+  background-color: green;
+  width: calc(100% - 300px);
+  flex: 0 0 100%;
+}
+
+.article p {
+  display: block;
+}
+
+.box1 {
+  order:2;
+  background-color: blue;
+}
+
+.box2 {
+  order: 3;
+  background-color: red;
+}
+
+.box3 {
+  order: 4;
+  background-color: purple;
+}
+
+.box4 {
+  order: 5;
+  background-color: pink;
+}
+
+.box1,.box2, .box3, .box4 {
+  width: 200px;
+  flex: 25%;
 }

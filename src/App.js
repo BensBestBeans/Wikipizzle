@@ -46,7 +46,7 @@ class App extends React.Component {
     this.wholePage = this.wholePage.bind(this);
   }
 
-  head = (
+head = (
   <div>
     {/* <h1 className="title">Wikipizzle</h1> */}
     <h2 className="subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h2>
@@ -102,11 +102,9 @@ class App extends React.Component {
       <div className="app">
       {this.head}
 
-      <div className='all-wrapper'>
-        {/* epic so true! */}
+      <div className='chosen-container wrapper'>
 
         <div className='left-wrapper'>
-          
           <div className='chosen-article'>
         <div className='article'>
           <ReactMarkdown>
@@ -199,7 +197,7 @@ class App extends React.Component {
   }
 
   explore = () => (
-    <div>
+    <div className='explore-container wrapper'>
     <form id='explore-form'>
     <div class='form'>
         <label id='inputLable'>Input keywords:</label>
@@ -215,7 +213,7 @@ class App extends React.Component {
 
 
   learn = () => (
-    <div className='learn-container'>
+    <div className='learn-container wrapper'>
 
       <div className='learn-flexbox'>
         <div class="item learn-intro">
@@ -256,12 +254,32 @@ class App extends React.Component {
 
     );
 
+  
+  tutorial = () => (
+    <div className='tutorial-one wrapper'>
+      <div class="box article1">
+        <p>The University of Queensland (UQ) is a public research university located in the city of Brisbane, the capital of the Australian state of Queensland. Founded in 1901, UQ is colloquially known as <span className='blue-highlight'>a sandstone university</span>.</p>
+        <p>UQ is considered one of Australia’s leading universities, and is ranked as the 48th most reputable university in the world in the 2016 Times Higher Education World University Rankings. UQ is ranked within the top 300 universities in thirteen indicators in the 2015-16 QS World University Rankings.</p>
+        <p>The main campus occupies much of the riverside inner suburb of St Lucia, southwest of the Brisbane CBD. Other UQ campuses and facilities are located throughout Queensland, the largest of which are the Gatton campus and the herbarium at Mount Coot-tha. UQ also has establishments overseas, such as the Brunei International School in Brunei Darussalam.</p>
+        <p>Cras dictum orci interdum nibh laoreet, ac rutrum ipsum rutrum. Aenean aliquam velit eu purus aliquet pretium. In ut ipsum ut justo blandit tristique ac vel urna. Etiam molestie ligula sapien, nec pharetra enim suscipit et. Praesent ultrices velit id ligula lobortis consequat. Praesent id tortor lorem. Vivamus vestibulum metus dui, at efficitur metus egestas quis. Nullam malesuada justo enim, feugiat lobortis quam convallis ac. Nullam nec justo nunc. Duis rutrum felis a ultrices viverra. In luctus accumsan turpis, fermentum tincidunt erat auctor id. Mauris semper nunc quis massa suscipit placerat. Integer vel semper urna.</p>
+      </div>
+      <div class="box box1">this is blah blah blah blah blah blah blah blah blah blah box 1</div>
+      <div class="box box2">box 2</div>
+      <div class="box box3">box 3</div>
+      <div class="box box4">box 4</div>
+      </div>
+
+  );
+
+
+
+
 
   wholePage = () => {return (
     <div className='page-container'>
     <div className='page-container-head'> {this.topbar()} </div>
     <div className='page-container-scroll' id='scroll'>
-      <div className='page-container-guess' id='guess'> {this.guess()} </div>
+      <div className='page-container-guess' id='guess'> {this.tutorial()} </div>
       <div className='page-container-switch' onClick={this.scroll}> 
         {(this.state.mode == 'up') ? <div className='page-container-switch-button'>Exploration Mode</div> :  <div className='page-container-switch-button'>Play Mode</div>}
         {/* <div className='page-container-switch-button'>⇕</div> */}

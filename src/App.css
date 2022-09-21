@@ -94,7 +94,6 @@ p {
     animation: App-logo-spin infinite 20s linear;
   }
 }
- 
 
 
 /* Header CSS --------------------*/
@@ -294,7 +293,7 @@ p {
 
 .page-container-head {
   height: 10%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .page-container-scroll {
@@ -366,63 +365,71 @@ p {
   padding: 10px;
 }
 
-/* .item:nth-child(1), .item:nth-child(2) {
-  width: 100%;
-} */
-
 .item:nth-child(2),.item:nth-child(3),.item:nth-child(6),.item:nth-child(7) {
   width: 65%;
 }
 
 
 
-/* Training Page ---------------------------------*/
+
+.tutorial-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tutorial-item-left {
+  background-color: #f1f1f1;
+  flex: 75%;
+}
+
+.box-article {
+  margin: 5px;
+}
+
+.box-article h2 {
+  padding: 20px 0 5px 0;
+  font-family: 'Georgia', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+.box-article p {
+  padding-top: 5px;
+}
+
+.tutorial-item-right {
+  flex: 25%;
+}
+
+.box {
+  padding: 10px;
+  margin: 0 0 20px 20px;
+}
+
+.box-one {
+  background-color: lightblue;
+}
+.box-two {
+  background-color: lightpink;
+}
+.box-three {
+  background-color: lightgreen;
+}
+
 .blue-highlight {
   background-color: lightblue;
 }
 
-.tutorial-one {
-  flex-direction: column;
-  display: flex;
-  height: 100%;
-  min-height: 100%;
-  flex-flow: column wrap;
-}
 
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .tutorial-item-left, .tutorial-item-right {
+    flex: 100%;
+  }
 
-.article1 {
-  /* flex:1;
-  order: 1; */
-  background-color: lightgray;
-  width: calc(100% - 300px);
-  flex: 0 0 100%;
-}
-
-.article1 p {
-  display: block;
-}
-
-.box1 {
-  order:2;
-  background-color: lightblue;
-}
-
-.box2 {
-  order: 3;
-  background-color: lightpink;
-}
-
-.box3 {
-  order: 4;
-  background-color: lightgreen;
-}
-
-.box4 {
-  order: 5;
-  background-color: yellow;
-}
-
-.box1,.box2, .box3, .box4 {
-  width: 200px;
-  flex: 25%;
+  .box {
+    padding: 10px;
+    margin: 0;
+  }
 }

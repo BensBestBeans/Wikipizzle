@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown'
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {page: 0, mode: 'up', md: null};
+    this.state = {page: 0, mode: 'GES', md: null};
     this.epic = 'TEXT TIME';
 
     this.state.mdtype = false;
@@ -35,29 +35,119 @@ class App extends React.Component {
     // this.switchMode = this.switchMode.bind(this);
   }
 
-  head = (
+head = (
   <div>
     {/* <h1 className="title">Wikipizzle</h1> */}
     <h2 className="subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h2>
   </div>
 )
 
+  topbut = (mode, text) => (
+    // <div className='button-container'> <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}><span>{text}</span> </button></div>
+    (this.state.mode == mode) ? 
+    <button className="head-button head-button-active" role="button" onClick={() => this.setState({mode: mode})}>{text} </button>
+    :
+    <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}>{text} </button>
+  )
+
   topbar = () => (
     <div className="logo-header">
-      <img src={logo} alt=""/><h1>Wikipizzle</h1>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'GES'})}><span>Quizzle</span> </button></div>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'EXP'})}><span>Explore</span> </button></div>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'LRN'})}><span>Learn more</span> </button></div>
+    
+      <div className='head-logo-container'>
+      <img src={logo} alt=""/><a>Wikipizzle</a>
+      </div>
+  
+    <div className='head-button-container'>
+    <ul>
+    
+    <li> {this.topbut('GES', 'Quizzle')}      </li>
+    <li> {this.topbut('EXP', 'Explore')}      </li>
+    <li> {this.topbut('LRN', 'Learn More')}   </li>
+    
+    </ul>
+    </div>
+
+    <div className='head-tute-container'>
+    <button role="button" onClick={() => this.setState({mode: 'TUT'})}> ? </button>
+    </div>
+    
+
     </div>
   )
 
+  explore = () => (
+    <div className='explore-container wrapper'>
+    <form id='explore-form'>
+    <div className='form'>
+        <label id='inputLable'>Input keywords:</label>
+        <input id='inputField' type='text' maxlength='50'></input>
+    </div>
+    </form>
+    {/* function othername() {
+    var input = document.getElementById("userInput").value;
+    alert(input); */}
+
+    </div>
+    );
+
+
+  learn = () => (
+    <div className='learn-container wrapper'>
+      <div className="learn-intro">
+            <h1>What is Wikipizzle?</h1>
+            <p>Wikipizzle is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+        <div className=''><h1>6 ways to spot a generated or fake article</h1></div>
+
+      <div className='learn-flexbox'>
+        <div className='item'></div>
+        <div className='item'>
+          <h2>1. Inconsistencies</h2>
+          <p>The two main inconsistencies to look out for are facts that contradicts itself throughout the article and headlines or titles that do not support the content and lack correlation</p>
+        </div>
+        <div className='item'>
+          <h2>2. Check the Vibes</h2>
+          <p>Does the tone of writing match the topic it is discussing?</p>
+          <p>Does a professional article contain large amounts of satire or parody? Does the Wikipedia article contain degrading, nonsensical, very baised or humorous content? There might be no harm intended, but it does have the potential to fool viewers. Apply common sense and look at the context.</p>
+          <p>Is the article informative or does it create more questions rather then answering them?</p>
+        </div>
+        <div className='item'></div>
+        <div className='item'></div>
+        <div className='item'>
+          <h2>3. Sloppy Writing</h2>
+          <p>Poor grammar, spelling mistakes</p>
+          <p>Stylistic choices, such as excessive capitalisation or the use of !!!, are a sign that the  </p>
+        </div>
+        <div className='item'>
+          <h2>4. Absence of quotes or sources</h2>
+          <p>The presence of quotes and sources might add an additional layer of integrity, potentially indicating more reliable information. External links to credible websites also boost the integrity of an article.</p>
+        </div>
+        <div className='item'></div>
+      </div>
+    </div>
+    );
+
+
+  
+  tutorial = () => (
+    <div className='tutorial-one wrapper'>
+      <div className='box article1'>
+        <p>The University of Queensland (UQ) is a public research university located in the city of Brisbane, the capital of the Australian state of Queensland. Founded in 1901, UQ is colloquially known as <span className='blue-highlight'>the sandstone university</span>.</p>
+        <p>UQ is considered one of Australia’s leading universities, and is ranked as the 48th most reputable university in the world in the 2016 Times Higher Education World University Rankings. UQ is ranked within the top 300 universities in thirteen indicators in the 2015-16 QS World University Rankings.</p>
+        <p>The main campus occupies much of the riverside inner suburb of St Lucia, southwest of the Brisbane CBD. Other UQ campuses and facilities are located throughout Queensland, the largest of which are the Gatton campus and the herbarium at Mount Coot-tha. UQ also has establishments overseas, such as the Brunei International School in Brunei Darussalam.</p>
+        <p>Cras dictum orci interdum nibh laoreet, ac rutrum ipsum rutrum. Aenean aliquam velit eu purus aliquet pretium. In ut ipsum ut justo blandit tristique ac vel urna. Etiam molestie ligula sapien, nec pharetra enim suscipit et. Praesent ultrices velit id ligula lobortis consequat. Praesent id tortor lorem. Vivamus vestibulum metus dui, at efficitur metus egestas quis. Nullam malesuada justo enim, feugiat lobortis quam convallis ac. Nullam nec justo nunc. Duis rutrum felis a ultrices viverra. In luctus accumsan turpis, fermentum tincidunt erat auctor id. Mauris semper nunc quis massa suscipit placerat. Integer vel semper urna.</p>
+      </div>
+      <div className='box box1'>The article should have used title case for "The Sandstone University" when referring and proper nouns.</div>
+      <div className='box box2'>box 2</div>
+      <div className='box box3'>box 3</div>
+      <div className='box box4'>box 4</div>
+    </div>
+  );
 
 
   choose = () => (
-    // <body>
-    <div className="app">
+    <div className='app'>
     {/* <header> {this.topbar()} </header> */}
-    
     {/* {this.head} */}
     
       <div className='article-container'><div className='article'> 
@@ -66,26 +156,26 @@ class App extends React.Component {
       </ReactMarkdown> 
       </div></div>
     
-    
     <div className='ins'> 
     <div className='button-container'> <button className="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
     <div className='button-container'> <button className="button2" role="button" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button> </div>
     </div>
     </div>
-    // </body>
     );
     
     correct = (
       <div className="app">
-      <header> </header>
-      {this.head}
-      <div className='answer-box'>
-      something
-      </div>
-      <div className='article'> something</div>
-      <div className='ins'>
-      <button className="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
-      </div>
+        <header></header>
+        {this.head}
+        
+        <div className='answer-box'>
+        something
+        </div>
+
+        <div className='article'> something</div>
+        <div className='ins'>
+        <button className="button1" role="button" onClick={() => this.home()}><span>HOME</span></button>
+        </div>
       </div>
     );
 
@@ -93,11 +183,9 @@ class App extends React.Component {
       <div className="app">
       {this.head}
 
-      <div className='all-wrapper'>
-        {/* epic so true! */}
+      <div className='chosen-container wrapper'>
 
         <div className='left-wrapper'>
-          
           <div className='chosen-article'>
         <div className='article'>
           <ReactMarkdown>
@@ -136,7 +224,6 @@ class App extends React.Component {
       </div> */}
       </div>
     );
-
 
   guessed(x) {
     if (x == this.mdtype) {
@@ -182,71 +269,12 @@ class App extends React.Component {
 
   guess = () => {
     // const out = this.topbar()
-
     if (this.state.page == 0) {
       return <> {this.choose()}</>;
     } else {
       return <> {this.chosen()}</>;
     }
-  }
-
-  explore = () => (
-    <div>
-    <form id='explore-form'>
-    <div class='form'>
-        <label id='inputLable'>Input keywords:</label>
-        <input id='inputField' type='text' maxlength='50'></input>
-    </div>
-    </form>
-    {/* function othername() {
-    var input = document.getElementById("userInput").value;
-    alert(input); */}
-
-    </div>
-    );
-
-
-  learn = () => (
-    <div className='learn-container'>
-
-      <div className='learn-flexbox'>
-        <div class="item learn-intro">
-            <h1>What is Wikipizzle?</h1>
-            <p>Wikipizzle is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus. Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio, scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus velit, cursus in fermentum eu, euismod et velit. Nullam a augue at turpis porta convallis. Cras interdum, ex at cursus cursus, purus felis consequat arcu, vel auctor nisi erat ut purus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div>
-        <div class="item"><h1>6 ways to spot a generated or fake article</h1></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-        <div class="item"></div>
-      </div>
-
-
-      <div className='learn-training'>
-        <h2>1. Inconsistencies</h2>
-        <p>The two main inconsistencies to look out for are facts that contradicts itself throughout the article and headlines or titles that do not support the content and lack correlation</p>
-
-        <h2>2. Check the Vibes</h2>
-        <p>Does the tone of writing match the topic it is discussing?</p>
-        <p>Does a professional article contain large amounts of satire or parody? Does the Wikipedia article contain degrading, nonsensical, very baised or humorous content? There might be no harm intended, but it does have the potential to fool viewers. Apply common sense and look at the context.</p>
-        <p>Is the article informative or does it create more questions rather then answering them?</p>
-
-        <h2>3. Sloppy Writing</h2>
-        <p>Poor grammar, spelling mistakes</p>
-        <p>Stylistic choices, such as excessive capitalisation or the use of !!!, are a sign that the  </p>
-
-        <h2>4. Absence of quotes or sources</h2>
-        <p>The presence of quotes and sources might add an additional layer of integrity, potentially indicating more reliable information. External links to credible websites also boost the integrity of an article.</p>
-
-      </div>
-
-    </div>
-
-    );
+  };
 
   getpage = () => {
     switch (this.state.mode) {
@@ -255,20 +283,19 @@ class App extends React.Component {
       case 'LRN':
         return <div className='page-container-learn' id='learn'> {this.learn()} </div>
       case 'EXP':
-        return <div className='page-container-explore' id='explore'> {this.explore()} </div>
+        return <div className='page-container-explore' id='explore'> </div>
+      case 'TUT':
+        return <div className='page-container-tutorial' id='tutorial'> {this.tutorial()} </div>
       default:
         return <></>
     }
-  }
+  };
 
   wholePage = () => {return (
     <div className='page-container'>
     <div className='page-container-head'> {this.topbar()} </div>
     <div className='page-container-scroll' id='scroll'>
       {this.getpage()}
-      
-      
-      
       {/* <div className='page-container-switch' onClick={this.scroll}> 
         {(this.state.mode == 'up') ? <div className='page-container-switch-button'>Exploration Mode</div> :  <div className='page-container-switch-button'>Play Mode</div>}
       </div> */}

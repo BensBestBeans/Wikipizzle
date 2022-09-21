@@ -40,6 +40,11 @@ p {
   margin: 0;
 }
 
+.wrapper {
+  width: 80%;
+  margin: 2% 10% 0 10%;
+}
+
 .app {
   margin: 0% 0% 0% 0%;
   text-align: center;
@@ -51,23 +56,139 @@ p {
   pointer-events: none;
 }
 
+.head {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  display: flexbox;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  height: 100%;
+  width: 100%;
+
+  /* justify-content: center; */
+  /* background-color: #333; */
+}
+
+li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 33.33333333333%;
+}
+
+.head-logo-container {
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  /* padding: 0px 30px; */
+  text-align: left;
+  overflow: hidden;
+}
+
+.head-button-container {
+  width: 50%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.head-button {
+  /* vertical-align: top;
+  display: inline-block; */
+
+  transition: all .15s;
+  line-height: 24px;
+
+  background-color: #FFFFFF;
+  /* color: #000; */
+  width: 100%;
+  height: 100%;
+
+  /* outline: 0; */
+  border: none;
+  box-sizing: border-box;
+
+
+  display: inline;
+  float: left;
+  color: #5851A2;
+  font-weight: normal;
+  font-size: 1em;
+  font-family: Georgia,'Times New Roman', Times, serif;
+
+  text-align: center;
+
+  padding: 0px;
+  /* color: #000; */
+}
+
+.head-button:hover {
+  background-color: #C4C1EC80;
+}
+
+.head-button:active {
+  background-color: #C4C1EC80;
+  font-weight: 900;
+  border-bottom:5px solid #5851A2;
+}
+
+.head-button-active {
+  /* background-color: #C4C1EC80; */
+  font-weight: 900;
+  border-bottom:5px solid #5851A2;
+}
+
+.head-tute-container {
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: right;
+}
+
 .logo-header {
-  height: 60px;
-  padding: 5px;
+  /* height: 60px; */
+  height: 100%;
+  width: 90%;
+  margin: 0px 5% 0px 5%;
   /* border-bottom: 2px solid #5851A2; */
-  padding: 10px 30px;
+  /* padding: 10px 0px; */
+  display: flex;
+
+  border-bottom:1px solid #5851A2;
+  /* overflow: hidden; */
 }
 
 .logo-header img {
   padding-left: 20px;
-  height: 100%;
+  /* top: 50%; */
+  padding-top: 9px;
+  padding-bottom: 9px;
+  /* height: 60px; */
+  height: 80%;
   float: left;
 }
 
-.logo-header h1 {
-  display: inline;
+.logo-header a {
   float: left;
-  padding-left: 20px;
+
+  /* height: 100%; */
+  padding: 28px 0px 28px 20px ;
+  justify-content: center;
+  margin: 0px;
+
+
   color: #5851A2;
   font-weight: normal;
   font-size: 1.5em;
@@ -91,11 +212,6 @@ p {
 }
  
 
-/*
-.title {
-  margin-bottom: 0;
-  font-size: calc(28px + 1.5vmin);
-} */
 
 /* Header CSS --------------------*/
 .subtitle {
@@ -156,7 +272,7 @@ p {
 }
 
 .button-container {
-  width: 50%;
+  /* width: 50%; */
   margin: 0px;
   display: inline-block;
   text-align: center;
@@ -198,15 +314,10 @@ p {
 .right-wrapper {
   /* padding: 10px 20px 10px 20px; */
   margin: 0% 0% 0% 1%;
-
   width: 60%;
-
   text-align: left;
-
   height: 100%;
-
   overflow-y: hidden;
-
   /* font-weight: 700;
   font-size: 20px; */
 
@@ -224,14 +335,12 @@ p {
   width: 100%;
 }
 
-.all-wrapper {
+.chosen-container {
   /* display: inline-block; */
   /* color: #06f;
   font-weight: 900; */
-  margin: 1% 10% 0% 10%;
   height: 500px;
   /* text-align: left; */
-
   display: flex;
   /* flex-direction: row; */
   justify-content: center;
@@ -241,7 +350,6 @@ p {
   width: 33%;
   text-align: center;
   height: 100%;
-
   margin: 0% 1% 0% 0%;
 
   /* background-color: white; */
@@ -256,7 +364,6 @@ p {
 
 .learn-more {
   height: 25%;
-
   background-color:#5851A2;
   color: white;
   border-radius: 5px;
@@ -300,6 +407,7 @@ p {
 .page-container {
   height: 100vh;
 }
+
 .page-container-head {
   height: 10%;
   /* overflow: hidden; */
@@ -310,13 +418,16 @@ p {
   overflow-y: scroll;
 }
 
+.page-container-guess {
+  height: 92%;
+  overflow: hidden;
+}
+
 .page-container-switch {
   transition: all .15s;
   background-color: #5851A2;
-  
   height: 8%;
   overflow: hidden;
-
   font-size: 1.2em;
   font-weight: 300;
 }
@@ -348,11 +459,8 @@ p {
 
 }
 
-
 /* Learn Page CSS --------------------*/
 .learn-container {
-  width: 80%;
-  margin: 5% 10% 0 10%;
 
 }
 
@@ -363,16 +471,78 @@ p {
 }
 
 .item {
-  background-color: darkslategray;
+  border: 1px solid black;
   width: 33.5%;
-  min-height: 100px;
+  min-height: 200px;
   margin-bottom: 1.5%;
 }
 
-.item:nth-child(1), .item:nth-child(2) {
-  width: 100%;
+.item h2 {
+  padding: 10px;
+  margin: 0;
 }
 
-.item:nth-child(4),.item:nth-child(5),.item:nth-child(8),.item:nth-child(9), .item:nth-child(12) {
+.item p {
+  padding: 10px;
+}
+
+/* .item:nth-child(1), .item:nth-child(2) {
+  width: 100%;
+} */
+
+.item:nth-child(2),.item:nth-child(3),.item:nth-child(6),.item:nth-child(7) {
   width: 65%;
+}
+
+
+
+/* Training Page ---------------------------------*/
+.blue-highlight {
+  background-color: lightblue;
+}
+
+.tutorial-one {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+  flex-flow: column wrap;
+}
+
+
+.article1 {
+  /* flex:1;
+  order: 1; */
+  background-color: lightgray;
+  width: calc(100% - 300px);
+  flex: 0 0 100%;
+}
+
+.article1 p {
+  display: block;
+}
+
+.box1 {
+  order:2;
+  background-color: lightblue;
+}
+
+.box2 {
+  order: 3;
+  background-color: lightpink;
+}
+
+.box3 {
+  order: 4;
+  background-color: lightgreen;
+}
+
+.box4 {
+  order: 5;
+  background-color: yellow;
+}
+
+.box1,.box2, .box3, .box4 {
+  width: 200px;
+  flex: 25%;
 }

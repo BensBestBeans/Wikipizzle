@@ -15,13 +15,13 @@ class App extends React.Component {
 
     console.log("BAKEND!");
 
-    // fetch("http://localhost:3001/art")
-    //   .then((response) => response.text())
-    //   .then((data) => this.setState({md: data}));
+    fetch("http://localhost:3001/art")
+      .then((response) => response.text())
+      .then((data) => this.setState({md: data}));
 
-    // fetch("http://localhost:3001/type")
-    //   .then((response) => response.text())
-    //   .then((data) => {this.mdtype = (data == "w")});
+    fetch("http://localhost:3001/type")
+      .then((response) => response.text())
+      .then((data) => {this.mdtype = (data == "w")});
 
     
 
@@ -42,13 +42,36 @@ head = (
   </div>
 )
 
+  topbut = (mode, text) => (
+    // <div className='button-container'> <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}><span>{text}</span> </button></div>
+    (this.state.mode == mode) ? 
+    <button className="head-button head-button-active" role="button" onClick={() => this.setState({mode: mode})}>{text} </button>
+    :
+    <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}>{text} </button>
+  )
+
   topbar = () => (
     <div className="logo-header">
-      <img src={logo} alt=""/><h1>Wikipizzle</h1>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'GES'})}><span>Quizzle</span> </button></div>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'EXP'})}><span>Explore</span> </button></div>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'LRN'})}><span>Learn more</span> </button></div>
-      <div className='button-container'> <button className="button1" role="button" onClick={() => this.setState({mode: 'TUT'})}><span>?</span> </button></div>
+    
+      <div className='head-logo-container'>
+      <img src={logo} alt=""/><a>Wikipizzle</a>
+      </div>
+  
+    <div className='head-button-container'>
+    <ul>
+    
+    <li> {this.topbut('GES', 'Quizzle')}      </li>
+    <li> {this.topbut('EXP', 'Explore')}      </li>
+    <li> {this.topbut('LRN', 'Learn More')}   </li>
+    
+    </ul>
+    </div>
+
+    <div className='head-tute-container'>
+    <button role="button" onClick={() => this.setState({mode: 'TUT'})}> ? </button>
+    </div>
+    
+
     </div>
   )
 

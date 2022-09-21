@@ -56,23 +56,139 @@ p {
   pointer-events: none;
 }
 
+.head {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  display: flexbox;
+  margin: 0;
+  padding: 0;
+  /* overflow: hidden; */
+  height: 100%;
+  width: 100%;
+
+  /* justify-content: center; */
+  /* background-color: #333; */
+}
+
+li {
+  float: left;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 33.33333333333%;
+}
+
+.head-logo-container {
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  /* padding: 0px 30px; */
+  text-align: left;
+  overflow: hidden;
+}
+
+.head-button-container {
+  width: 50%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.head-button {
+  /* vertical-align: top;
+  display: inline-block; */
+
+  transition: all .15s;
+  line-height: 24px;
+
+  background-color: #FFFFFF;
+  /* color: #000; */
+  width: 100%;
+  height: 100%;
+
+  /* outline: 0; */
+  border: none;
+  box-sizing: border-box;
+
+
+  display: inline;
+  float: left;
+  color: #5851A2;
+  font-weight: normal;
+  font-size: 1em;
+  font-family: Georgia,'Times New Roman', Times, serif;
+
+  text-align: center;
+
+  padding: 0px;
+  /* color: #000; */
+}
+
+.head-button:hover {
+  background-color: #C4C1EC80;
+}
+
+.head-button:active {
+  background-color: #C4C1EC80;
+  font-weight: 900;
+  border-bottom:5px solid #5851A2;
+}
+
+.head-button-active {
+  /* background-color: #C4C1EC80; */
+  font-weight: 900;
+  border-bottom:5px solid #5851A2;
+}
+
+.head-tute-container {
+  width: 25%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: right;
+}
+
 .logo-header {
-  height: 60px;
-  padding: 5px;
+  /* height: 60px; */
+  height: 100%;
+  width: 90%;
+  margin: 0px 5% 0px 5%;
   /* border-bottom: 2px solid #5851A2; */
-  padding: 10px 30px;
+  /* padding: 10px 0px; */
+  display: flex;
+
+  border-bottom:1px solid #5851A2;
+  /* overflow: hidden; */
 }
 
 .logo-header img {
   padding-left: 20px;
-  height: 100%;
+  /* top: 50%; */
+  padding-top: 9px;
+  padding-bottom: 9px;
+  /* height: 60px; */
+  height: 80%;
   float: left;
 }
 
-.logo-header h1 {
-  display: inline;
+.logo-header a {
   float: left;
-  padding-left: 20px;
+
+  /* height: 100%; */
+  padding: 28px 0px 28px 20px ;
+  justify-content: center;
+  margin: 0px;
+
+
   color: #5851A2;
   font-weight: normal;
   font-size: 1.5em;
@@ -329,8 +445,12 @@ p {
 }
 
 
+.page-container-guess {
+
+  /* overflow: hidden; */
+}
+
 .page-container-explore {
-  height: 92%;
   /* overflow: hidden; */
 }
 

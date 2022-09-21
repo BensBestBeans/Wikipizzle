@@ -32,7 +32,7 @@ color: white; */
 }
 
 h1, h2, h3 {
-
+  font-family: Georgia,'Times New Roman', Times, serif;
 }
 
 p {
@@ -217,16 +217,17 @@ li {
 .subtitle {
   font-weight: normal;
   font-size: 1.1em;
-  padding: 20px 0;
+  padding: 25px 0;
 }
 
 .article-container {
-  margin: 1% 10% 1% 10%;
-  min-height: 40vh;
-  max-height: 55vh;
+  margin: 0px 20% 50px 20%;
+  /* min-height: 40vh; */
+  width: 60%;
+  height: 50vh;
   /* background-color: rgb(237, 237, 237); */
   overflow-y: scroll;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3) /* , 0 6px 20px 0 rgba(0, 0, 0, 0.3) */ ;
 }
 
 .article {
@@ -253,7 +254,7 @@ li {
 
 
 .ins {
-  margin: 2% 27% 0% 27%;
+  margin: 30px 30% 0% 30%;
   text-align:center;
   color: black;
 }

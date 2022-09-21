@@ -36,10 +36,9 @@ class App extends React.Component {
   }
 
 head = (
-  <div>
-    {/* <h1 className="title">Wikipizzle</h1> */}
-    <h2 className="subtitle">Wikipedia or AI-Generated? Take a guess and test your gut!</h2>
-  </div>
+    <h2 className="subtitle">
+      Wikipedia or AI-Generated? Take a guess and test your skills!
+    </h2>
 )
 
   topbut = (mode, text) => (
@@ -148,7 +147,7 @@ head = (
   choose = () => (
     <div className='app'>
     {/* <header> {this.topbar()} </header> */}
-    {/* {this.head} */}
+    {this.head}
     
       <div className='article-container'><div className='article'> 
       <ReactMarkdown>
@@ -157,8 +156,8 @@ head = (
       </div></div>
     
     <div className='ins'> 
-    <div className='button-container'> <button className="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
-    <div className='button-container'> <button className="button2" role="button" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button> </div>
+    <div className='button-container' style={{float: 'left'}}> <button className="button1" role="button" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button> </div>
+    <div className='button-container' style={{float: 'right'}}> <button className="button2" role="button" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button> </div>
     </div>
     </div>
     );

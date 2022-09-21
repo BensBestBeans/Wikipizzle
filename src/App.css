@@ -310,12 +310,6 @@ p {
   overflow-y: scroll;
 }
 
-.page-container-guess {
-
-  height: 92%;
-  overflow: hidden;
-}
-
 .page-container-switch {
   transition: all .15s;
   background-color: #5851A2;
@@ -341,8 +335,12 @@ p {
 }
 
 
+.page-container-guess {
+
+  /* overflow: hidden; */
+}
+
 .page-container-explore {
-  height: 92%;
   /* overflow: hidden; */
 }
 

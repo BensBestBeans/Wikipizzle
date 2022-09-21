@@ -255,7 +255,7 @@ class App extends React.Component {
       case 'LRN':
         return <div className='page-container-learn' id='learn'> {this.learn()} </div>
       case 'EXP':
-        return <div className='page-container-explore' id='explore'> </div>
+        return <div className='page-container-explore' id='explore'> {this.explore()} </div>
       default:
         return <></>
     }

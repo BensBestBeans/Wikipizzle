@@ -606,30 +606,65 @@ li {
   justify-content: space-between;
 }
 
-.item {
+.learn-item {
   border: 1px solid black;
   width: 33.5%;
   min-height: 200px;
   margin-bottom: 1.5%;
 }
 
-.item h2 {
+.learn-item h2 {
   padding: 10px;
   margin: 0;
 }
 
-.item p {
+.learn-item p {
   padding: 10px;
 }
 
-.item:nth-child(2),.item:nth-child(3),.item:nth-child(6),.item:nth-child(7) {
+.learn-item:nth-child(2),.learn-item:nth-child(3),.learn-item:nth-child(6),.learn-item:nth-child(7) {
   width: 65%;
 }
 
 
 
 
-.tutorial-container {
+.intro {
+  margin: 0 0 30px 0;
+}
+
+.intro h1 {
+  font-weight: normal;
+}
+
+.intro p {
+  font-size: 1.1em;
+}
+
+.intro .tutorial-guess {
+  display: flex;
+  border-radius: 5px;
+  outline: 2px solid #9e0000;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.intro .tutorial-guess-left {
+  background-color: #9e0000;
+  padding: 10px 30px;
+  color: white;
+}
+
+.intro .tutorial-guess-right {
+  padding: 10px 30px;
+}
+
+/* Tutorial Pages -----------------------------*/
+
+
+
+.tutorial-main {
   display: flex;
   flex-wrap: wrap;
 }
@@ -664,20 +699,21 @@ li {
   margin: 0 0 20px 20px;
 }
 
-.box-one {
+.blue-box {
   background-color: lightblue;
 }
-.box-two {
+
+.pink-box {
   background-color: lightpink;
 }
-.box-three {
+
+.green-box {
   background-color: lightgreen;
 }
 
 .blue-highlight {
   background-color: lightblue;
 }
-
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 800px) {

@@ -89,6 +89,9 @@ class App extends React.Component {
 
   explore = () => (
     <div className="explore-container wrapper">
+      <p className="subtitle">
+      gamerland
+      </p>
       <form id="explore-form">
         <div className="form">
           <label id="inputLable">Input keywords:</label>
@@ -408,29 +411,33 @@ class App extends React.Component {
   }
 
   explore = () => (
-    
-    <form className="explore-grid" onSubmit={this.handleSubmit}>
-      <div className="send-to-bottom">
-        <b>Topic Keyword</b>
-        <input className="explore-search-bar" type="text" value={this.state.searchvalue} onChange={this.handleChange} />
-      </div>
+    <div className="page-container-explore">
+      <p className="subtitle">
+        [text maybe]
+      </p>
 
-      <div className="send-to-bottom">
-        <input className="explore-gen-button explore-item" type="submit" value="GEN" />
-      </div>
-      <div className="send-to-bottom">
-      <button className="explore-clear-button explore-item" type="button" onClick={this.resetForm} > CLEAR </button>
-      </div>
-      
-      <div className="explore-article">
-        <div className="chosen-article">
-            <div className="article">
-              <Interweave content={this.state.html} />
+      <form className="explore-grid" onSubmit={this.handleSubmit}>
+        <div className="split">
+          <b style={{'margin-bottom': 'auto'}}>Topic Keyword</b>
+            <input className="explore-search-bar" type="text" value={this.state.searchvalue} onChange={this.handleChange} />
+        </div>
+
+        <div className="send-to-bottom">
+          <input className="explore-gen-button explore-item" type="submit" value="GEN" />
+        </div>
+        <div className="send-to-bottom">
+        <button className="explore-clear-button explore-item" type="button" onClick={this.resetForm} > CLEAR </button>
+        </div>
+        
+        <div className="explore-article">
+          <div className="chosen-article">
+              <div className="article">
+                <Interweave content={this.state.html} />
+              </div>
             </div>
-          </div>
-      </div>
-    </form>
-    
+        </div>
+      </form>
+    </div>
   );
 
   guessed(x) {

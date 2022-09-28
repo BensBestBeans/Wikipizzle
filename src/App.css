@@ -67,14 +67,14 @@ p {
 
 ul {
   list-style-type: none;
-  display: flexbox;
+  display: flex;
   margin: 0;
   padding: 0;
   /* overflow: hidden; */
   height: 100%;
   width: 100%;
 
-  /* justify-content: center; */
+  justify-content: center;
   /* background-color: #333; */
 }
 
@@ -184,7 +184,7 @@ li {
 
 .logo-header a {
   float: left;
-
+  text-decoration: none;
   /* height: 100%; */
   padding: 28px 0px 28px 20px ;
   justify-content: center;
@@ -243,7 +243,7 @@ li {
   margin-right: auto;
   /* min-height: 40vh; */
   width: 80%;
-  height: 55vh;
+  height: 60vh;
   /* background-color: rgb(237, 237, 237); */
   border: 1px solid #c0c0c0; 
   overflow-y: scroll;
@@ -290,9 +290,15 @@ li {
 
 
 .ins {
-  margin: 30px 30% 0% 30%;
-  text-align:center;
+  /* margin: 30px 30% 0% 30%; */
+  margin: auto;
+  margin-top: 5px;
+  width: 80%;
+  /* text-align:center; */
   color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .app-link {
@@ -309,10 +315,12 @@ li {
 }
 
 .button-container {
-  /* width: 50%; */
+  width: 200px;
   margin: 0px;
+  margin-bottom: 5px;
   display: inline-block;
   text-align: center;
+  overflow: hidden;
 }
 
 .button1, .button2 {
@@ -326,7 +334,7 @@ li {
 
   background-color: #5851A2;
   color: white;
-  width: 200px;
+  width: 100%;
 
   /* outline: 0; */
   border: none;
@@ -611,6 +619,7 @@ li {
   
   width: 80%;
   margin: auto;
+  margin-top: 0;
   
   display: grid;
   gap: 2rem;

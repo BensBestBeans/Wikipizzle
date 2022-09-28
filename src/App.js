@@ -21,7 +21,7 @@ class App extends React.Component {
     fetch("http://localhost:3001/type")
       .then((response) => response.text())
       .then((data) => {
-        this.mdtype = data == "w";
+        this.mdtype = data === "w";
       });
 
     console.log("front!");
@@ -48,10 +48,9 @@ class App extends React.Component {
 
   topbut = (mode, text) =>
     // <div className='button-container'> <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}><span>{text}</span> </button></div>
-    this.state.mode == mode ? (
+    this.state.mode === mode ? (
       <button
         className="head-button head-button-active"
-        role="button"
         onClick={() => this.setState({ mode: mode })}
       >
         {text}{" "}
@@ -59,7 +58,6 @@ class App extends React.Component {
     ) : (
       <button
         className="head-button"
-        role="button"
         onClick={() => this.setState({ mode: mode })}
       >
         {text}{" "}
@@ -70,19 +68,19 @@ class App extends React.Component {
     <div className="logo-header">
       <div className="head-logo-container">
         <img src={logo} alt="" />
-        <a>Wiki{this.ops[Math.floor(Math.random() * this.ops.length)]}izzle</a>
+        <a href="https://www.wikipedia.org/">Wiki{this.ops[Math.floor(Math.random() * this.ops.length)]}izzle</a>
       </div>
 
       <div className="head-button-container">
         <ul>
           <li> {this.topbut("GES", "Quizzle")} </li>
           <li> {this.topbut("EXP", "Explore")} </li>
-          <li> {this.topbut("LRN", "Learn More")} </li>
+          {/* <li> {this.topbut("LRN", "Learn More")} </li> */}
         </ul>
       </div>
 
       <div className="head-tute-container">
-        <button role="button" onClick={() => this.setState({ popup: !this.state.popup })}>
+        <button onClick={() => this.setState({ popup: !this.state.popup })}>
           {" "}
           ?{" "}
         </button>
@@ -276,21 +274,19 @@ class App extends React.Component {
       </div>
 
       <div className="ins">
-        <div className="button-container" style={{ float: "left" }}>
+        <div className="button-container">
           {" "}
           <button
             className="button1"
-            role="button"
             onClick={() => this.guessed(true)}
           >
             <span>WIKIPEDIA</span>
           </button>{" "}
         </div>
-        <div className="button-container" style={{ float: "right" }}>
+        <div className="button-container">
           {" "}
           <button
             className="button2"
-            role="button"
             onClick={() => this.guessed(false)}
           >
             <span>AI GENERATED</span>
@@ -309,7 +305,7 @@ class App extends React.Component {
 
       <div className="article"> something</div>
       <div className="ins">
-        <button className="button1" role="button" onClick={() => this.home()}>
+        <button className="button1" onClick={() => this.home()}>
           <span>HOME</span>
         </button>
       </div>
@@ -317,7 +313,7 @@ class App extends React.Component {
   );
 
   chosen = () => {
-    const answerbox = "answer-box " + ((this.state.page == 1) ? "correct" : "incorrect");
+    const answerbox = "answer-box " + ((this.state.page === 1) ? "correct" : "incorrect");
     return (
     <div className="app">
       {this.head}
@@ -325,9 +321,9 @@ class App extends React.Component {
       <div className="chosen-container">
 
         <div className={answerbox}>
-            <h2 className="answer-box">{this.state.page == 1 ? "Correct" : "Incorrect"}</h2>
+            <h2 className="answer-box">{this.state.page === 1 ? "Correct" : "Incorrect"}</h2>
             <h3 className="answer-box">
-              {this.state.page == 1
+              {this.state.page === 1
                 ? "You're right!"
                 : "You have been deceived!"}{" "}
               Today's article{" "}
@@ -404,7 +400,7 @@ class App extends React.Component {
 
       <form className="explore-grid" onSubmit={this.handleSubmit}>
         <div className="split">
-          <b style={{'margin-bottom': 'auto'}}>Topic Keyword</b>
+          <b style={{'marginBottom': 'auto'}}>Topic Keyword</b>
             <input className="explore-search-bar" type="text" value={this.state.searchvalue} onChange={this.handleChange} />
         </div>
 
@@ -424,7 +420,7 @@ class App extends React.Component {
   );
 
   guessed(x) {
-    if (x == this.mdtype) {
+    if (x === this.mdtype) {
       this.setState({ page: 1 });
     } else {
       this.setState({ page: 2 });
@@ -458,7 +454,7 @@ class App extends React.Component {
 
   scroll = () => {
     console.log(this.mdtype);
-    if (this.state.mode == "down") {
+    if (this.state.mode === "down") {
       document.getElementById("guess").scrollIntoView({ behavior: "smooth" });
     } else {
       document.getElementById("learn").scrollIntoView({ behavior: "smooth" });
@@ -467,7 +463,7 @@ class App extends React.Component {
 
   guess = () => {
     // const out = this.topbar()
-    if (this.state.page == 0) {
+    if (this.state.page === 0) {
       return <> {this.choose()}</>;
     } else {
       return <> {this.chosen()}</>;
@@ -509,21 +505,23 @@ class App extends React.Component {
   getTuteContent = () => {
     switch (this.state.tutepage) {
       case 0:
-        return <> PAGE ONE OF THE TUTTaoijoaerh </>;
+        return this.choose();
       case 1:
         return this.tutorial2();
       case 2:
-        return <> the third, and final, page of the tute. </>;
+        return this.learn();
+      default:
+        return <></>;
     }
   }
 
   bumpTutePage() {
-    if (this.state.tutepage == 2) return;
+    if (this.state.tutepage === 2) return;
     this.setState({tutepage: this.state.tutepage + 1});
   }
 
   bopTutePage() {
-    if (this.state.tutepage == 0) return;
+    if (this.state.tutepage === 0) return;
     this.setState({tutepage: this.state.tutepage - 1});
   }
 
@@ -545,7 +543,7 @@ class App extends React.Component {
 
   wholePage = () => {
     return (
-      <div style={{'height': '100vh', 'width': '100%', 'display': 'grid',  'grid-template-rows': '100%', 'grid-template-columns': '100%', 'overflow': 'hidden'}}>
+      <div style={{'height': '100vh', 'width': '100%', 'display': 'grid',  'gridTemplateRows': '100%', 'gridTemplateColumns': '100%', 'overflow': 'hidden'}}>
       
         <div className="page-container">
           <div className="page-container-head"> {this.topbar()} </div>

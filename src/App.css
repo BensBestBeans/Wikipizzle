@@ -152,9 +152,9 @@ li {
 .head-tute-container {
   width: 25%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
-  text-align: right;
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }
 
 .logo-header {
@@ -386,7 +386,7 @@ li {
 .stats {
   box-sizing: border-box;
   background-color: white;
-  border: 2px solid #5851A2;
+  border: 1px solid #5851A2;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -776,6 +776,7 @@ li {
   display: flex;
   justify-content: right;
   align-items: center;
+  margin-right: 20px;
 }
 
 .tute-content {

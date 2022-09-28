@@ -80,7 +80,7 @@ class App extends React.Component {
       </div>
 
       <div className="head-tute-container">
-        <button onClick={() => this.setState({ popup: !this.state.popup })}>
+        <button style={{'margin': '20px'}} onClick={() => this.setState({ popup: !this.state.popup })}>
           {" "}
           ?{" "}
         </button>

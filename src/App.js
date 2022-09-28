@@ -14,15 +14,15 @@ class App extends React.Component {
 
     console.log("BAKEND!");
 
-    // fetch("http://localhost:3001/art")
-    //   .then((response) => response.text())
-    //   .then((data) => this.setState({ html: data }));
+    fetch("http://localhost:3001/art")
+      .then((response) => response.text())
+      .then((data) => this.setState({ html: data }));
 
-    // fetch("http://localhost:3001/type")
-    //   .then((response) => response.text())
-    //   .then((data) => {
-    //     this.mdtype = data == "w";
-    //   });
+    fetch("http://localhost:3001/type")
+      .then((response) => response.text())
+      .then((data) => {
+        this.mdtype = data == "w";
+      });
 
     console.log("front!");
 
@@ -84,23 +84,6 @@ class App extends React.Component {
           ?{" "}
         </button>
       </div>
-    </div>
-  );
-
-  explore = () => (
-    <div className="explore-container wrapper">
-      <p className="subtitle">
-      gamerland
-      </p>
-      <form id="explore-form">
-        <div className="form">
-          <label id="inputLable">Input keywords:</label>
-          <input id="inputField" type="text" maxlength="50"></input>
-        </div>
-      </form>
-      {/* function othername() {
-    var input = document.getElementById("userInput").value;
-    alert(input); */}
     </div>
   );
 
@@ -428,14 +411,11 @@ class App extends React.Component {
         <div className="send-to-bottom">
         <button className="explore-clear-button explore-item" type="button" onClick={this.resetForm} > CLEAR </button>
         </div>
-        
-        <div className="explore-article">
-          <div className="chosen-article">
+          <div className="explore-article chosen-article">
               <div className="article">
                 <Interweave content={this.state.html} />
               </div>
             </div>
-        </div>
       </form>
     </div>
   );

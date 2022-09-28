@@ -238,9 +238,11 @@ li {
 }
 
 .article-container {
-  margin: 0px 20% 50px 20%;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
   /* min-height: 40vh; */
-  width: 60%;
+  width: 80%;
   height: 55vh;
   /* background-color: rgb(237, 237, 237); */
   border: 1px solid #c0c0c0; 
@@ -389,6 +391,7 @@ li {
   /* color: #06f;
   font-weight: 900; */
   height: 500px;
+  /* overflow: hidden; */
   
   width: 80%;
   margin: auto;
@@ -400,7 +403,7 @@ li {
     "t t"
     "l r";
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 80px;
+  grid-template-rows: 80px 100%;
   /* flex-direction: row; */
   /* justify-content: center; */
 }
@@ -410,6 +413,8 @@ li {
   
   display: flex;
   flex-direction: column;
+
+  height: 100%;
 
   /* width: 33%;
   text-align: center;
@@ -442,7 +447,7 @@ li {
 .chosen-article {
   /* margin: 0px 20% 50px 20%; */
   /* min-height: 40vh; */
-  height: 100%;
+  max-height: 100%;
   border-radius: 4px;
 
   /* width: 60%; */
@@ -657,6 +662,8 @@ li {
 
 .explore-article {
   grid-area: a;
+  height: 100%;
+  /* overflow-y: scroll; */
 }
 
 .learn-flexbox {

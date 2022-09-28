@@ -34,6 +34,7 @@ class App extends React.Component {
     // this.switchMode = this.switchMode.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   head = (
@@ -394,7 +395,7 @@ class App extends React.Component {
   )};
 
   handleChange(event) {
-    this.setState({searchvalue: event.target.searchvalue});
+    this.setState({searchvalue: event.target.value});
   }
 
   handleSubmit(event) {
@@ -402,21 +403,34 @@ class App extends React.Component {
     event.preventDefault();
   }
 
+  resetForm() {
+    this.setState({searchvalue: ""});
+  }
+
   explore = () => (
-    <div className="explore-grid">
-      <div className="explore-search-bar">
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input type="text" value={this.state.searchvalue} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+    
+    <form className="explore-grid" onSubmit={this.handleSubmit}>
+      <div className="send-to-bottom">
+        <b>Topic Keyword</b>
+        <input className="explore-search-bar" type="text" value={this.state.searchvalue} onChange={this.handleChange} />
       </div>
-      <div className="explore-gen-button">gen</div>
-      <div className="explore-clear-button">clear</div>
-      <div className="explore-article">art</div>
-    </div>
+
+      <div className="send-to-bottom">
+        <input className="explore-gen-button explore-item" type="submit" value="GEN" />
+      </div>
+      <div className="send-to-bottom">
+      <button className="explore-clear-button explore-item" type="button" onClick={this.resetForm} > CLEAR </button>
+      </div>
+      
+      <div className="explore-article">
+        <div className="chosen-article">
+            <div className="article">
+              <Interweave content={this.state.html} />
+            </div>
+          </div>
+      </div>
+    </form>
+    
   );
 
   guessed(x) {

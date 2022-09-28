@@ -125,7 +125,7 @@ li {
   color: #5851A2;
   font-weight: normal;
   font-size: 1em;
-  font-family: Georgia,'Times New Roman', Times, serif;
+  font-family: Montserrat;
 
   text-align: center;
 
@@ -159,6 +159,8 @@ li {
 
 .logo-header {
   /* height: 60px; */
+  box-sizing:border-box;
+
   height: 100%;
   width: 90%;
   margin: 0px 5% 0px 5%;
@@ -214,8 +216,10 @@ li {
 
 /* Header CSS --------------------*/
 .subtitle {
-  font-weight: normal;
-  font-size: 1.1em;
+  font-weight: lighter;
+  font-family: Montserrat;
+  font-style: italic;
+  font-size: 0.9em;
   padding: 25px 0;
 }
 
@@ -223,10 +227,27 @@ li {
   margin: 0px 20% 50px 20%;
   /* min-height: 40vh; */
   width: 60%;
-  height: 50vh;
+  height: 55vh;
   /* background-color: rgb(237, 237, 237); */
+  border: 1px solid #c0c0c0; 
   overflow-y: scroll;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3) /* , 0 6px 20px 0 rgba(0, 0, 0, 0.3) */ ;
+  scrollbar-width: none;
+  transition: all 1s;
+  transition-delay: revert 2s;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) ;
+  
+  /*, 0 6px 20px 0 rgba(0, 0, 0, 0.3) */
+}
+
+.article-container:hover {
+  box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.1) ;
+  /* margin: 0px 20% 50px 20%; */
+  /* width: 62%; 
+  height: 52vh; */
+}
+
+.article-container::-webkit-scrollbar {
+  display: none;
 }
 
 .article {
@@ -282,7 +303,9 @@ li {
   vertical-align: top;
   display: inline-block;
 
-  transition: all .15s;
+  transition: all .5s;
+  /* transition-delay: box-shadow 2s; */
+
   line-height: 24px;
 
   background-color: #5851A2;
@@ -292,19 +315,23 @@ li {
   /* outline: 0; */
   border: none;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 2px;
 
   /* margin:1em; */
   font-size: 1em;
-  font-weight: 500;
+  font-weight: bold;
   height: 55px;
-  font-family: 'Georgia', sans-serif;
+  font-family: Montserrat;
+
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25) ;
 }
 
 .button1:hover, .button2:hover {
-  font-weight: 900;
+  font-weight: 1000;
   cursor: pointer;
+  /* background: white; */
   background: #7e77ce;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5) ;
 }
 
 .button1:active, .button2:active {
@@ -312,26 +339,34 @@ li {
 }
 
 .right-wrapper {
-  /* padding: 10px 20px 10px 20px; */
-  margin: 0% 0% 0% 1%;
+  grid-area: r;
+  box-sizing: content-box;
+
+  /* margin: 0% 0% 0% 1%;
   width: 60%;
   text-align: left;
   height: 100%;
   overflow-y: hidden;
+  
+  border: 3px solid #5851A2;
+  border-radius: 5px; */
+  
+  /* padding: 10px 20px 10px 20px; */
   /* font-weight: 700;
   font-size: 20px; */
-
-  border: 3px solid #5851A2;
   /* box-sizing: border-box; */
-  border-radius: 5px;
-
   /* display: inline-block; */
   /* text-align: center; */
 }
 
 .stats {
+  box-sizing: border-box;
   background-color: white;
-  height: 100%;
+  border: 2px solid #5851A2;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
   width: 100%;
 }
 
@@ -340,60 +375,125 @@ li {
   /* color: #06f;
   font-weight: 900; */
   height: 500px;
-  /* text-align: left; */
-  display: flex;
+  
+  width: 80%;
+  margin: auto;
+  
+
+  display: grid;
+  gap: 2rem;
+  grid-template-areas: 
+    "t t"
+    "l r";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 80px;
   /* flex-direction: row; */
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .left-wrapper {
-  width: 33%;
+  grid-area: l;
+  
+  display: flex;
+  flex-direction: column;
+
+  /* width: 33%;
   text-align: center;
   height: 100%;
   margin: 0% 1% 0% 0%;
-
-  /* background-color: white; */
+  
   overflow-y: hidden;
-
+  display: inline-block; */
+  
+  /* background-color: white; */
+  
   /* font-weight: 700;
   font-size: 20px; */
 
-  display: inline-block;
   /* text-align: center; */
 }
 
 .learn-more {
-  height: 25%;
-  background-color:#5851A2;
-  color: white;
-  border-radius: 5px;
+  font-weight: 550;
+  font-style: italic;
+  font-family: Montserrat;
+  padding: 20px;
+  text-align: left;
+  /* height: 25%; */
+  /* background-color:#5851A2;
+  color: white; */
+  /* border-radius: 5px; */
 }
 
 .chosen-article {
-  height: 75%;
-  background-color: white;
+  /* margin: 0px 20% 50px 20%; */
+  /* min-height: 40vh; */
+  height: 100%;
+  /* width: 60%; */
+  /* height: 55vh; */
+  /* background-color: rgb(237, 237, 237); */
+  border: 1px solid #c0c0c0; 
   overflow-y: scroll;
+  scrollbar-width: none;
+  transition: all 1s;
+  transition-delay: revert 2s;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) ;
+}
+
+.chosen-article::-webkit-scrollbar {
+  display: none;
 }
 
 .answer-box {
-  background-color:#5851A2;
+  grid-area: t;
+
   color: white;
-  padding: 20px;
+  /* background-color: #5851A2; */
+  
+  border-radius: 4px;
+
+  /* padding: 20px; */
   font-weight: 700;
   font-size: 1em;
-  height: 20%;
+  font-family: Montserrat;
   text-align: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.correct {
+  background-color: #006600;
+  border: 2px solid #006600;
+}
+
+.incorrect {
+  background-color: #A10000;
+  border: 2px solid #A10000;
 }
 
 .answer-box h2 {
   text-transform: uppercase;
+  padding: 20px 40px;
+  /* border-radius: 0; */
   font-size: 2em;
 }
 
+.answer-box h3 {
+  background-color: white;
+  border-radius: 0px 3px 3px 0px;
+  /* padding: 2px;
+  background-clip: content-box; */
+  /* margin: 4px; */
+  color: black;
+  width: 100%;
+}
+
 .answer-box h2, .answer-box h3 {
+  border: none;
   margin: 0;
-  padding: 1px;
-  text-align: left;
+  display: grid;
+  place-items: center;
 }
 
 .padded {
@@ -419,7 +519,7 @@ li {
 }
 
 .page-container-guess {
-  height: 92%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -453,6 +553,9 @@ li {
 
 .page-container-explore {
   /* overflow: hidden; */
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
 .page-container-learn {
@@ -462,6 +565,39 @@ li {
 /* Learn Page CSS --------------------*/
 .learn-container {
 
+}
+
+
+.explore-grid {
+  height: 80%;
+  
+  width: 80%;
+  margin: auto;
+  
+
+  display: grid;
+  gap: 2rem;
+  grid-template-areas: 
+    "t g c"
+    "a a a";
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 80px;
+}
+
+.explore-search-bar {
+  grid-area: t;
+}
+
+.explore-gen-button {
+  grid-area: g;
+}
+
+.explore-clear-button {
+  grid-area: c;
+}
+
+.explore-article {
+  grid-area: a;
 }
 
 .learn-flexbox {

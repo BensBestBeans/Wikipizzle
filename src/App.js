@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.ops = ['p', 'fr', 'd', 'w'];
-    this.state = { page: 0, mode: "GES", html: "loading...", searchvalue: "" };
+    this.state = { tutepage: 0, page: 0, popup: false, mode: "GES", html: "loading...", searchvalue: "" };
     this.epic = "TEXT TIME";
 
     this.state.mdtype = false;
@@ -35,6 +35,9 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetForm = this.resetForm.bind(this);
+
+    this.bopTutePage = this.bopTutePage.bind(this);
+    this.bumpTutePage = this.bumpTutePage.bind(this);
   }
 
   head = (
@@ -79,7 +82,7 @@ class App extends React.Component {
       </div>
 
       <div className="head-tute-container">
-        <button role="button" onClick={() => this.setState({ mode: "TUT" })}>
+        <button role="button" onClick={() => this.setState({ popup: !this.state.popup })}>
           {" "}
           ?{" "}
         </button>
@@ -503,16 +506,58 @@ class App extends React.Component {
     }
   };
 
+  getTuteContent = () => {
+    switch (this.state.tutepage) {
+      case 0:
+        return <> PAGE ONE OF THE TUTTaoijoaerh </>;
+      case 1:
+        return this.tutorial2();
+      case 2:
+        return <> the third, and final, page of the tute. </>;
+    }
+  }
+
+  bumpTutePage() {
+    if (this.state.tutepage == 2) return;
+    this.setState({tutepage: this.state.tutepage + 1});
+  }
+
+  bopTutePage() {
+    if (this.state.tutepage == 0) return;
+    this.setState({tutepage: this.state.tutepage - 1});
+  }
+
+  tute = () => (
+    <div className="tute">
+      <div className="tute-dots">
+        <button onClick={this.bopTutePage}> {'<'} </button>
+        ...
+        <button onClick={this.bumpTutePage}> {'>'} </button>
+      </div>
+      <div className="tute-exit">
+        <button onClick={() => {this.setState({popup: false})}}> x </button>
+      </div>
+      <div className="tute-content">
+        {this.getTuteContent()}
+      </div>
+    </div>
+  );
+
   wholePage = () => {
     return (
-      <div className="page-container">
-        <div className="page-container-head"> {this.topbar()} </div>
-        <div className="page-container-scroll" id="scroll">
-          {this.getpage()}
-          {/* <div className='page-container-switch' onClick={this.scroll}> 
-        {(this.state.mode == 'up') ? <div className='page-container-switch-button'>Exploration Mode</div> :  <div className='page-container-switch-button'>Play Mode</div>}
-      </div> */}
+      <div style={{'height': '100vh', 'width': '100%', 'display': 'grid',  'grid-template-rows': '100%', 'grid-template-columns': '100%', 'overflow': 'hidden'}}>
+      
+        <div className="page-container">
+          <div className="page-container-head"> {this.topbar()} </div>
+          <div className="page-container-scroll" id="scroll">
+            {this.getpage()}
+          </div>
         </div>
+
+        {this.state.popup ? <div className="page-container-tute">
+          {this.tute()}
+        </div> : <></>}
+
       </div>
     );
   };

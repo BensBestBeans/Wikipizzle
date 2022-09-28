@@ -267,7 +267,7 @@ li {
 }
 
 .article {
-  padding: 5px 20px 0px 20px;
+  padding: 5px 20px 5px 20px;
   /* height: 100%; */
   text-align: left;
   justify-content: left;
@@ -527,6 +527,8 @@ li {
 
 .page-container {
   height: 100vh;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .page-container-head {
@@ -534,9 +536,23 @@ li {
   overflow: hidden;
 }
 
+.page-container-content {
+  height: 100%;
+}
+
 .page-container-scroll {
   height: 90%;
   overflow-y: scroll;
+}
+
+.page-container-tute {
+  height: 100%;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
 }
 
 .page-container-guess {
@@ -594,11 +610,8 @@ li {
   height: 80%;
   
   width: 80%;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   
-
   display: grid;
   gap: 2rem;
   grid-template-areas: 
@@ -727,6 +740,46 @@ li {
 }
 
 /* Tutorial Pages -----------------------------*/
+
+.tute {
+  width: 60%;
+  height: 90%;
+  background: white;
+  display: grid;
+  grid-template-areas: 
+    "x d e"
+    "c c c";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 10fr;
+  overflow: hidden;
+}
+
+
+.tute-dots {
+  grid-area: d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tute-exit {
+  grid-area: e;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.tute-content {
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
 
 
 

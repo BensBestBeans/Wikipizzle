@@ -6,6 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.ops = ['p', 'fr', 'd', 'w'];
+    this.l = this.ops[Math.floor(Math.random() * this.ops.length)];
     this.state = { tutepage: 0, page: 0, popup: false, mode: "GES", html: "loading...", searchvalue: "" };
     this.epic = "TEXT TIME";
 
@@ -68,7 +69,7 @@ class App extends React.Component {
     <div className="logo-header">
       <div className="head-logo-container">
         <img src={logo} alt="" />
-        <a href="https://www.wikipedia.org/">Wiki{this.ops[Math.floor(Math.random() * this.ops.length)]}izzle</a>
+        <a href="https://www.wikipedia.org/">Wiki{this.l}izzle</a>
       </div>
 
       <div className="head-button-container">

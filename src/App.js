@@ -15,15 +15,15 @@ class App extends React.Component {
 
     console.log("BAKEND!");
 
-    fetch("http://localhost:3001/art")
-      .then((response) => response.text())
-      .then((data) => this.setState({ html: data }));
+    // fetch("http://localhost:3001/art")
+    //   .then((response) => response.text())
+    //   .then((data) => this.setState({ html: data }));
 
-    fetch("http://localhost:3001/type")
-      .then((response) => response.text())
-      .then((data) => {
-        this.mdtype = data === "w";
-      });
+    // fetch("http://localhost:3001/type")
+    //   .then((response) => response.text())
+    //   .then((data) => {
+    //     this.mdtype = data === "w";
+    //   });
 
     console.log("front!");
 
@@ -50,19 +50,9 @@ class App extends React.Component {
   topbut = (mode, text) =>
     // <div className='button-container'> <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}><span>{text}</span> </button></div>
     this.state.mode === mode ? (
-      <button
-        className="head-button head-button-active"
-        onClick={() => this.setState({ mode: mode })}
-      >
-        {text}{" "}
-      </button>
+      <button className="head-button head-button-active" onClick={() => this.setState({ mode: mode })}>{text}{" "}</button>
     ) : (
-      <button
-        className="head-button"
-        onClick={() => this.setState({ mode: mode })}
-      >
-        {text}{" "}
-      </button>
+      <button className="head-button" onClick={() => this.setState({ mode: mode })} >{text}{" "}</button>
     );
 
   topbar = () => (
@@ -81,10 +71,8 @@ class App extends React.Component {
       </div>
 
       <div className="head-tute-container">
-        <button style={{'margin': '20px'}} onClick={() => this.setState({ popup: !this.state.popup })}>
-          {" "}
-          ?{" "}
-        </button>
+        <button className="question-mark" style={{'margin': '20px'}} onClick={() => this.setState({ popup: !this.state.popup })}>
+          {" "}?{" "}</button>
       </div>
     </div>
   );
@@ -93,21 +81,8 @@ class App extends React.Component {
     <div className="learn-container wrapper">
       <div className="learn-intro intro">
         <h1>What is Wikipizzle?</h1>
-        <p>
-          Wikipizzle is Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Sed scelerisque nulla libero, a pulvinar risus egestas in. Duis sed
-          mauris velit. Proin condimentum varius odio nec tincidunt. Vivamus
-          tortor neque, sollicitudin id ante sit amet, hendrerit lobortis metus.
-          Nam sagittis finibus elit, at faucibus nisl sagittis id. Nulla
-          facilisi. Duis nec massa eu nisl feugiat lobortis. Donec tellus odio,
-          scelerisque lacinia ex eu, consectetur porttitor turpis. Etiam tellus
-          velit, cursus in fermentum eu, euismod et velit. Nullam a augue at
-          turpis porta convallis. Cras interdum, ex at cursus cursus, purus
-          felis consequat arcu, vel auctor nisi erat ut purus.Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit.{" "}
-        </p>
+        <p> Wikipizzle aims to help users learn more trivia and practice critical thinking through the use of text generation AI, GPT3. This educational project will test the limits of GPT3 to see if it can successfully fool you! We want to build awareness about misinformation online, and the implications of AI. We hope to encourage users to be discerning about information online, and whether what they're reading is trustworthy. And in the process, you guys can learn more general trivia as well. So... how do you discern false information? </p>
       </div>
-
 
       <div className="">
         <h1>6 ways to spot a generated or fake article</h1>
@@ -117,26 +92,15 @@ class App extends React.Component {
         <div className="learn-item"></div>
         <div className="learn-item">
           <h2>1. Inconsistencies</h2>
-          <p>
-            The two main inconsistencies to look out for are facts that
-            contradicts itself throughout the article and headlines or titles
-            that do not support the content and lack correlation
-          </p>
+          <p>The two main inconsistencies to look out for are facts that contradicts itself throughout the article and headlines or titles that do not support the content and lack correlation.</p>
+          <p>If you see </p>
         </div>
         <div className="learn-item">
           <h2>2. Check the Vibes</h2>
           <p>Does the tone of writing match the topic it is discussing?</p>
-          <p>
-            Does a professional article contain large amounts of satire or
-            parody? Does the Wikipedia article contain degrading, nonsensical,
-            very baised or humorous content? There might be no harm intended,
-            but it does have the potential to fool viewers. Apply common sense
-            and look at the context.
-          </p>
-          <p>
-            Is the article informative or does it create more questions rather
-            then answering them?
-          </p>
+          <p>Does a professional article contain large amounts of satire or parody?</p>
+          <p>Does the Wikipedia article contain degrading, nonsensical, very baised or humorous content?</p> 
+          <p>There might be no harm intended, but it does have the potential to fool viewers. Apply common sense and look at the context. Ask yourself if the article is informative or does it create more questions for you rather than answering them.</p>
         </div>
         <div className="learn-item"></div>
         <div className="learn-item"></div>
@@ -162,7 +126,7 @@ class App extends React.Component {
     </div>
   );
 
-  tutorial1 = () => (
+  tutorial2 = () => (
     <div className="tutorial-container wrapper">
       <div className="tutorial-intro intro">
         <h1>How did you go?</h1>
@@ -192,15 +156,15 @@ class App extends React.Component {
           <div className="blue-box box">
             <p>Inconsistent dates are used to refer to the same album release date. It says 2007 in the first section but later claims 2000.</p>
           </div>
-          <div className="pink-box box">2</div>
-          <div className="green-box box">3</div>
+          <div className="pink-box box"><p>2</p></div>
+          <div className="green-box box"><p>3</p></div>
         </div>
       </div>
 
     </div>
   );
 
-  tutorial = () => (
+  tutorial4 = () => (
     <div className="tutorial-container wrapper">
       <div className="tutorial-intro intro">
         <h1>Tutorial 2/3</h1>
@@ -211,51 +175,20 @@ class App extends React.Component {
         <div className="tutorial-item-left">
           <div className="box-article box">
             <h2>Introduction</h2>
-            <p>
-              The University of Queensland (UQ) is a public research university
-              located in the city of Brisbane, the capital of the Australian state
-              of Queensland. Founded in 1901, UQ is colloquially known as{" "}
-              <span className="blue-highlight">the sandstone university</span>.
-            </p>
-            <p>
-              UQ is considered one of Australia's leading universities, and is
-              ranked as the 48th most reputable university in the world in the
-              2016 Times Higher Education World University Rankings. UQ is ranked
-              within the top 300 universities in thirteen indicators in the
-              2015-16 QS World University Rankings.
-            </p>
+            <p>The University of Queensland (UQ) is a public research university located in the city of Brisbane, the capital of the Australian state of Queensland. Founded in 1901, UQ is colloquially known as <span className="blue-highlight">the sandstone university</span>.</p>
+            <p>UQ is considered one of Australia's leading universities, and is ranked as the 48th most reputable university in the world in the 2016 Times Higher Education World University Rankings. UQ is ranked within the top 300 universities in thirteen indicators in the 2015-16 QS World University Rankings.</p>
             <h2>Campuses and Facilities</h2>
-            <p>The main campus occupies much of the riverside inner suburb of St
-              Lucia, southwest of the Brisbane CBD. Other UQ campuses and
-              facilities are located throughout Queensland, the largest of which
-              are the Gatton campus and the herbarium at Mount Coot-tha. UQ also
-              has establishments overseas, such as the Brunei International School
-              in Brunei Darussalam.
-            </p>
-            <p>
-              Cras dictum orci interdum nibh laoreet, ac rutrum ipsum rutrum.
-              Aenean aliquam velit eu purus aliquet pretium. In ut ipsum ut justo
-              blandit tristique ac vel urna. Etiam molestie ligula sapien, nec
-              pharetra enim suscipit et. Praesent ultrices velit id ligula
-              lobortis consequat. Praesent id tortor lorem. Vivamus vestibulum
-              metus dui, at efficitur metus egestas quis. Nullam malesuada justo
-              enim, feugiat lobortis quam convallis ac. Nullam nec justo nunc.
-              Duis rutrum felis a ultrices viverra. In luctus accumsan turpis,
-              fermentum tincidunt erat auctor id. Mauris semper nunc quis massa
-              suscipit placerat. Integer vel semper urna.
-            </p>
+            <p>The main campus occupies much of the riverside inner suburb of St Lucia, southwest of the Brisbane CBD. Other UQ campuses and facilities are located throughout Queensland, the largest of which are the Gatton campus and the herbarium at Mount Coot-tha. UQ also has establishments overseas, such as the Brunei International School in Brunei Darussalam.</p>
+            <p></p>
           </div>
         </div>
 
         <div className="tutorial-item-right">
           <div className="blue-box box">
-            <p>
-              The article should have used title case for "The Sandstone
-              University" when referring and proper nouns.
-            </p>
+            <p>The article should have used title case for "The Sandstone University" when referring and proper nouns. </p>
           </div>
-          <div className="pink-box box">2</div>
-          <div className="green-box box">3</div>
+          <div className="pink-box box"><p>2</p></div>
+          <div className="green-box box"><p>3</p></div>
         </div>
       </div>
 
@@ -263,13 +196,13 @@ class App extends React.Component {
   );
 
 
-  tutorial2 = () => (
+  tutorial6 = () => (
     <div className="tutorial-container wrapper">
       <div className="tutorial-intro intro">
         <h1>How did you go?</h1>
           <div className="tutorial-guess tut-correct">
             <div className="tutorial-guess-left correct"><p>Correct!</p></div>
-            <div className="tutorial-guess-right"><p>Good job! This article is from Wikipedia.</p></div>
+            <div className="tutorial-guess-right"><p>Great job! This article is from Wikipedia.</p></div>
           </div>
       </div>
 
@@ -292,9 +225,6 @@ class App extends React.Component {
   );
 
 
-
-
-
   choose = () => (
     <div className="app">
       {/* <header> {this.topbar()} </header> */}
@@ -309,21 +239,11 @@ class App extends React.Component {
       <div className="ins">
         <div className="button-container">
           {" "}
-          <button
-            className="button1"
-            onClick={() => this.guessed(true)}
-          >
-            <span>WIKIPEDIA</span>
-          </button>{" "}
+          <button className="button1" onClick={() => this.guessed(true)}><span>WIKIPEDIA</span></button>{" "}
         </div>
         <div className="button-container">
           {" "}
-          <button
-            className="button2"
-            onClick={() => this.guessed(false)}
-          >
-            <span>AI GENERATED</span>
-          </button>{" "}
+          <button className="button2" onClick={() => this.guessed(false)}><span>AI GENERATED</span></button>{" "}
         </div>
       </div>
     </div>
@@ -436,10 +356,10 @@ class App extends React.Component {
         </div>
 
         <div className="send-to-bottom">
-          <input className="explore-gen-button explore-item" type="submit" value="GEN" />
+          <input className="explore-gen-button explore-item" type="submit" value="GENERATE" />
         </div>
         <div className="send-to-bottom">
-        <button className="explore-clear-button explore-item" type="button" onClick={this.resetForm} > CLEAR </button>
+        <button className="explore-clear-button explore-item" type="button" onClick={this.resetForm}> CLEAR </button>
         </div>
           <div className="explore-article chosen-article">
               <div className="article">
@@ -536,18 +456,22 @@ class App extends React.Component {
   getTuteContent = () => {
     switch (this.state.tutepage) {
       case 0:
-        return this.choose();
+        return this.learn();
       case 1:
         return this.tutorial2();
       case 2:
-        return this.learn();
+        return this.tutorial4();
+      case 3:
+        return this.tutorial6()
+      case 4: 
+      return this.tutorial6();
       default:
         return <></>;
     }
   }
 
   bumpTutePage() {
-    if (this.state.tutepage === 2) return;
+    if (this.state.tutepage === 4) return;
     this.setState({tutepage: this.state.tutepage + 1});
   }
 
@@ -559,12 +483,12 @@ class App extends React.Component {
   tute = () => (
     <div className="tute">
       <div className="tute-dots">
-        <button onClick={this.bopTutePage}> {'<'} </button>
+        <button className="tute-btn" onClick={this.bopTutePage}> {'<'} </button>
         ...
-        <button onClick={this.bumpTutePage}> {'>'} </button>
+        <button className="tute-btn" onClick={this.bumpTutePage}> {'>'} </button>
       </div>
       <div className="tute-exit">
-        <button onClick={() => {this.setState({popup: false})}}> x </button>
+        <button className="tute-btn" onClick={() => {this.setState({popup: false})}}> &#x2715; </button>
       </div>
       <div className="tute-content">
         {this.getTuteContent()}

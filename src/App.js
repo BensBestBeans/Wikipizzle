@@ -409,6 +409,7 @@ class App extends React.Component {
   );
 
   chosen = () => {
+    const stats = JSON.parse(localStorage.getItem("stats"));
     const answerbox =
       "answer-box " + (this.state.page === 1 ? "correct" : "incorrect");
     return (
@@ -447,7 +448,7 @@ class App extends React.Component {
               Want to find out more about this topic?
               <a
                 target="_blank"
-                href={`https://wikipedia.com/wiki/${this.state.title}`}
+                href={`https://letmegooglethat.com/?q=${this.state.title}`}
               >
                 Click here
               </a>
@@ -459,9 +460,12 @@ class App extends React.Component {
               <h2> people deceived </h2>
               <h1> pi chart </h1>
               <h3> your statistics </h3>
+              <h4> {JSON.stringify(stats)} </h4>
               <h4> win rate </h4>
+              <h4> {`${(stats.win / (stats.loss + stats.win)) * 100}%`} </h4>
               <h4> -------- </h4>
               <h4> Correct Streak: </h4>
+              <h4> {stats.streak} </h4>
             </div>
 
             {/* <div className='padded'>
@@ -543,9 +547,19 @@ class App extends React.Component {
   );
 
   guessed(x) {
+    let stats = JSON.parse(localStorage.getItem("stats"));
+    if (stats === null) {
+      stats = { win: 0, loss: 0, streak: 0 };
+    }
     if (x === this.mdtype) {
+      stats["win"] += 1;
+      stats["streak"] += 1;
+      localStorage.setItem("stats", JSON.stringify(stats));
       this.setState({ page: 1 });
     } else {
+      stats["loss"] += 1;
+      stats["streak"] = 0;
+      localStorage.setItem("stats", JSON.stringify(stats));
       this.setState({ page: 2 });
     }
   }

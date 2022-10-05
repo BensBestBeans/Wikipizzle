@@ -5,7 +5,7 @@ import { Interweave } from "interweave";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.ops = ['p', 'fr', 'd', 'w'];
+    this.ops = ['p', 'fr', 'd', 'w', 's', 'n', 'tr', 'sh', 'b', 'z', 'x', 'ph'];
     this.l = this.ops[Math.floor(Math.random() * this.ops.length)];
     this.state = { tutepage: 0, page: 0, popup: false, mode: "GES", html: "loading...", searchvalue: "", explorepage: "" };
     this.epic = "TEXT TIME";
@@ -418,7 +418,8 @@ class App extends React.Component {
 
   handleSubmit(event) {
     // alert('A name was submitted: ' + this.state.searchvalue);
-    fetch("http://localhost:3001/req/?title=" + this.state.searchvalue + "&type=w")
+    this.setState({ explorepage: "loading..." });
+    fetch("http://localhost:3001/req/?title=" + this.state.searchvalue + "&type=p")
       .then((response) => response.text())
       .then((data) => this.setState({ explorepage: data }));
     event.preventDefault();

@@ -7,7 +7,7 @@ import sloppywriting from "../assets/images/sloppy-writing-icon.png";
 import "../assets/styles/App.css";
 import React from "react";
 import { Interweave } from "interweave";
-import { tutorial } from "../components/tutorialTest";
+import { tutorial } from "../components/tutorial";
 
 class Pizzle extends React.Component {
   constructor(props) {

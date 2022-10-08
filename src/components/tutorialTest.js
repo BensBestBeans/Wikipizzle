@@ -4,9 +4,10 @@ import checkvibes from "../assets/images/check-vibes-icon.png";
 import quotes from "../assets/images/quotes-icon.png";
 import sloppywriting from "../assets/images/sloppy-writing-icon.png";
 
-import styles from "../assets/styles/App.css";
-
 import React from "react";
+
+import style from "../assets/styles/tutorial.module.css";
+import test from "../assets/styles/test.module.css";
 
 export const tutorial = (tutorial) => {
   switch (tutorial) {
@@ -26,8 +27,8 @@ export const tutorial = (tutorial) => {
 };
 
 const page1 = () => (
-  <div className="wrapper">
-    <div className="intro">
+  <div className={test.test}>
+    <div className={style.intro}>
       <h1>What is Wikipizzle?</h1>
       <p>
         {" "}
@@ -46,11 +47,11 @@ const page1 = () => (
       <h1>6 ways to spot a generated or fake article</h1>
     </div>
 
-    <div className="learn-flexbox">
-      <div className="learn-item learn-img">
+    <div className={style.learnFlexbox}>
+      <div className={'${style.learnItem} ${style.learnImg}'}>
         <img src={inconsistencies}></img>
       </div>
-      <div className="learn-item">
+      <div className={style.learnItem}>
         <h2>1. Inconsistencies</h2>
         <p>
           The two main inconsistencies to look out for are facts that
@@ -59,7 +60,7 @@ const page1 = () => (
         </p>
         <p></p>
       </div>
-      <div className="learn-item">
+      <div className={style.learnItem}>
         <h2>2. Check the Vibes</h2>
         <p>
           Does the tone of writing match the topic it is discussing? Does a
@@ -72,20 +73,20 @@ const page1 = () => (
           fool viewers. Apply common sense and look at the context.
         </p>
       </div>
-      <div className="learn-item learn-img">
+      <div className={'${style.learnItem} ${style.learnImg}'}>
         <img src={checkvibes}></img>
       </div>
-      <div className="learn-item learn-img">
+      <div className={'${style.learnItem} ${style.learnImg}'}>
         <img src={sloppywriting}></img>
       </div>
-      <div className="learn-item">
+      <div className={style.learnItem}>
         <h2>3. Sloppy Writing</h2>
         <p>
           Poor grammar, spelling mistakes and stylistic choices, such as
           excessive capitalisation or the use of !!!, are a bad signs{" "}
         </p>
       </div>
-      <div className="learn-item">
+      <div className={style.learnItem}>
         <h2>4. Absence of quotes or sources</h2>
         <p>
           The presence of quotes and sources might add an additional layer of
@@ -93,7 +94,7 @@ const page1 = () => (
           links to credible websites also boost the integrity of an article.
         </p>
       </div>
-      <div className="learn-item learn-img">
+      <div className={'${style.learnItem} ${style.learnImg}'}>
         <img src={quotes}></img>
       </div>
     </div>

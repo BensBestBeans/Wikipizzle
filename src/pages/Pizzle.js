@@ -7,7 +7,7 @@ import sloppywriting from "../assets/images/sloppy-writing-icon.png";
 import "../assets/styles/App.css";
 import React from "react";
 import { Interweave } from "interweave";
-import { tutorial } from "../components/tutorial";
+import { tutorial } from "../components/tutorialTest";
 
 class Pizzle extends React.Component {
   constructor(props) {
@@ -31,11 +31,11 @@ class Pizzle extends React.Component {
     // this.state.contentType = false;
     console.log("BAKEND!");
 
-    fetch("http://localhost:3001/art")
+    fetch("http://localhost:3000/art")
       .then((response) => response.json())
       .then((data) => this.setState({ html: data.html, title: data.title }));
 
-    fetch("http://localhost:3001/type")
+    fetch("http://localhost:3000/type")
       .then((response) => response.text())
       .then((data) => {
         this.contentType = data === "w";
@@ -240,7 +240,7 @@ class Pizzle extends React.Component {
   handleSubmit(event) {
     // alert('A name was submitted: ' + this.state.searchvalue);
     fetch(
-      "http://localhost:3001/req/?title=" + this.state.searchValue + "&type=w"
+      "http://localhost:3000/req/?title=" + this.state.searchValue + "&type=w"
     )
       .then((response) => response.text())
       .then((data) => this.setState({ explorepage: data }));

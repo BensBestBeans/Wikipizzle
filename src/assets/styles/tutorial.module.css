@@ -1,0 +1,246 @@
+/*////////////////////////////////
+------------LEARN-PAGE------------
+////////////////////////////////*/
+.exploreGrid {
+  height: 80%;
+
+  width: 80%;
+  margin: auto;
+  margin-top: 0;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "t g c"
+    "a a a";
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 80px;
+}
+
+.exploreSearchBar {
+  grid-area: t;
+  width: 100%;
+  height: 50px;
+
+  padding: 20px;
+
+  line-height: 24px;
+
+  background: white;
+  border: black;
+
+  border: solid 1px #c0c0c0;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  font-size: 1em;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.exploreGenButton {
+  grid-area: g;
+  background: #5851a2;
+  color: white;
+}
+
+.exploreItem {
+  width: 100%;
+  height: 50px;
+
+  transition: all 0.05s;
+  border: solid #c0c0c0 0px;
+  border-radius: 2px;
+
+  font-size: 1em;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.exploreClearButton:hover {
+  border: solid #c0c0c0 1px;
+}
+
+.exploreClearButton {
+  grid-area: c;
+  color: #5851a2;
+  background: white;
+}
+
+.exploreArticle {
+  grid-area: a;
+  height: 100%;
+  /* overflow-y: scroll; */
+}
+
+.learnFlexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.learnItem {
+  /* border: 1px solid black; */
+  width: 33.5%;
+  min-height: 100px;
+  margin-bottom: 1.5%;
+}
+
+.learnItem h2 {
+  padding: 10px;
+  margin: 0;
+}
+
+.learnItem p {
+  padding: 10px;
+}
+
+.learnItem:nth-child(2),
+.learnItem:nth-child(3),
+.learnItem:nth-child(6),
+.learnItem:nth-child(7) {
+  width: 65%;
+}
+
+.learnImg {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.learnImg img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.intro {
+  margin: 0 0 30px 0;
+}
+
+.intro p {
+  font-size: 1.1em;
+}
+
+.intro .tutorialGuess {
+  display: flex;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.intro .tutorialGuessLeft {
+  padding: 10px 30px;
+  color: white;
+}
+
+.intro .tutorialGuessRight {
+  padding: 10px 30px;
+}
+
+.tutCorrect {
+  outline: 2px solid #006600;
+  border-radius: 5px;
+}
+
+/*////////////////////////////////
+----------TUTORIAL-PAGES----------
+////////////////////////////////*/
+.tute {
+  width: 70%;
+  height: 90%;
+  background: white;
+  display: grid;
+  grid-template-areas:
+    "x d e"
+    "c c c";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 10fr;
+  overflow: hidden;
+}
+
+.tuteDots {
+  grid-area: d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tuteExit {
+  grid-area: e;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.tuteContent {
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.tutorialMain {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tutorialItemLeft {
+  background-color: #f1f1f1;
+  flex: 75%;
+}
+
+.tutorialItemRight {
+  flex: 25%;
+}
+
+.boxArticle {
+  margin: 5px;
+}
+
+.boxArticle h2 {
+  padding: 20px 0 5px 0;
+  font-family: "Georgia", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+.boxArticle p {
+  padding-top: 5px;
+}
+
+.box {
+  padding: 10px;
+  margin: 0 0 20px 20px;
+}
+
+.blueHighlight {
+  background-color: lightblue;
+}
+
+.pinkHighlight {
+  background-color: #facdd8;
+}
+
+.greenHighlight {
+  background-color: #c5e3d4;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 950px) {
+  .tutorial-item-left,
+  .tutorial-item-right {
+    flex: 100%;
+  }
+
+  .box {
+    padding: 10px;
+    margin: 0;
+  }
+}

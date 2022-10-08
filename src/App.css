@@ -719,9 +719,9 @@ li {
 }
 
 .learn-item {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 33.5%;
-  min-height: 200px;
+  min-height: 100px;
   margin-bottom: 1.5%;
 }
 
@@ -738,6 +738,22 @@ li {
   width: 65%;
 }
 
+<<<<<<< HEAD
+=======
+.learn-img {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.learn-img img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+
+>>>>>>> 79507ba6fb8c0fbdf9fd92397b825b6d00782795
 .intro {
   margin: 0 0 30px 0;
 }
@@ -771,7 +787,7 @@ li {
 /* Tutorial Pages -----------------------------*/
 
 .tute {
-  width: 60%;
+  width: 70%;
   height: 90%;
   background: white;
   display: grid;
@@ -854,23 +870,35 @@ li {
 }
 
 .pink-box {
+<<<<<<< HEAD
   background-color: lightsalmon;
 }
 
 .pink-box p {
   text-align: center;
+=======
+  background-color: #facdd8;
+>>>>>>> 79507ba6fb8c0fbdf9fd92397b825b6d00782795
 }
 
 .green-box {
-  background-color: lightgreen;
+  background-color: #c5e3d4;
 }
 
 .green-box p {
   text-align: center;
 }
 
+.pink-highlight {
+  background-color: #facdd8;
+}
+
+.green-highlight {
+  background-color: #c5e3d4;
+}
+
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   .tutorial-item-left, .tutorial-item-right {
     flex: 100%;
   }

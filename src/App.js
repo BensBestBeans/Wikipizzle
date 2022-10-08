@@ -8,7 +8,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Pizzle />} />
-        <Route path="/explore" element={<Explore />} />
+        {/* <Route path="/explore" element={<Explore />} /> */}
       </Routes>
     </BrowserRouter>
   );

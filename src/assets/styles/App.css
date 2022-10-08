@@ -1,43 +1,43 @@
-@import url('http://fonts.cdnfonts.com/css/georgia');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("http://fonts.cdnfonts.com/css/georgia");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @font-face {
   font-family: Linux-Libertine;
-  src:url("LinLibertine_R.ttf");
+  src: url("LinLibertine_R.ttf");
 }
 
-
-/* Custom Scrollbar --------------------*/
+/*////////////////////////////////
+-------CUSTOM-SCROLLBAR-----------
+////////////////////////////////*/
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
-/* Main CSS -------------------- */
-body {
-/* background-color: black;
-color: white; */
-}
-
-h1, h2, h3 {
+/*////////////////////////////////
+------------MAIN-CSS--------------
+////////////////////////////////*/
+h1,
+h2,
+h3 {
   font-family: Montserrat;
 }
 
 p {
   padding: 0;
-  margin: 0; 
+  margin: 0;
   text-align: justify;
 }
 
@@ -51,8 +51,9 @@ p {
   text-align: center;
 }
 
-
-/* Header CSS -------------------- */ 
+/*////////////////////////////////
+------------HEADER-CSS------------
+////////////////////////////////*/
 .app-logo {
   pointer-events: none;
 }
@@ -108,10 +109,10 @@ li {
   /* vertical-align: top;
   display: inline-block; */
 
-  transition: all .15s;
+  transition: all 0.15s;
   line-height: 24px;
 
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   /* color: #000; */
   width: 100%;
   height: 100%;
@@ -122,7 +123,7 @@ li {
 
   display: inline;
   float: left;
-  color: #5851A2;
+  color: #5851a2;
   font-weight: normal;
   font-size: 1em;
   font-family: Montserrat;
@@ -134,19 +135,19 @@ li {
 }
 
 .head-button:hover {
-  background-color: #C4C1EC80;
+  background-color: #c4c1ec80;
 }
 
 .head-button:active {
-  background-color: #C4C1EC80;
+  background-color: #c4c1ec80;
   font-weight: 900;
-  border-bottom:5px solid #5851A2;
+  border-bottom: 5px solid #5851a2;
 }
 
 .head-button-active {
   /* background-color: #C4C1EC80; */
   font-weight: 900;
-  border-bottom:5px solid #5851A2;
+  border-bottom: 5px solid #5851a2;
 }
 
 .head-tute-container {
@@ -159,7 +160,7 @@ li {
 
 .logo-header {
   /* height: 60px; */
-  box-sizing:border-box;
+  box-sizing: border-box;
 
   height: 100%;
   width: 90%;
@@ -168,7 +169,7 @@ li {
   /* padding: 10px 0px; */
   display: flex;
 
-  border-bottom:1px solid #5851A2;
+  border-bottom: 1px solid #5851a2;
   /* overflow: hidden; */
 }
 
@@ -186,15 +187,14 @@ li {
   float: left;
   text-decoration: none;
   /* height: 100%; */
-  padding: 28px 0px 28px 20px ;
+  padding: 28px 0px 28px 20px;
   justify-content: center;
   margin: 0px;
 
-
-  color: #5851A2;
+  color: #5851a2;
   font-weight: normal;
   font-size: 1.5em;
-  font-family: Georgia,'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .header {
@@ -218,7 +218,6 @@ li {
   /* margin-bottom: auto; */
 }
 
-
 @media (prefers-reduced-motion: no-preference) {
   .app-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -229,7 +228,7 @@ li {
   border: solid 3px #393377;
   background: transparent;
   font-size: 1.4em;
-  display:block;
+  display: block;
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -258,7 +257,9 @@ li {
   font-weight: 900;
 }
 
-/* Header CSS --------------------*/
+/*////////////////////////////////
+------------HEADER-CSS------------
+////////////////////////////////*/
 .subtitle {
   font-weight: lighter;
   font-family: Montserrat;
@@ -277,18 +278,18 @@ li {
   width: 80%;
   height: 60vh;
   /* background-color: rgb(237, 237, 237); */
-  border: 1px solid #c0c0c0; 
+  border: 1px solid #c0c0c0;
   overflow-y: scroll;
   scrollbar-width: none;
   transition: all 1s;
   transition-delay: revert 2s;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) ;
-  
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
   /*, 0 6px 20px 0 rgba(0, 0, 0, 0.3) */
 }
 
 .article-container:hover {
-  box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.1) ;
+  box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.1);
   /* margin: 0px 20% 50px 20%; */
   /* width: 62%; 
   height: 52vh; */
@@ -311,15 +312,14 @@ li {
   padding: 10px 0 20px 0;
 }
 
-.article h1, .article h2 {
+.article h1,
+.article h2 {
   padding: 10px 0;
-  font-family: 'Georgia', sans-serif;
+  font-family: "Georgia", sans-serif;
   font-weight: normal;
   margin: 0;
   border-bottom: 1px solid rgb(155, 155, 155);
 }
-
-
 
 .ins {
   /* margin: 30px 30% 0% 30%; */
@@ -355,16 +355,17 @@ li {
   overflow: hidden;
 }
 
-.button1, .button2 {
+.button1,
+.button2 {
   vertical-align: top;
   display: inline-block;
 
-  transition: all .5s;
+  transition: all 0.5s;
   /* transition-delay: box-shadow 2s; */
 
   line-height: 24px;
 
-  background-color: #5851A2;
+  background-color: #5851a2;
   color: white;
   width: 100%;
 
@@ -379,19 +380,16 @@ li {
   height: 55px;
   font-family: Montserrat;
 
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25) ;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
 
-.button1:hover, .button2:hover {
+.button1:hover,
+.button2:hover {
   font-weight: 1000;
   cursor: pointer;
   /* background: white; */
   background: #7e77ce;
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5) ;
-}
-
-.button1:active, .button2:active {
-  /* color: #F1F8FF; */
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5);
 }
 
 .right-wrapper {
@@ -406,7 +404,7 @@ li {
   
   border: 3px solid #5851A2;
   border-radius: 5px; */
-  
+
   /* padding: 10px 20px 10px 20px; */
   /* font-weight: 700;
   font-size: 20px; */
@@ -418,7 +416,7 @@ li {
 .stats {
   box-sizing: border-box;
   background-color: white;
-  border: 1px solid #5851A2;
+  border: 1px solid #5851a2;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -432,14 +430,13 @@ li {
   font-weight: 900; */
   height: 500px;
   /* overflow: hidden; */
-  
+
   width: 80%;
   margin: auto;
-  
 
   display: grid;
   gap: 2rem;
-  grid-template-areas: 
+  grid-template-areas:
     "t t"
     "l r";
   grid-template-columns: 2fr 1fr;
@@ -450,7 +447,7 @@ li {
 
 .left-wrapper {
   grid-area: l;
-  
+
   display: flex;
   flex-direction: column;
 
@@ -463,9 +460,9 @@ li {
   
   overflow-y: hidden;
   display: inline-block; */
-  
+
   /* background-color: white; */
-  
+
   /* font-weight: 700;
   font-size: 20px; */
 
@@ -493,12 +490,12 @@ li {
   /* width: 60%; */
   /* height: 55vh; */
   /* background-color: rgb(237, 237, 237); */
-  border: 1px solid #c0c0c0; 
+  border: 1px solid #c0c0c0;
   overflow-y: scroll;
   scrollbar-width: none;
   transition: all 1s;
   transition-delay: revert 2s;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) ;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .chosen-article::-webkit-scrollbar {
@@ -510,7 +507,7 @@ li {
 
   color: white;
   /* background-color: #5851A2; */
-  
+
   border-radius: 4px;
 
   /* padding: 20px; */
@@ -529,8 +526,8 @@ li {
 }
 
 .incorrect {
-  background-color: #A10000;
-  outline: 2px solid #A10000;
+  background-color: #a10000;
+  outline: 2px solid #a10000;
 }
 
 .answer-box h2 {
@@ -550,7 +547,8 @@ li {
   width: 100%;
 }
 
-.answer-box h2, .answer-box h3 {
+.answer-box h2,
+.answer-box h3 {
   border: none;
   margin: 0;
   display: grid;
@@ -601,8 +599,8 @@ li {
 }
 
 .page-container-switch {
-  transition: all .15s;
-  background-color: #5851A2;
+  transition: all 0.15s;
+  background-color: #5851a2;
   height: 8%;
   overflow: hidden;
   font-size: 1.2em;
@@ -622,12 +620,6 @@ li {
   transform: translateY(+45%);
 }
 
-
-.page-container-guess {
-
-  /* overflow: hidden; */
-}
-
 .page-container-explore {
   /* overflow: hidden; */
   height: 100%;
@@ -636,26 +628,19 @@ li {
   flex-direction: column;
 }
 
-.page-container-learn {
-
-}
-
-/* Learn Page CSS --------------------*/
-.learn-container {
-
-}
-
-
+/*////////////////////////////////
+------------LEARN-PAGE------------
+////////////////////////////////*/
 .explore-grid {
   height: 80%;
-  
+
   width: 80%;
   margin: auto;
   margin-top: 0;
-  
+
   display: grid;
   gap: 2rem;
-  grid-template-areas: 
+  grid-template-areas:
     "t g c"
     "a a a";
   grid-template-columns: 3fr 1fr 1fr;
@@ -666,7 +651,7 @@ li {
   grid-area: t;
   width: 100%;
   height: 50px;
-  
+
   padding: 20px;
 
   line-height: 24px;
@@ -685,8 +670,7 @@ li {
 
 .explore-gen-button {
   grid-area: g;
-  
-  background: #5851A2;
+  background: #5851a2;
   color: white;
 }
 
@@ -694,7 +678,7 @@ li {
   width: 100%;
   height: 50px;
 
-  transition: all .05s;
+  transition: all 0.05s;
   border: solid #c0c0c0 0px;
   border-radius: 2px;
 
@@ -709,8 +693,7 @@ li {
 
 .explore-clear-button {
   grid-area: c;
-  
-  color: #5851A2;
+  color: #5851a2;
   background: white;
 }
 
@@ -742,7 +725,10 @@ li {
   padding: 10px;
 }
 
-.learn-item:nth-child(2),.learn-item:nth-child(3),.learn-item:nth-child(6),.learn-item:nth-child(7) {
+.learn-item:nth-child(2),
+.learn-item:nth-child(3),
+.learn-item:nth-child(6),
+.learn-item:nth-child(7) {
   width: 65%;
 }
 
@@ -758,11 +744,9 @@ li {
   height: auto;
 }
 
-
 .intro {
   margin: 0 0 30px 0;
 }
-
 
 .intro p {
   font-size: 1.1em;
@@ -789,22 +773,21 @@ li {
   border-radius: 5px;
 }
 
-
-/* Tutorial Pages -----------------------------*/
-
+/*////////////////////////////////
+----------TUTORIAL-PAGES----------
+////////////////////////////////*/
 .tute {
   width: 70%;
   height: 90%;
   background: white;
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     "x d e"
     "c c c";
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 10fr;
   overflow: hidden;
 }
-
 
 .tute-dots {
   grid-area: d;
@@ -830,10 +813,7 @@ li {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-
 }
-
-
 
 .tutorial-main {
   display: flex;
@@ -851,7 +831,7 @@ li {
 
 .box-article h2 {
   padding: 20px 0 5px 0;
-  font-family: 'Georgia', sans-serif;
+  font-family: "Georgia", sans-serif;
   font-weight: normal;
   margin: 0;
   border-bottom: 1px solid rgb(155, 155, 155);
@@ -870,18 +850,6 @@ li {
   margin: 0 0 20px 20px;
 }
 
-.blue-box {
-  background-color: lightblue;
-}
-
-.pink-box {
-  background-color: #facdd8;
-}
-
-.green-box {
-  background-color: #c5e3d4;
-}
-
 .blue-highlight {
   background-color: lightblue;
 }
@@ -896,7 +864,8 @@ li {
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
 @media (max-width: 950px) {
-  .tutorial-item-left, .tutorial-item-right {
+  .tutorial-item-left,
+  .tutorial-item-right {
     flex: 100%;
   }
 

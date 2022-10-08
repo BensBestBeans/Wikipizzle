@@ -636,15 +636,7 @@ li {
   flex-direction: column;
 }
 
-.page-container-learn {
-
-}
-
 /* Learn Page CSS --------------------*/
-.learn-container {
-
-}
-
 
 .explore-grid {
   height: 80%;
@@ -746,12 +738,9 @@ li {
   width: 65%;
 }
 
-
-
 .intro {
   margin: 0 0 30px 0;
 }
-
 
 .intro p {
   font-size: 1.1em;
@@ -794,7 +783,6 @@ li {
   overflow: hidden;
 }
 
-
 .tute-dots {
   grid-area: d;
   display: flex;
@@ -821,8 +809,6 @@ li {
   overflow-x: hidden;
 
 }
-
-
 
 .tutorial-main {
   display: flex;
@@ -863,16 +849,24 @@ li {
   background-color: lightblue;
 }
 
+.blue-box p {
+  text-align: center;
+}
+
 .pink-box {
-  background-color: lightpink;
+  background-color: lightsalmon;
+}
+
+.pink-box p {
+  text-align: center;
 }
 
 .green-box {
   background-color: lightgreen;
 }
 
-.blue-highlight {
-  background-color: lightblue;
+.green-box p {
+  text-align: center;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */

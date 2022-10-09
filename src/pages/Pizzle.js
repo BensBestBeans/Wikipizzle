@@ -4,133 +4,127 @@ import checkvibes from "../assets/images/check-vibes-icon.png";
 import quotes from "../assets/images/quotes-icon.png";
 import sloppywriting from "../assets/images/sloppy-writing-icon.png";
 
+import { Link } from "react-router-dom";
+import Heading from "../components/heading";
 import "../assets/styles/App.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { Interweave } from "interweave";
-import { tutorial } from "../components/tutorial";
+import { Tutorial, tutorial } from "../components/tutorial";
 
-class Pizzle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.ops = ["p", "fr", "d", "w"];
-    this.l = this.ops[Math.floor(Math.random() * this.ops.length)];
-    this.state = {
-      tutePage: 0,
-      page: 0,
-      popup: false,
-      mode: "GES",
-      html: "loading...",
-      title: "",
-      searchValue: "",
-      explorePage: "",
-      contentType: false,
-    };
-    this.epic = "TEXT TIME";
+function Pizzle({ state, setState, data }) {
+  console.log("render");
+  console.log(state);
+  React.useEffect(() => {
+    setState({ ...state, current: "q" });
+  }, []);
+  // this.ops = ["p", "fr", "d", "w"];
+  // this.l = this.ops[Math.floor(Math.random() * this.ops.length)];
+  // this.state = {
+  //   tutePage: 0,
+  //   page: 0,
+  //   popup: false,
+  //   mode: "GES",
+  //   html: "loading...",
+  //   title: "",
+  //   searchValue: "",
+  //   explorePage: "",
+  //   contentType: false,
+  // };
 
-    // this.state.md = getmd(this.state.mdtype);
-    // this.state.contentType = false;
-    console.log("BAKEND!");
+  // this.state.md = getmd(this.state.mdtype);
+  // this.state.contentType = false;
+  // console.log("BAKEND!");
 
-    fetch("http://localhost:3000/art")
-      .then((response) => response.json())
-      .then((data) => this.setState({ html: data.html, title: data.title }));
+  // console.log("front!");
+  // console.log(state.title);
 
-    fetch("http://localhost:3000/type")
-      .then((response) => response.text())
-      .then((data) => {
-        this.contentType = data === "w";
-      });
+  // This binding is necessary to make `this` work in the callback
+  // this.guessed = this.guessed.bind(this);
+  // this.home = this.home.bind(this);
+  // this.listenScrollEvent = this.listenScrollEvent.bind(this);
+  // this.wholePage = this.wholePage.bind(this);
+  // // this.switchMode = this.switchMode.bind(this);
+  // this.handleChange = this.handleChange.bind(this);
+  // this.handleSubmit = this.handleSubmit.bind(this);
+  // this.resetForm = this.resetForm.bind(this);
 
-    console.log("front!");
-    console.log(this.state.title);
+  // this.bopTutePage = this.bopTutePage.bind(this);
+  // this.bumpTutePage = this.bumpTutePage.bind(this);
 
-    // This binding is necessary to make `this` work in the callback
-    this.guessed = this.guessed.bind(this);
-    this.home = this.home.bind(this);
-    this.listenScrollEvent = this.listenScrollEvent.bind(this);
-    this.wholePage = this.wholePage.bind(this);
-    // this.switchMode = this.switchMode.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.resetForm = this.resetForm.bind(this);
-
-    this.bopTutePage = this.bopTutePage.bind(this);
-    this.bumpTutePage = this.bumpTutePage.bind(this);
-  }
-
-  head = (
+  const head = (
     <p className="subtitle">
       Wikipedia or AI-Generated? Take a guess and test your skills!
     </p>
   );
 
-  topbut = (mode, text) =>
-    // <div className='button-container'> <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}><span>{text}</span> </button></div>
-    this.state.mode === mode ? (
-      <button
-        className="head-button head-button-active"
-        onClick={() => this.setState({ mode: mode })}
-      >
-        {text}{" "}
-      </button>
-    ) : (
-      <button
-        className="head-button"
-        onClick={() => this.setState({ mode: mode })}
-      >
-        {text}{" "}
-      </button>
-    );
+  // TODO - delete this
+  // const topbut = (mode, text) =>
+  //   // <div className='button-container'> <button className="head-button" role="button" onClick={() => this.setState({mode: mode})}><span>{text}</span> </button></div>
+  //   state.mode === mode ? (
+  //     <button
+  //       className="head-button head-button-active"
+  //       onClick={() => setState({ ...state, mode: mode })}
+  //     >
+  //       {text}{" "}
+  //     </button>
+  //   ) : (
+  //     <button
+  //       className="head-button"
+  //       onClick={() => setState({ ...state, mode: mode })}
+  //     >
+  //       {text}{" "}
+  //     </button>
+  //   );
 
-  topbar = () => (
-    <div className="logo-header">
-      <div className="head-logo-container">
-        <img src={logo} alt="" />
-        <a href="https://www.wikipedia.org/">Wiki{this.l}izzle</a>
-      </div>
+  // const topbar = () => (
+  //   <div className="logo-header">
+  //     <div className="head-logo-container">
+  //       <img src={logo} alt="" />
+  //       <a href="https://www.wikipedia.org/">Wiki{state.pizz}izzle</a>
+  //     </div>
 
-      <div className="head-button-container">
-        <ul>
-          <li> {this.topbut("GES", "Quizzle")} </li>
-          <li> {this.topbut("EXP", "Explore")} </li>
-          {/* <li> {this.topbut("LRN", "Learn More")} </li> */}
-        </ul>
-      </div>
+  //     <div className="head-button-container">
+  //       <ul>
+  //         <li> {topbut("GES", "Quizzle")} </li>
+  //         <li> {topbut("EXP", "Explore")} </li>
+  //         {/* <li> {this.topbut("LRN", "Learn More")} </li> */}
+  //       </ul>
+  //     </div>
 
-      <div className="head-tute-container">
-        <button
-          className="question-mark"
-          style={{ margin: "20px" }}
-          onClick={() => this.setState({ popup: !this.state.popup })}
-        >
-          {" "}
-          ?{" "}
-        </button>
-      </div>
-    </div>
-  );
+  //     <div className="head-tute-container">
+  //       <button
+  //         className="question-mark"
+  //         style={{ margin: "20px" }}
+  //         onClick={() => setState({ ...state, popup: !state.popup })}
+  //       >
+  //         {" "}
+  //         ?{" "}
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
 
-  choose = () => (
+  const choose = () => (
     <div className="app">
       {/* <header> {this.topbar()} </header> */}
-      {this.head}
+      {head}
 
       <div className="article-container">
         <div className="article">
-          <Interweave content={this.state.html} />
+          <Interweave content={data.html} />
         </div>
       </div>
 
       <div className="ins">
         <div className="button-container">
           {" "}
-          <button className="button1" onClick={() => this.guessed(true)}>
+          <button className="button1" onClick={() => guessed(true)}>
             <span>WIKIPEDIA</span>
           </button>{" "}
         </div>
         <div className="button-container">
           {" "}
-          <button className="button2" onClick={() => this.guessed(false)}>
+          <button className="button2" onClick={() => guessed(false)}>
             <span>AI GENERATED</span>
           </button>{" "}
         </div>
@@ -138,41 +132,39 @@ class Pizzle extends React.Component {
     </div>
   );
 
-  correct = (
+  const correct = (
     <div className="app">
       <header></header>
-      {this.head}
+      {head}
 
       <div className="answer-box">something</div>
 
       <div className="article"> something</div>
       <div className="ins">
-        <button className="button1" onClick={() => this.home()}>
+        <button className="button1" onClick={() => home()}>
           <span>HOME</span>
         </button>
       </div>
     </div>
   );
 
-  chosen = () => {
+  const chosen = () => {
     const stats = JSON.parse(localStorage.getItem("stats"));
     const answerbox =
-      "answer-box " + (this.state.page === 1 ? "correct" : "incorrect");
+      "answer-box " + (state.page === 1 ? "correct" : "incorrect");
     return (
       <div className="app">
-        {this.head}
+        {head}
 
         <div className="chosen-container">
           <div className={answerbox}>
             <h2 className="answer-box">
-              {this.state.page === 1 ? "Correct" : "Incorrect"}
+              {state.page === 1 ? "Correct" : "Incorrect"}
             </h2>
             <h3 className="answer-box">
-              {this.state.page === 1
-                ? "You're right!"
-                : "You have been deceived!"}{" "}
+              {state.page === 1 ? "You're right!" : "You have been deceived!"}{" "}
               Today's article{" "}
-              {this.contentType
+              {data.contentType
                 ? "was an actual Wikipedia article"
                 : "was generated by AI"}
             </h3>
@@ -187,14 +179,14 @@ class Pizzle extends React.Component {
           <div className="left-wrapper">
             <div className="chosen-article">
               <div className="article">
-                <Interweave content={this.state.html} />
+                <Interweave content={data.html} />
               </div>
             </div>
             <div className="learn-more">
               Want to find out more about this topic?
               <a
                 target="_blank"
-                href={`https://letmegooglethat.com/?q=${this.state.title}`}
+                href={`https://letmegooglethat.com/?q=${data.title}`}
               >
                 Click here
               </a>
@@ -233,201 +225,157 @@ class Pizzle extends React.Component {
     );
   };
 
-  handleChange(event) {
-    this.setState({ searchvalue: event.target.value });
-  }
+  //  handleChange(event) {
+  //    setState({ searchvalue: event.target.value });
+  //  }
 
-  handleSubmit(event) {
-    // alert('A name was submitted: ' + this.state.searchvalue);
-    fetch(
-      "http://localhost:3000/req/?title=" + this.state.searchValue + "&type=w"
-    )
-      .then((response) => response.text())
-      .then((data) => this.setState({ explorepage: data }));
-    event.preventDefault();
-  }
+  //  handleSubmit(event) {
+  //    // alert('A name was submitted: ' + this.state.searchvalue);
+  //    fetch(
+  //      "http://localhost:3000/req/?title=" + state.searchValue + "&type=w"
+  //    )
+  //     .then((response) => response.text())
+  //     .then((data) => this.setState({ explorepage: data }));
+  //   event.preventDefault();
+  // }
 
-  resetForm() {
-    this.setState({ searchvalue: "" /*, explorepage: "" */ });
-  }
+  // resetForm() {
+  //   this.setState({ searchvalue: "" /*, explorepage: "" */ });
+  // }
 
-  explore = () => (
-    <div className="page-container-explore">
-      <p className="subtitle">Enter a few keywords to generate an article</p>
+  // const explore = () => (
+  //   <div className="page-container-explore">
+  //     <p className="subtitle">Enter a few keywords to generate an article</p>
 
-      <form className="explore-grid" onSubmit={this.handleSubmit}>
-        <div className="split">
-          <b style={{ marginBottom: "auto" }}>Topic Keyword</b>
-          <input
-            className="explore-search-bar"
-            type="text"
-            value={this.state.searchValue}
-            onChange={this.handleChange}
-          />
-        </div>
+  //     <form className="explore-grid" onSubmit={handleSubmit}>
+  //       <div className="split">
+  //         <b style={{ marginBottom: "auto" }}>Topic Keyword</b>
+  //         <input
+  //           className="explore-search-bar"
+  //           type="text"
+  //           value={state.searchValue}
+  //           onChange={handleChange}
+  //         />
+  //       </div>
 
-        <div className="send-to-bottom">
-          <input
-            className="explore-gen-button explore-item"
-            type="submit"
-            value="GENERATE"
-          />
-        </div>
-        <div className="send-to-bottom">
-          <button
-            className="explore-clear-button explore-item"
-            type="button"
-            onClick={this.resetForm}
-          >
-            {" "}
-            CLEAR{" "}
-          </button>
-        </div>
-        <div className="explore-article chosen-article">
-          <div className="article">
-            <Interweave content={this.state.explorePage} />
-          </div>
-        </div>
-      </form>
-    </div>
-  );
+  //       <div className="send-to-bottom">
+  //         <input
+  //           className="explore-gen-button explore-item"
+  //           type="submit"
+  //           value="GENERATE"
+  //         />
+  //       </div>
+  //       <div className="send-to-bottom">
+  //         <button
+  //           className="explore-clear-button explore-item"
+  //           type="button"
+  //           onClick={this.resetForm}
+  //         >
+  //           {" "}
+  //           CLEAR{" "}
+  //         </button>
+  //       </div>
+  //       <div className="explore-article chosen-article">
+  //         <div className="article">
+  //           <Interweave content={this.state.explorePage} />
+  //         </div>
+  //       </div>
+  //     </form>
+  //   </div>
+  // );
 
-  guessed(x) {
+  function guessed(x) {
+    console.log(x);
+    console.log(data.contentType);
     let stats = JSON.parse(localStorage.getItem("stats"));
     if (stats === null) {
       stats = { win: 0, loss: 0, streak: 0 };
     }
-    if (x === this.contentType) {
+    if (x === data.contentType) {
       stats["win"] += 1;
       stats["streak"] += 1;
       localStorage.setItem("stats", JSON.stringify(stats));
-      this.setState({ page: 1 });
+      setState({ ...state, page: 1 });
     } else {
       stats["loss"] += 1;
       stats["streak"] = 0;
       localStorage.setItem("stats", JSON.stringify(stats));
-      this.setState({ page: 2 });
+      setState({ ...state, page: 2 });
     }
   }
 
-  home() {
-    this.setState({ page: 0 });
-  }
+  const home = () => setState({ ...state, page: 0 });
 
-  handleClick() {
-    this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn,
-    }));
-  }
+  // const handleClick = () => {
+  //   setState((prevState) => ({
+  //     isToggleOn: !prevState.isToggleOn,
+  //   }));
+  // };
 
-  listenScrollEvent = (e) => {
+  const listenScrollEvent = (e) => {
     const elem = document.getElementById("scroll");
 
     if (elem.scrollTop > elem.clientHeight / 2) {
-      this.setState({ mode: "down" });
+      setState({ ...state, mode: "down" });
     } else {
-      this.setState({ mode: "up" });
+      setState({ ...state, mode: "up" });
     }
     // console.log("skrrrt");
   };
 
-  componentDidMount() {
-    // document.getElementById('scroll').addEventListener('scroll', this.listenScrollEvent);
-  }
+  // const componentDidMount() {
+  //   // document.getElementById('scroll').addEventListener('scroll', this.listenScrollEvent);
+  // }
 
-  scroll = () => {
-    console.log(this.contentType);
-    if (this.state.mode === "down") {
+  const scroll = () => {
+    console.log(data.contentType);
+    if (state.mode === "down") {
       document.getElementById("guess").scrollIntoView({ behavior: "smooth" });
     } else {
       document.getElementById("learn").scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  guess = () => {
+  const guess = () => {
     // const out = this.topbar()
-    if (this.state.page === 0) {
-      return <> {this.choose()}</>;
+    if (state.page === 0) {
+      return <> {choose()}</>;
     } else {
-      return <> {this.chosen()}</>;
+      return <> {chosen()}</>;
     }
   };
 
-  getpage = () => {
-    switch (this.state.mode) {
-      case "GES":
-        return (
-          <div className="page-container-guess" id="guess">
-            {this.guess()}
-          </div>
-        );
-      // case "LRN":
-      //   return (
-      //     <div className="page-container-learn" id="learn">
-      //       {this.learn()}
-      //     </div>
-      //   );
-      case "EXP":
-        return (
-          <div className="page-container-explore" id="explore">
-            {this.explore()}
-          </div>
-        );
-      // case "TUT":
-      //   return (
-      //     <div className="page-container-tutorial" id="tutorial">
-      //       {" "}
-      //       {this.tutorial2()}{" "}
-      //     </div>
-      //   );
-      default:
-        return <></>;
-    }
-  };
+  // const getpage = () => {
+  //   switch (state.mode) {
+  //     case "GES":
+  //       return (
 
-  getTuteContent = () => {
-    return tutorial(this.state.tutePage);
-  };
+  //       );
+  //     // case "LRN":
+  //     //   return (
+  //     //     <div className="page-container-learn" id="learn">
+  //     //       {this.learn()}
+  //     //     </div>
+  //     //   );
+  //     case "EXP":
+  //       return (
+  //         <div className="page-container-explore" id="explore">
+  //           {/* {tis.explore()} */}
+  //         </div>
+  //       );
+  //     // case "TUT":
+  //     //   return (
+  //     //     <div className="page-container-tutorial" id="tutorial">
+  //     //       {" "}
+  //     //       {this.tutorial2()}{" "}
+  //     //     </div>
+  //     //   );
+  //     default:
+  //       return <></>;
+  //   }
+  // };
 
-  bumpTutePage() {
-    if (this.state.tutePage === 4) return;
-    this.setState({ tutePage: this.state.tutePage + 1 });
-  }
-
-  bopTutePage() {
-    if (this.state.tutePage === 0) return;
-    this.setState({ tutePage: this.state.tutePage - 1 });
-  }
-
-  tute = () => (
-    <div className="tute">
-      <div className="tute-dots">
-        <button className="tute-btn" onClick={this.bopTutePage}>
-          {" "}
-          {"<"}{" "}
-        </button>
-        ...
-        <button className="tute-btn" onClick={this.bumpTutePage}>
-          {" "}
-          {">"}{" "}
-        </button>
-      </div>
-      <div className="tute-exit">
-        <button
-          className="tute-btn"
-          onClick={() => {
-            this.setState({ popup: false });
-          }}
-        >
-          {" "}
-          &#x2715;{" "}
-        </button>
-      </div>
-      <div className="tute-content">{this.getTuteContent()}</div>
-    </div>
-  );
-
-  wholePage = () => {
+  const wholePage = () => {
     return (
       <div
         style={{
@@ -440,14 +388,22 @@ class Pizzle extends React.Component {
         }}
       >
         <div className="page-container">
-          <div className="page-container-head"> {this.topbar()} </div>
+          <div className="page-container-head">
+            {" "}
+            {/* {topbar()} */}
+            <Heading state={state} setState={setState} />{" "}
+          </div>
           <div className="page-container-scroll" id="scroll">
-            {this.getpage()}
+            <div className="page-container-guess" id="guess">
+              {guess()}
+            </div>
           </div>
         </div>
 
-        {this.state.popup ? (
-          <div className="page-container-tute">{this.tute()}</div>
+        {state.popup ? (
+          <div className="page-container-tute">
+            <Tutorial state={state} setState={setState} />
+          </div>
         ) : (
           <></>
         )}
@@ -455,9 +411,7 @@ class Pizzle extends React.Component {
     );
   };
 
-  render() {
-    return this.wholePage();
-  }
+  return wholePage();
 }
 
 // function tick() {

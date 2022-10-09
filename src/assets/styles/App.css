@@ -121,16 +121,19 @@ li {
   border: none;
   box-sizing: border-box;
 
-  display: inline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   float: left;
   color: #5851a2;
   font-weight: normal;
   font-size: 1em;
   font-family: Montserrat;
-
+  text-decoration: none;
   text-align: center;
 
   padding: 0px;
+  padding-bottom: 5px;
   /* color: #000; */
 }
 
@@ -147,6 +150,7 @@ li {
 .head-button-active {
   /* background-color: #C4C1EC80; */
   font-weight: 900;
+  padding-bottom: 0px;
   border-bottom: 5px solid #5851a2;
 }
 
@@ -183,7 +187,7 @@ li {
   float: left;
 }
 
-.logo-header a {
+.head-logo-container a {
   float: left;
   text-decoration: none;
   /* height: 100%; */

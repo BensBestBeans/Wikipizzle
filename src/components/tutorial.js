@@ -8,7 +8,51 @@ import styles from "../assets/styles/App.css";
 
 import React from "react";
 
-export const tutorial = (tutorial) => {
+export function Tutorial({ state, setState }) {
+  const getTuteContent = () => {
+    return tute(state.tutePage);
+  };
+
+  const bumpTutePage = () => {
+    if (state.tutePage === 3) return;
+    setState({ ...state, tutePage: state.tutePage + 1 });
+  };
+
+  const bopTutePage = () => {
+    if (state.tutePage === 0) return;
+    setState({ ...state, tutePage: state.tutePage - 1 });
+  };
+
+  return (
+    <div className="tute">
+      <div className="tute-dots">
+        <button className="tute-btn" onClick={bopTutePage}>
+          {" "}
+          {"<"}{" "}
+        </button>
+        ...
+        <button className="tute-btn" onClick={bumpTutePage}>
+          {" "}
+          {">"}{" "}
+        </button>
+      </div>
+      <div className="tute-exit">
+        <button
+          className="tute-btn"
+          onClick={() => {
+            setState({ ...state, popup: false });
+          }}
+        >
+          {" "}
+          &#x2715;{" "}
+        </button>
+      </div>
+      <div className="tute-content">{getTuteContent()}</div>
+    </div>
+  );
+}
+
+const tute = (tutorial) => {
   switch (tutorial) {
     case 0:
       return page1();
@@ -17,8 +61,6 @@ export const tutorial = (tutorial) => {
     case 2:
       return page3();
     case 3:
-      return page4();
-    case 4:
       return page4();
     default:
       return <></>;

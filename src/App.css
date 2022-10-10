@@ -32,12 +32,13 @@ color: white; */
 }
 
 h1, h2, h3 {
-  font-family: Georgia,'Times New Roman', Times, serif;
+  font-family: Montserrat;
 }
 
 p {
   padding: 0;
-  margin: 0;
+  margin: 0; 
+  text-align: justify;
 }
 
 .wrapper {
@@ -118,7 +119,6 @@ li {
   /* outline: 0; */
   border: none;
   box-sizing: border-box;
-
 
   display: inline;
   float: left;
@@ -225,6 +225,38 @@ li {
   }
 }
 
+.question-mark {
+  border: solid 3px #393377;
+  background: transparent;
+  font-size: 1.4em;
+  display:block;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  color: #393377;
+  font-weight: 600;
+}
+
+.question-mark:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.tute-btn {
+  border: none;
+  color: #393377;
+  font-size: 2em;
+  background-color: transparent;
+}
+
+.tute-btn:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.tute-exit .tute-btn {
+  font-weight: 900;
+}
 
 /* Header CSS --------------------*/
 .subtitle {
@@ -604,15 +636,7 @@ li {
   flex-direction: column;
 }
 
-.page-container-learn {
-
-}
-
 /* Learn Page CSS --------------------*/
-.learn-container {
-
-}
-
 
 .explore-grid {
   height: 80%;
@@ -695,9 +719,9 @@ li {
 }
 
 .learn-item {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 33.5%;
-  min-height: 200px;
+  min-height: 100px;
   margin-bottom: 1.5%;
 }
 
@@ -714,14 +738,21 @@ li {
   width: 65%;
 }
 
+.learn-img {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.learn-img img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
 
 
 .intro {
   margin: 0 0 30px 0;
-}
-
-.intro h1 {
-  font-weight: normal;
 }
 
 .intro p {
@@ -753,7 +784,7 @@ li {
 /* Tutorial Pages -----------------------------*/
 
 .tute {
-  width: 60%;
+  width: 70%;
   height: 90%;
   background: white;
   display: grid;
@@ -764,7 +795,6 @@ li {
   grid-template-rows: 1fr 10fr;
   overflow: hidden;
 }
-
 
 .tute-dots {
   grid-area: d;
@@ -792,8 +822,6 @@ li {
   overflow-x: hidden;
 
 }
-
-
 
 .tutorial-main {
   display: flex;
@@ -834,20 +862,32 @@ li {
   background-color: lightblue;
 }
 
+.blue-box p {
+  text-align: center;
+}
+
 .pink-box {
-  background-color: lightpink;
+  background-color: #facdd8;
 }
 
 .green-box {
-  background-color: lightgreen;
+  background-color: #c5e3d4;
 }
 
-.blue-highlight {
-  background-color: lightblue;
+.green-box p {
+  text-align: center;
+}
+
+.pink-highlight {
+  background-color: #facdd8;
+}
+
+.green-highlight {
+  background-color: #c5e3d4;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
-@media (max-width: 800px) {
+@media (max-width: 950px) {
   .tutorial-item-left, .tutorial-item-right {
     flex: 100%;
   }

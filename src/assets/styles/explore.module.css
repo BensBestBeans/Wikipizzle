@@ -1,0 +1,71 @@
+.exploreGrid {
+  height: 80%;
+
+  width: 80%;
+  margin: auto;
+  margin-top: 0;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "t g c"
+    "a a a";
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 80px;
+}
+
+.exploreSearchBar {
+  grid-area: t;
+  width: 100%;
+  height: 50px;
+
+  padding: 20px;
+
+  line-height: 24px;
+
+  background: white;
+  border: black;
+
+  border: solid 1px #c0c0c0;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  font-size: 1em;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.exploreGenButton {
+  grid-area: g;
+  background: #5851a2;
+  color: white;
+}
+
+.exploreItem {
+  width: 100%;
+  height: 50px;
+
+  transition: all 0.05s;
+  border: solid #c0c0c0 0px;
+  border-radius: 2px;
+
+  font-size: 1em;
+  font-weight: bold;
+  font-family: Montserrat;
+}
+
+.exploreClearButton:hover {
+  border: solid #c0c0c0 1px;
+}
+
+.exploreClearButton {
+  grid-area: c;
+  color: #5851a2;
+  background: white;
+}
+
+.exploreArticle {
+  grid-area: a;
+  height: 100%;
+  /* overflow-y: scroll; */
+}

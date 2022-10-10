@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Explore from "./pages/Explore";
 import Pizzle from "./pages/Pizzle";
@@ -6,34 +6,43 @@ import Pizzle from "./pages/Pizzle";
 export default function App() {
   const ops = ["p", "fr", "d", "w"];
   const l = ops[Math.floor(Math.random() * ops.length)];
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     pizz: l,
     tutePage: 0,
     page: 0,
     popup: false,
     mode: "GES",
     searchValue: "",
-    explorePage: "",
+    explorePage: "test",
   });
 
-  const [data, setData] = React.useState({
+  const [data, setData] = useState({
     html: "loading...",
     title: "",
     contentType: false,
   });
 
   console.log("render");
-  React.useEffect(() => {
+  useEffect(() => {
     fetch("http://localhost:3001/art")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Something went wrong ...");
+        }
+      })
+      .then((art) => {
+        console.log(art);
         setData({
-          html: data.html,
-          title: data.title,
-          contentType: data.type === "w",
+          html: art.html,
+          title: art.title,
+          contentType: art.type === "w",
         });
-      });
+      })
+      .catch((error) =>
+        setData((d) => ({ ...d, html: "Error: could not load article" }))
+      );
   }, []);
 
   return (
@@ -47,7 +56,6 @@ export default function App() {
           path="/explore"
           element={<Explore state={state} setState={setState} />}
         />
-        {/* <Route path="/explore" element={<Explore />} /> */}
       </Routes>
     </BrowserRouter>
   );

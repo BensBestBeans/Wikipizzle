@@ -1,12 +1,11 @@
-import logo from "../assets/images/wikipizzlelogo.png";
 import inconsistencies from "../assets/images/inconsistencies-icon.png";
 import checkvibes from "../assets/images/check-vibes-icon.png";
 import quotes from "../assets/images/quotes-icon.png";
 import sloppywriting from "../assets/images/sloppy-writing-icon.png";
 
-import styles from "../assets/styles/App.css";
+import style from "../assets/styles/tutorial.module.css";
 
-import React from "react";
+// import styles from "../assets/styles/App.css";
 
 export function Tutorial({ state, setState }) {
   const getTuteContent = () => {
@@ -15,39 +14,39 @@ export function Tutorial({ state, setState }) {
 
   const bumpTutePage = () => {
     if (state.tutePage === 3) return;
-    setState({ ...state, tutePage: state.tutePage + 1 });
+    setState((s) => ({ ...s, tutePage: s.tutePage + 1 }));
   };
 
   const bopTutePage = () => {
     if (state.tutePage === 0) return;
-    setState({ ...state, tutePage: state.tutePage - 1 });
+    setState((s) => ({ ...s, tutePage: s.tutePage - 1 }));
   };
 
   return (
-    <div className="tute">
-      <div className="tute-dots">
-        <button className="tute-btn" onClick={bopTutePage}>
+    <div className={style["tute"]}>
+      <div className={style["tute-dots"]}>
+        <button className={style["tute-btn"]} onClick={bopTutePage}>
           {" "}
           {"<"}{" "}
         </button>
         ...
-        <button className="tute-btn" onClick={bumpTutePage}>
+        <button className={style["tute-btn"]} onClick={bumpTutePage}>
           {" "}
           {">"}{" "}
         </button>
       </div>
-      <div className="tute-exit">
+      <div className={style["tute-exit"]}>
         <button
-          className="tute-btn"
+          className={style["tute-btn"]}
           onClick={() => {
-            setState({ ...state, popup: false });
+            setState((s) => ({ ...s, popup: false }));
           }}
         >
           {" "}
           &#x2715;{" "}
         </button>
       </div>
-      <div className="tute-content">{getTuteContent()}</div>
+      <div className={style["tute-content"]}>{getTuteContent()}</div>
     </div>
   );
 }
@@ -68,8 +67,8 @@ const tute = (tutorial) => {
 };
 
 const page1 = () => (
-  <div className="wrapper">
-    <div className="intro">
+  <div className={style["wrapper"]}>
+    <div className={style["intro"]}>
       <h1>What is Wikipizzle?</h1>
       <p>
         {" "}
@@ -88,11 +87,11 @@ const page1 = () => (
       <h1>6 ways to spot a generated or fake article</h1>
     </div>
 
-    <div className="learn-flexbox">
-      <div className="learn-item learn-img">
-        <img src={inconsistencies}></img>
+    <div className={style["learn-flexbox"]}>
+      <div className={style["learn-item learn-img"]}>
+        <img src={inconsistencies} alt={"" /*TODO*/} />
       </div>
-      <div className="learn-item">
+      <div className={style["learn-item"]}>
         <h2>1. Inconsistencies</h2>
         <p>
           The two main inconsistencies to look out for are facts that
@@ -101,7 +100,7 @@ const page1 = () => (
         </p>
         <p></p>
       </div>
-      <div className="learn-item">
+      <div className={style["learn-item"]}>
         <h2>2. Check the Vibes</h2>
         <p>
           Does the tone of writing match the topic it is discussing? Does a
@@ -114,20 +113,20 @@ const page1 = () => (
           fool viewers. Apply common sense and look at the context.
         </p>
       </div>
-      <div className="learn-item learn-img">
-        <img src={checkvibes}></img>
+      <div className={style["learn-item learn-img"]}>
+        <img src={checkvibes} alt={"" /*TODO*/} />
       </div>
-      <div className="learn-item learn-img">
-        <img src={sloppywriting}></img>
+      <div className={style["learn-item learn-img"]}>
+        <img src={sloppywriting} alt={"" /*TODO*/} />
       </div>
-      <div className="learn-item">
+      <div className={style["learn-item"]}>
         <h2>3. Sloppy Writing</h2>
         <p>
           Poor grammar, spelling mistakes and stylistic choices, such as
           excessive capitalisation or the use of !!!, are a bad signs{" "}
         </p>
       </div>
-      <div className="learn-item">
+      <div className={style["learn-item"]}>
         <h2>4. Absence of quotes or sources</h2>
         <p>
           The presence of quotes and sources might add an additional layer of
@@ -135,28 +134,28 @@ const page1 = () => (
           links to credible websites also boost the integrity of an article.
         </p>
       </div>
-      <div className="learn-item learn-img">
-        <img src={quotes}></img>
+      <div className={style["learn-item learn-img"]}>
+        <img src={quotes} alt={"" /*TODO*/} />
       </div>
     </div>
   </div>
 );
 
 const page2 = () => (
-  <div className="tutorial-container wrapper">
-    <div className="tutorial-intro intro">
+  <div className={style["tutorial-container wrapper"]}>
+    <div className={style["tutorial-intro intro"]}>
       <h1>How did you go?</h1>
-      <div className="answer-box incorrect">
-        <h2 className="answer-box"> incorrect </h2>
-        <h3 className="answer-box">
+      <div className={style["answer-box incorrect"]}>
+        <h2 className={style["answer-box"]}> incorrect </h2>
+        <h3 className={style["answer-box"]}>
           {" "}
           Deceived! This article was generated by AI.{" "}
         </h3>
       </div>
 
-      {/* <div className="tutorial-guess">
-            <div className="tutorial-guess-left"><p>Incorrect</p></div>
-            <div className="tutorial-guess-right"><p>Deceived! This article was generated by AI.</p></div>
+      {/* <div className={style["tutorial-guess">
+            <div className={style["tutorial-guess-left"><p>Incorrect</p></div>
+            <div className={style["tutorial-guess-right"><p>Deceived! This article was generated by AI.</p></div>
           </div> */}
       <p>
         How might you be able to tell? Take a look below on what you may have
@@ -164,22 +163,22 @@ const page2 = () => (
       </p>
     </div>
 
-    <div className="tutorial-main">
-      <div className="tutorial-item-left">
-        <div className="box-article box">
+    <div className={style["tutorial-main"]}>
+      <div className={style["tutorial-item-left"]}>
+        <div className={style["box-article box"]}>
           <h2>Joel's Hair</h2>
           <p>
             Joel's Hair is the name of an American rock band. The band was
             formed in Omaha, Nebraska in 1992 by vocalist/guitarist Joel
             Petersen and drummer Matt Bowen.{" "}
-            <span className="blue-highlight">
+            <span className={style["blue-highlight"]}>
               {" "}
               The band has released three albums; the latest, "The Speed of
               Sound", in 2007
             </span>
             . The band's name was inspired by Petersen's long hair. In an
             interview with the Omaha World-Herald, Petersen recalled,
-            <span className="pink-highlight">
+            <span className={style["pink-highlight"]}>
               "I had long hair at the time and the bass player [at the time] was
               like, 'Dude, you need a band named Joel's Hair.' I was like, 'All
               right, that's a good band name.'"
@@ -203,7 +202,7 @@ const page2 = () => (
           <h2>Present Day</h2>
           <p>
             In{" "}
-            <span className="blue-highlight">
+            <span className={style["blue-highlight"]}>
               2000, the band released its third album, "The Speed of Sound"
             </span>
             . The album was in Omaha, and was again well-received by critics. In
@@ -212,25 +211,28 @@ const page2 = () => (
           <p>
             The band is currently inactive, with Petersen focusing on his solo
             project,{" "}
-            <span className="green-highlight">The Petersen Effect</span>.
+            <span className={style["green-highlight"]}>
+              The Petersen Effect
+            </span>
+            .
           </p>
         </div>
       </div>
 
-      <div className="tutorial-item-right">
-        <div className="blue-box box">
+      <div className={style["tutorial-item-right"]}>
+        <div className={style["blue-box box"]}>
           <p>
             Inconsistent dates are used to refer to the same album release date.
             It says 2007 in the first section but later claims 2000.
           </p>
         </div>
-        <div className="pink-box box">
+        <div className={style["pink-box box"]}>
           <p>
             The bad flow of this sentence suggests the text could be generated
             and not written by a reputable source.
           </p>
         </div>
-        <div className="green-box box">
+        <div className={style["green-box box"]}>
           <p>
             This project name should be surrounded in quotation marks, "The
             Petersen Effect", similarly to the other album names.
@@ -242,21 +244,24 @@ const page2 = () => (
 );
 
 const page3 = () => (
-  <div className="tutorial-container wrapper">
-    <div className="tutorial-intro intro">
+  <div className={style["tutorial-container wrapper"]}>
+    <div className={style["tutorial-intro intro"]}>
       <h1>Tutorial 2/3</h1>
       <p></p>
     </div>
 
-    <div className="tutorial-main">
-      <div className="tutorial-item-left">
-        <div className="box-article box">
+    <div className={style["tutorial-main"]}>
+      <div className={style["tutorial-item-left"]}>
+        <div className={style["box-article box"]}>
           <h2>Introduction</h2>
           <p>
             The University of Queensland (UQ) is a public research university
             located in the city of Brisbane, the capital of the Australian state
             of Queensland. Founded in 1901, UQ is colloquially known as{" "}
-            <span className="blue-highlight">the sandstone university</span>.
+            <span className={style["blue-highlight"]}>
+              the sandstone university
+            </span>
+            .
           </p>
           <p>
             UQ is considered one of Australia's leading universities, and is
@@ -278,17 +283,17 @@ const page3 = () => (
         </div>
       </div>
 
-      <div className="tutorial-item-right">
-        <div className="blue-box box">
+      <div className={style["tutorial-item-right"]}>
+        <div className={style["blue-box box"]}>
           <p>
             The article should have used title case for "The Sandstone
             University" when referring and proper nouns.{" "}
           </p>
         </div>
-        <div className="pink-box box">
+        <div className={style["pink-box box"]}>
           <p>2</p>
         </div>
-        <div className="green-box box">
+        <div className={style["green-box box"]}>
           <p>3</p>
         </div>
       </div>
@@ -297,22 +302,22 @@ const page3 = () => (
 );
 
 const page4 = () => (
-  <div className="tutorial-container wrapper">
-    <div className="tutorial-intro intro">
+  <div className={style["tutorial-container wrapper"]}>
+    <div className={style["tutorial-intro intro"]}>
       <h1>How did you go?</h1>
-      <div className="tutorial-guess tut-correct">
-        <div className="tutorial-guess-left correct">
+      <div className={style["tutorial-guess tut-correct"]}>
+        <div className={style["tutorial-guess-left correct"]}>
           <p>Correct!</p>
         </div>
-        <div className="tutorial-guess-right">
+        <div className={style["tutorial-guess-right"]}>
           <p>Great job! This article is from Wikipedia.</p>
         </div>
       </div>
     </div>
 
-    <div className="tutorial-main">
-      <div className="tutorial-item-left">
-        <div className="box-article box">
+    <div className={style["tutorial-main"]}>
+      <div className={style["tutorial-item-left"]}>
+        <div className={style["box-article box"]}>
           <h2>Kolonos Hill</h2>
           <p>
             Kolonos Hill (/kə'loʊnɒs/; Greek: Λόφος Κολωνού) is a hill in

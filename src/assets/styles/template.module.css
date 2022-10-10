@@ -1,0 +1,25 @@
+.container {
+  height: 100vh;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.container-tute {
+  height: 100%;
+  width: 100%;
+  grid-column: 1;
+  grid-row: 1;
+  background: rgba(0, 0, 0, 0.4);
+  display: grid;
+  place-items: center;
+}
+
+.container-head {
+  height: 10%;
+  overflow: hidden;
+}
+
+.container-scroll {
+  height: 90%;
+  overflow-y: scroll;
+}

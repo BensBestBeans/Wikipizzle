@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Interweave } from "interweave";
 import Template from "../components/template";
 
+import style from "../assets/styles/explore.module.css";
+
 export default function Explore({ state, setState }) {
   useEffect(() => {
     setState((s) => ({ ...s, current: "e" }));
@@ -23,37 +25,35 @@ export default function Explore({ state, setState }) {
   }
   return (
     <Template state={state} setState={setState}>
-      <div className="page-container-explore">
+      <div className={style["page-container-explore"]}>
         <p className="subtitle">Enter a few keywords to generate an article</p>
 
-        <form className="explore-grid" onSubmit={handleSubmit}>
-          <div className="split">
+        <form className={style["explore-grid"]} onSubmit={handleSubmit}>
+          <div>
             <b style={{ marginBottom: "auto" }}>Topic Keyword</b>
             <input
-              className="explore-search-bar"
+              className={style["explore-search-bar"]}
               type="text"
               value={state.searchValue}
               onChange={handleChange}
             />
           </div>
 
-          <div className="send-to-bottom">
-            <input
-              className="explore-gen-button explore-item"
-              type="submit"
-              value="GENERATE"
-            />
-          </div>
-          <div className="send-to-bottom">
-            <button
-              className="explore-clear-button explore-item"
-              type="button"
-              onClick={resetForm}
-            >
-              CLEAR
-            </button>
-          </div>
-          <div className="explore-article chosen-article">
+          <input
+            className={`${style["explore-gen-button"]} ${style["explore-item"]}`}
+            type="submit"
+            value="GENERATE"
+          />
+
+          <button
+            className={`${style["explore-clear-button"]} ${style["explore-item"]}`}
+            type="button"
+            onClick={resetForm}
+          >
+            CLEAR
+          </button>
+
+          <div className={`${style["explore-article"]} ${"chosen-article"}`}>
             <div className="article">
               <Interweave content={state.explorePage} />
             </div>

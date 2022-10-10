@@ -1,0 +1,137 @@
+.pizzle {
+  margin: 0% 0% 0% 0%;
+  text-align: center;
+}
+
+.choices {
+  /* margin: 30px 30% 0% 30%; */
+  margin: auto;
+  margin-top: 5px;
+  width: 80%;
+  /* text-align:center; */
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.button-container {
+  width: 200px;
+  margin: 0px;
+  margin-bottom: 5px;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+}
+
+.choice-button {
+  vertical-align: top;
+  display: inline-block;
+
+  transition: all 0.5s;
+  /* transition-delay: box-shadow 2s; */
+
+  line-height: 24px;
+
+  background-color: #5851a2;
+  color: white;
+  width: 100%;
+
+  /* outline: 0; */
+  border: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  /* margin:1em; */
+  font-size: 1em;
+  font-weight: bold;
+  height: 55px;
+  font-family: Montserrat;
+
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.left-wrapper {
+  grid-area: l;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.right-wrapper {
+  grid-area: r;
+  box-sizing: content-box;
+}
+
+.stats {
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #5851a2;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  width: 100%;
+}
+
+.choice-button:hover {
+  font-weight: 1000;
+  cursor: pointer;
+  /* background: white; */
+  background: #7e77ce;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.chosen-container {
+  /* display: inline-block; */
+  /* color: #06f;
+    font-weight: 900; */
+  height: 500px;
+  /* overflow: hidden; */
+
+  width: 80%;
+  margin: auto;
+
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "t t"
+    "l r";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 80px 100%;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+}
+
+.article-container {
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  /* min-height: 40vh; */
+  width: 80%;
+  height: 60vh;
+  /* background-color: rgb(237, 237, 237); */
+  border: 1px solid #c0c0c0;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  transition: all 1s;
+  transition-delay: revert 2s;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+
+  /*, 0 6px 20px 0 rgba(0, 0, 0, 0.3) */
+}
+
+.article-container:hover {
+  box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.1);
+}
+
+.article-container::-webkit-scrollbar {
+  display: none;
+}
+
+.page-container-pizzle {
+  height: 100%;
+  overflow: hidden;
+}

@@ -1,4 +1,4 @@
-.exploreGrid {
+.explore-grid {
   height: 80%;
 
   width: 80%;
@@ -14,7 +14,7 @@
   grid-template-rows: 80px;
 }
 
-.exploreSearchBar {
+.explore-search-bar {
   grid-area: t;
   width: 100%;
   height: 50px;
@@ -35,37 +35,63 @@
   font-family: Montserrat;
 }
 
-.exploreGenButton {
+.explore-gen-button {
   grid-area: g;
   background: #5851a2;
   color: white;
 }
 
-.exploreItem {
+.explore-gen-button:hover {
+  background: #6b63c7;
+  color: white;
+}
+
+.explore-item {
   width: 100%;
   height: 50px;
 
   transition: all 0.05s;
   border: solid #c0c0c0 0px;
   border-radius: 2px;
+  margin-top: 22px;
 
   font-size: 1em;
   font-weight: bold;
   font-family: Montserrat;
 }
 
-.exploreClearButton:hover {
+.explore-clear-button:hover {
   border: solid #c0c0c0 1px;
 }
 
-.exploreClearButton {
+.explore-clear-button {
   grid-area: c;
   color: #5851a2;
   background: white;
 }
 
-.exploreArticle {
+.explore-article {
   grid-area: a;
   height: 100%;
+  max-height: 100%;
+  border-radius: 4px;
+
+  /* width: 60%; */
+  /* height: 55vh; */
+  /* background-color: rgb(237, 237, 237); */
+  border: 1px solid #c0c0c0;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  transition: all 1s;
+  transition-delay: revert 2s;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   /* overflow-y: scroll; */
+}
+
+.page-container-explore {
+  /* overflow: hidden; */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }

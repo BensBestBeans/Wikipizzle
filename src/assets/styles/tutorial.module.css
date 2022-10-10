@@ -1,43 +1,45 @@
+<<<<<<< HEAD
+.learn-flexbox {
+=======
 /*////////////////////////////////
 ------------LEARN-PAGE------------
 ////////////////////////////////*/
 
 .learnFlexbox {
+>>>>>>> 659b66f3490a0d3fdd225f9c6205e2e6a457cdf0
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.learnItem {
-  /* border: 1px solid black; */
+.learn-item {
   width: 33.5%;
   min-height: 100px;
   margin-bottom: 1.5%;
 }
 
-.learnItem h2 {
+.learn-item h2 {
   padding: 10px;
   margin: 0;
 }
 
-.learnItem p {
+.learn-item p {
   padding: 10px;
 }
 
-.learnItem:nth-child(2),
-.learnItem:nth-child(3),
-.learnItem:nth-child(6),
-.learnItem:nth-child(7) {
+.learn-item:nth-child(2),
+.learn-item:nth-child(3),
+.learn-item:nth-child(6),
+.learn-item:nth-child(7) {
   width: 65%;
 }
 
-.learnImg {
+.learn-img {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 }
 
-.learnImg img {
+.learn-img img {
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -51,25 +53,20 @@
   font-size: 1.1em;
 }
 
-.intro .tutorialGuess {
+.intro .tutorial-guess {
   display: flex;
   font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.intro .tutorialGuessLeft {
+.intro .tutorial-guess-left {
   padding: 10px 30px;
   color: white;
 }
 
-.intro .tutorialGuessRight {
+.intro .tutorial-guess-right {
   padding: 10px 30px;
-}
-
-.tutCorrect {
-  outline: 2px solid #006600;
-  border-radius: 5px;
 }
 
 /*////////////////////////////////
@@ -88,14 +85,14 @@
   overflow: hidden;
 }
 
-.tuteDots {
+.tute-dots {
   grid-area: d;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.tuteExit {
+.tute-exit {
   grid-area: e;
   display: flex;
   justify-content: right;
@@ -103,7 +100,7 @@
   margin-right: 20px;
 }
 
-.tuteContent {
+.tute-content {
   grid-area: c;
   display: flex;
   flex-direction: column;
@@ -114,25 +111,21 @@
   overflow-x: hidden;
 }
 
-.tutorialMain {
+.tutorial-main {
   display: flex;
   flex-wrap: wrap;
 }
 
-.tutorialItemLeft {
+.tutorial-item-left {
   background-color: #f1f1f1;
   flex: 75%;
 }
 
-.tutorialItemRight {
-  flex: 25%;
-}
-
-.boxArticle {
+.box-article {
   margin: 5px;
 }
 
-.boxArticle h2 {
+.box-article h2 {
   padding: 20px 0 5px 0;
   font-family: "Georgia", sans-serif;
   font-weight: normal;
@@ -140,8 +133,12 @@
   border-bottom: 1px solid rgb(155, 155, 155);
 }
 
-.boxArticle p {
+.box-article p {
   padding-top: 5px;
+}
+
+.tutorial-item-right {
+  flex: 25%;
 }
 
 .box {
@@ -149,16 +146,56 @@
   margin: 0 0 20px 20px;
 }
 
-.blueHighlight {
+.blue-highlight {
   background-color: lightblue;
 }
 
-.pinkHighlight {
+.pink-highlight {
   background-color: #facdd8;
 }
 
-.greenHighlight {
+.green-highlight {
   background-color: #c5e3d4;
+}
+
+.blue-box {
+  background-color: lightblue;
+}
+
+.blue-box p {
+  text-align: center;
+}
+
+.pink-box {
+  background-color: #facdd8;
+}
+
+.green-box {
+  background-color: #c5e3d4;
+}
+
+.green-box p {
+  text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 2% 10% 0 10%;
+}
+.tute-btn {
+  border: none;
+  color: #393377;
+  font-size: 2em;
+  background-color: transparent;
+}
+
+.tute-btn:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.tute-exit .tute-btn {
+  font-weight: 900;
 }
 
 /* Responsive layout - makes a one column-layout instead of a two-column layout */
@@ -174,6 +211,63 @@
   }
 }
 
+<<<<<<< HEAD
+.answer-box {
+  grid-area: t;
+
+  color: white;
+  /* background-color: #5851A2; */
+
+  border-radius: 4px;
+
+  /* padding: 20px; */
+  font-weight: 700;
+  font-size: 1em;
+  font-family: Montserrat;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.correct {
+  background-color: #006600;
+  outline: 2px solid #006600;
+}
+.tut-correct {
+  outline: 2px solid #006600;
+  border-radius: 5px;
+}
+
+.incorrect {
+  background-color: #a10000;
+  outline: 2px solid #a10000;
+}
+
+.answer-box h2 {
+  text-transform: uppercase;
+  padding: 20px 40px;
+  /* border-radius: 0; */
+  font-size: 2em;
+}
+
+.answer-box h3 {
+  background-color: white;
+  border-radius: 0px 3px 3px 0px;
+  /* padding: 2px;
+  background-clip: content-box; */
+  /* margin: 4px; */
+  color: black;
+  width: 100%;
+}
+
+.answer-box h2,
+.answer-box h3 {
+  border: none;
+  margin: 0;
+  display: grid;
+  place-items: center;
+=======
 .tute-btn {
   border: none;
   color: #393377;
@@ -188,4 +282,5 @@
 
 .tute-exit .tute-btn {
   font-weight: 900;
+>>>>>>> 659b66f3490a0d3fdd225f9c6205e2e6a457cdf0
 }

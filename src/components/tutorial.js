@@ -22,13 +22,21 @@ export function Tutorial({ state, setState }) {
     setState((s) => ({ ...s, tutePage: s.tutePage - 1 }));
   };
 
+  const getDots = () => {
+    let out = <></>;
+    for (let i = 0; i <= 3; i++) {
+      out = <> {out} <span onClick={() => setState((s) => ({ ...s, tutePage: i }))} className={style["dot"] + " " + (state.tutePage === i ? style["pressed"] : "")}></span> </>;
+    }
+    return out;
+  }
+
   return (
     <div className={style["tute"]}>
       <div className={style["tute-dots"]}>
         <button className={style["tute-btn"]} onClick={bopTutePage}>
           {"<"}
         </button>
-        ...
+        {getDots()}
         <button className={style["tute-btn"]} onClick={bumpTutePage}>
           {">"}
         </button>

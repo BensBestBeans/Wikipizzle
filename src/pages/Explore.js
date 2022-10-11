@@ -29,10 +29,10 @@ export default function Explore({ state, setState }) {
         <p className="subtitle">Enter a few keywords to generate an article</p>
 
         <form className={style["explore-grid"]} onSubmit={handleSubmit}>
-          <div>
-            <b style={{ marginBottom: "auto" }}>Topic Keyword</b>
+          <div style={{"display": "flex", "flexDirection": "column"}}>
+            <b>Topic Keyword</b>
             <input
-              className={style["explore-search-bar"]}
+              className={` ${style["explore-search-bar"]}`}
               type="text"
               value={state.searchValue}
               onChange={handleChange}

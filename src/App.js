@@ -13,7 +13,7 @@ export default function App() {
     popup: false,
     mode: "GES",
     searchValue: "",
-    explorePage: "test",
+    explorePage: "",
   });
 
   const [data, setData] = useState({
@@ -37,7 +37,7 @@ export default function App() {
         setData({
           html: art.html,
           title: art.title,
-          contentType: art.type === "w",
+          contentType: (art.type === 'w'),
         });
       })
       .catch((error) =>

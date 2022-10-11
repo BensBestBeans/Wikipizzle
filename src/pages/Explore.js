@@ -14,6 +14,7 @@ export default function Explore({ state, setState }) {
   }
 
   function handleSubmit(event) {
+    setState((s) => ({ ...s, explorePage: "Generating" }));
     fetch("http://localhost:3001/req/?title=" + state.searchValue + "&type=p")
       .then((response) => response.text())
       .then((data) => setState((s) => ({ ...s, explorePage: data })));
@@ -35,6 +36,7 @@ export default function Explore({ state, setState }) {
               className={` ${style["explore-search-bar"]}`}
               type="text"
               value={state.searchValue}
+              placeholder="Scott Morrison"
               onChange={handleChange}
             />
           </div>
@@ -54,9 +56,18 @@ export default function Explore({ state, setState }) {
           </button>
 
           <div className={`${style["explore-article"]} ${"chosen-article"}`}>
+          {(state.explorePage === "Generating") ? 
+            <div className={style["generating"]}>
+              <div>
+                <h1>Generating</h1>
+                <h2>this may take a hot minute</h2>
+              </div>
+            </div>
+              : 
             <div className="article">
               <Interweave content={state.explorePage} />
             </div>
+            }
           </div>
         </form>
       </div>

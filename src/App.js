@@ -24,7 +24,7 @@ export default function App() {
 
   console.log("render");
   useEffect(() => {
-    fetch("http://localhost:3001/art")
+    fetch("/art")
       .then((response) => {
         if (response.ok) {
           return response.json();

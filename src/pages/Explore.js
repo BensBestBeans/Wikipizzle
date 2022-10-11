@@ -14,7 +14,7 @@ export default function Explore({ state, setState }) {
   }
 
   function handleSubmit(event) {
-    fetch("http://localhost:3001/req/?title=" + state.searchValue + "&type=w")
+    fetch("http://localhost:3001/req/?title=" + state.searchValue + "&type=p")
       .then((response) => response.text())
       .then((data) => setState((s) => ({ ...s, explorePage: data })));
     event.preventDefault();

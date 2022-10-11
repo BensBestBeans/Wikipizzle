@@ -135,3 +135,18 @@
   height: 100%;
   overflow: hidden;
 }
+
+.pie {
+  width: 50%;
+  margin: auto;
+  display: grid;
+  place-items: center;
+}
+
+.bar {
+  background: #D8D9DB;
+  width: 75%;
+  height: 40px;
+  border-radius: 4px;
+  margin: auto;
+}

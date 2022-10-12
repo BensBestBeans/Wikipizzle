@@ -25,10 +25,23 @@ export function Tutorial({ state, setState }) {
   const getDots = () => {
     let out = <></>;
     for (let i = 0; i <= 3; i++) {
-      out = <> {out} <span onClick={() => setState((s) => ({ ...s, tutePage: i }))} className={style["dot"] + " " + (state.tutePage === i ? style["pressed"] : "")}></span> </>;
+      out = (
+        <>
+          {" "}
+          {out}{" "}
+          <span
+            onClick={() => setState((s) => ({ ...s, tutePage: i }))}
+            className={
+              style["dot"] +
+              " " +
+              (state.tutePage === i ? style["pressed"] : "")
+            }
+          ></span>{" "}
+        </>
+      );
     }
     return out;
-  }
+  };
 
   return (
     <div className={style["tute"]}>

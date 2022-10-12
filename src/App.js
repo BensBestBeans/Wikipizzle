@@ -22,7 +22,6 @@ export default function App() {
     contentType: false,
   });
 
-  console.log("render");
   useEffect(() => {
     fetch("http://localhost:3001/art")
       .then((response) => {
@@ -37,7 +36,7 @@ export default function App() {
         setData({
           html: art.html,
           title: art.title,
-          contentType: (art.type === 'w'),
+          contentType: art.type === "w",
         });
       })
       .catch((error) =>

@@ -1,15 +1,10 @@
 import "../assets/styles/App.css";
-import { useEffect } from "react";
 import { Interweave } from "interweave";
-import { PieChart } from 'react-minimal-pie-chart';
+import { PieChart } from "react-minimal-pie-chart";
 import Template from "../components/template";
 import style from "../assets/styles/pizzle.module.css";
 
 function Pizzle({ state, setState, data }) {
-  useEffect(() => {
-    setState((s) => ({ ...s, current: "q" }));
-  }, [setState]);
-
   const subtitle = (
     <p className="subtitle">
       Wikipedia or AI-Generated? Take a guess and test your skills!
@@ -92,25 +87,27 @@ function Pizzle({ state, setState, data }) {
             <div className={style["stats"]}>
               <h2> people deceived </h2>
               <div className={style["pie"]}>
-              <PieChart
-                style={{"grid-area": "1 / 1"}}
-                data={[
-                  { title: 'One', value: 10, color: '#D8D9DB' },
-                  { title: 'Two', value: 15, color: '#554F9C' },
-                ]} 
-                lineWidth={40}
-                startAngle={270}
-              />
-              <h1 style={{"grid-area": "1 / 1"}}>42%</h1>
+                <PieChart
+                  style={{ "grid-area": "1 / 1" }}
+                  data={[
+                    { title: "One", value: 10, color: "#D8D9DB" },
+                    { title: "Two", value: 15, color: "#554F9C" },
+                  ]}
+                  lineWidth={40}
+                  startAngle={270}
+                />
+                <h1 style={{ "grid-area": "1 / 1" }}>42%</h1>
               </div>
               <h3> your win rate </h3>
-              <div className={style["bar"]}> 
-              <div style={{
-                "width": `${(stats.win / (stats.loss + stats.win)) * 100}%`, 
-                "height": "100%",
-                "background": '#554F9C',
-                "borderRadius": '2px'
-                }} />
+              <div className={style["bar"]}>
+                <div
+                  style={{
+                    width: `${(stats.win / (stats.loss + stats.win)) * 100}%`,
+                    height: "100%",
+                    background: "#554F9C",
+                    borderRadius: "2px",
+                  }}
+                />
               </div>
               <h3> Correct Streak of {stats.streak} </h3>
             </div>
@@ -141,7 +138,7 @@ function Pizzle({ state, setState, data }) {
   }
 
   return (
-    <Template state={state} setState={setState}>
+    <Template state={state} setState={setState} page={"q"}>
       <div className={style["page-container-pizzle"]} id="guess">
         {state.page === 0 ? choose() : chosen()}
       </div>

@@ -28,8 +28,7 @@ function TopButton({ current, next }) {
   );
 }
 
-export default function Heading({ state, setState }) {
-  console.log("state", state);
+export default function Heading({ state, setState, page }) {
   return (
     <>
       <div className={style["logo-header"]}>
@@ -41,10 +40,10 @@ export default function Heading({ state, setState }) {
         <div className={style["head-button-container"]}>
           <ul>
             <li>
-              <TopButton current={state.current} next={"q"} />{" "}
+              <TopButton current={page} next={"q"} />{" "}
             </li>
             <li>
-              <TopButton current={state.current} next={"e"} />{" "}
+              <TopButton current={page} next={"e"} />{" "}
             </li>
             {/* <li> {this.topbut("LRN", "Learn More")} </li> */}
           </ul>

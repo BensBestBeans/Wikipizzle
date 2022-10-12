@@ -150,3 +150,10 @@
   border-radius: 4px;
   margin: auto;
 }
+
+.learn-more {
+  display: flex;
+  justify-items: left;
+  margin-top: 10px;
+  margin-left: 10px;
+}

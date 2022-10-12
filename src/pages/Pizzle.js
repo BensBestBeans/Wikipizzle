@@ -76,14 +76,14 @@ function Pizzle({ state, setState, data }) {
                 <Interweave content={data.html} />
               </div>
             </div>
-            <div>
+            <div className={style["learn-more"]}>
               Want to find out more about this topic?
               <a
                 target="_blank"
                 rel="noreferrer"
                 href={`https://letmegooglethat.com/?q=${data.title}`}
               >
-                Click here
+                <span> Click here </span>
               </a>
             </div>
           </div>
@@ -93,7 +93,7 @@ function Pizzle({ state, setState, data }) {
               <h2> people deceived </h2>
               <div className={style["pie"]}>
               <PieChart
-                style={{"grid-area": "1 / 1", "z-index": "1"}}
+                style={{"grid-area": "1 / 1"}}
                 data={[
                   { title: 'One', value: 10, color: '#D8D9DB' },
                   { title: 'Two', value: 15, color: '#554F9C' },
@@ -101,7 +101,7 @@ function Pizzle({ state, setState, data }) {
                 lineWidth={40}
                 startAngle={270}
               />
-              <h1 style={{"grid-area": "1 / 1", "z-index": "2"}}>40%</h1>
+              <h1 style={{"grid-area": "1 / 1"}}>42%</h1>
               </div>
               <h3> your win rate </h3>
               <div className={style["bar"]}> 

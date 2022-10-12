@@ -1,8 +1,8 @@
-/* .learn-flexbox {
+.learn-flexbox {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-} */
+}
 
 .learn-item {
   width: 33.5%;
@@ -138,20 +138,8 @@
   margin: 0 0 20px 20px;
 }
 
-.blue-highlight {
-  background-color: lightblue;
-}
-
-.pink-highlight {
-  background-color: #facdd8;
-}
-
-.green-highlight {
-  background-color: #c5e3d4;
-}
-
 .blue-box {
-  background-color: lightblue;
+  background-color: #FFEBA0;
 }
 
 .blue-box p {
@@ -159,11 +147,15 @@
 }
 
 .pink-box {
-  background-color: #facdd8;
+  background-color: paleturquoise;
+}
+
+.pink-box p {
+  text-align: center;
 }
 
 .green-box {
-  background-color: #c5e3d4;
+  background-color: #EDD9FF;
 }
 
 .green-box p {

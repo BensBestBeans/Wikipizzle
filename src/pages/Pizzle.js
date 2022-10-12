@@ -92,22 +92,23 @@ function Pizzle({ state, setState, data }) {
                 <PieChart
                   style={{ "gridArea": "2 / 1 / 1" }}
                   data={[
-                    { title: "One", value: loss, color: "#D8D9DB" },
-                    { title: "Two", value: wins, color: "#554F9C" },
+                    { title: "Deceived!", value: loss, color: "#D8D9DB" },
+                    { title: "NotDeceived!", value: wins, color: "#554F9C" },
                   ]}
                   lineWidth={40}
                   startAngle={270}
                 />
-                <h1 style={{ "gridArea": "2 / 1 / 1" }}>{Math.round(100 * wins / (wins + loss))}%</h1>
+                <h1 style={{ "gridArea": "2 / 1 / 1" }}>{Math.round(100 - 100 * wins / (wins + loss))}%</h1>
               </div>
               <h3> your win rate </h3>
               <div className={style["bar"]}>
                 <div
                   style={{
-                    width: `${(stats.win / (stats.loss + stats.win)) * 100}%`,
-                    height: "100%",
-                    background: "#554F9C",
-                    borderRadius: "2px",
+                    "width": `${(stats.win / (stats.loss + stats.win)) * 100}%`,
+                    "margin": "0",
+                    "height": "100%",
+                    "background": "#554F9C",
+                    "borderRadius": "2px",
                   }}
                 />
               </div>

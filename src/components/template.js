@@ -3,6 +3,7 @@ import { Tutorial } from "./tutorial";
 import style from "../assets/styles/template.module.css";
 
 export default function Template({ state, setState, children }) {
+  console.log("template time!");
   return (
     <div
       style={{

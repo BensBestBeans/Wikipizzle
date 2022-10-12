@@ -29,7 +29,7 @@ function TopButton({ current, next }) {
 }
 
 export default function Heading({ state, setState }) {
-  console.log("state", state);
+  console.log("render heading");
   return (
     <>
       <div className={style["logo-header"]}>

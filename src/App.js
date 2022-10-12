@@ -14,6 +14,7 @@ export default function App() {
     mode: "GES",
     searchValue: "",
     explorePage: "",
+    piedata: {win: 1, loss: 1}
   });
 
   const [data, setData] = useState({
@@ -22,7 +23,6 @@ export default function App() {
     contentType: false,
   });
 
-  console.log("render");
   useEffect(() => {
     fetch("http://localhost:3001/art")
       .then((response) => {
@@ -37,7 +37,7 @@ export default function App() {
         setData({
           html: art.html,
           title: art.title,
-          contentType: (art.type === 'w'),
+          contentType: art.type === "w",
         });
       })
       .catch((error) =>

@@ -33,7 +33,9 @@ export default function Heading({ state, setState, page }) {
     <>
       <div className={style["logo-header"]}>
         <div className={style["head-logo-container"]}>
-          <img src={logo} alt="" />
+            <div style={{"height": "100%", "display": "flex", "alignItems": "center"}}>
+            <img src={logo} alt="" />
+            </div>
           <a href="https://www.wikipedia.org/">Wiki{state.pizz}izzle</a>
         </div>
 

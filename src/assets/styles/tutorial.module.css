@@ -1,0 +1,267 @@
+.learn-flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.learn-item {
+  width: 33.5%;
+  min-height: 100px;
+  margin-bottom: 1.5%;
+}
+
+.learn-item h2 {
+  padding: 10px;
+  margin: 0;
+}
+
+.learn-item p {
+  padding: 10px;
+}
+
+.learn-item:nth-child(2),
+.learn-item:nth-child(3),
+.learn-item:nth-child(6),
+.learn-item:nth-child(7) {
+  width: 65%;
+}
+
+.learn-img {
+  display: flex;
+  align-items: center;
+}
+
+.learn-img img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.intro {
+  margin: 0 0 30px 0;
+}
+
+.intro p {
+  font-size: 1.1em;
+}
+
+.intro .tutorial-guess {
+  display: flex;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.intro .tutorial-guess-left {
+  padding: 10px 30px;
+  color: white;
+}
+
+.intro .tutorial-guess-right {
+  padding: 10px 30px;
+}
+
+/*////////////////////////////////
+----------TUTORIAL-PAGES----------
+////////////////////////////////*/
+.tute {
+  width: 70%;
+  height: 90%;
+  background: white;
+  display: grid;
+  grid-template-areas:
+    "x d e"
+    "c c c";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 10fr;
+  overflow: hidden;
+}
+
+.tute-dots {
+  grid-area: d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tute-exit {
+  grid-area: e;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.tute-content {
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.tutorial-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tutorial-item-left {
+  background-color: #f1f1f1;
+  flex: 75%;
+}
+
+.box-article {
+  margin: 5px;
+}
+
+.box-article h2 {
+  padding: 20px 0 5px 0;
+  font-family: "Georgia", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+.box-article p {
+  padding-top: 5px;
+}
+
+.tutorial-item-right {
+  flex: 25%;
+}
+
+.box {
+  padding: 10px;
+  margin: 0 0 20px 20px;
+}
+
+.blue-box {
+  background-color: #A3EBD9;
+}
+
+.blue-box p {
+  text-align: center;
+}
+
+.pink-box {
+  background-color: #EDD9FF;
+}
+
+.pink-box p {
+  text-align: center;
+}
+
+.yellow-box {
+  background-color: #FFEBA0;
+}
+
+.yellow-box p {
+  text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 2% 10% 0 10%;
+}
+.tute-btn {
+  border: none;
+  color: #393377;
+  font-size: 2em;
+  background-color: transparent;
+}
+
+.tute-btn:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.tute-exit .tute-btn {
+  font-weight: 900;
+}
+
+/* Responsive layout - makes a one column-layout instead of a two-column layout */
+@media (max-width: 950px) {
+  .tutorial-item-left,
+  .tutorial-item-right {
+    flex: 100%;
+  }
+
+  .box {
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+.answer-box {
+  grid-area: t;
+
+  color: white;
+  /* background-color: #5851A2; */
+
+  border-radius: 4px;
+
+  /* padding: 20px; */
+  font-weight: 700;
+  font-size: 1em;
+  font-family: Montserrat;
+  text-align: center;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.correct {
+  background-color: #006600;
+  outline: 2px solid #006600;
+}
+.tut-correct {
+  outline: 2px solid #006600;
+  border-radius: 5px;
+}
+
+.incorrect {
+  background-color: #a10000;
+  outline: 2px solid #a10000;
+}
+
+.answer-box h2 {
+  text-transform: uppercase;
+  padding: 20px 40px;
+  /* border-radius: 0; */
+  font-size: 2em;
+}
+
+.answer-box h3 {
+  background-color: white;
+  border-radius: 0px 3px 3px 0px;
+  /* padding: 2px;
+  background-clip: content-box; */
+  /* margin: 4px; */
+  color: black;
+  width: 100%;
+}
+
+.answer-box h2,
+.answer-box h3 {
+  border: none;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.dot {
+  height: 13px;
+  width: 13px;
+  background-color: #efefef;
+  /* border: solid #393377 2px; */
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.pressed {
+  background-color: #393377;
+}

@@ -1,14 +1,9 @@
-import { useEffect } from "react";
 import { Interweave } from "interweave";
 import Template from "../components/template";
 
 import style from "../assets/styles/explore.module.css";
 
 export default function Explore({ state, setState }) {
-  useEffect(() => {
-    setState((s) => ({ ...s, current: "e" }));
-  }, [setState]);
-
   function handleChange(event) {
     setState({ ...state, searchValue: event.target.value });
   }
@@ -25,12 +20,12 @@ export default function Explore({ state, setState }) {
     setState((s) => ({ ...s, searchValue: "" }));
   }
   return (
-    <Template state={state} setState={setState}>
+    <Template state={state} setState={setState} page={"e"}>
       <div className={style["page-container-explore"]}>
         <p className="subtitle">Enter a few keywords to generate an article</p>
 
         <form className={style["explore-grid"]} onSubmit={handleSubmit}>
-          <div style={{"display": "flex", "flexDirection": "column"}}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <b>Topic Keyword</b>
             <input
               className={` ${style["explore-search-bar"]}`}
@@ -56,18 +51,18 @@ export default function Explore({ state, setState }) {
           </button>
 
           <div className={`${style["explore-article"]} ${"chosen-article"}`}>
-          {(state.explorePage === "Generating") ? 
-            <div className={style["generating"]}>
-              <div>
-                <h1>Generating</h1>
-                <h2>this may take a hot minute</h2>
+            {state.explorePage === "Generating" ? (
+              <div className={style["generating"]}>
+                <div>
+                  <h1>Generating</h1>
+                  <h2>this may take a hot minute</h2>
+                </div>
               </div>
-            </div>
-              : 
-            <div className="article">
-              <Interweave content={state.explorePage} />
-            </div>
-            }
+            ) : (
+              <div className="article">
+                <Interweave content={state.explorePage} />
+              </div>
+            )}
           </div>
         </form>
       </div>

@@ -4,7 +4,7 @@ import Explore from "./pages/Explore";
 import Pizzle from "./pages/Pizzle";
 
 export default function App() {
-  const ops = ["p", "fr", "d", "w"];
+  const ops = ["p", "fr", "d", "w", 's', 'n', 'tr', 'sh', 'b', 'z', 'x', 'ph'];
   const l = ops[Math.floor(Math.random() * ops.length)];
   const [state, setState] = useState({
     pizz: l,
@@ -14,6 +14,7 @@ export default function App() {
     mode: "GES",
     searchValue: "",
     explorePage: "",
+    piedata: {win: 1, loss: 1}
   });
 
   const [data, setData] = useState({
@@ -22,7 +23,6 @@ export default function App() {
     contentType: false,
   });
 
-  console.log("render");
   useEffect(() => {
     fetch("/art")
       .then((response) => {
@@ -37,7 +37,7 @@ export default function App() {
         setData({
           html: art.html,
           title: art.title,
-          contentType: (art.type === 'w'),
+          contentType: art.type === "w",
         });
       })
       .catch((error) =>

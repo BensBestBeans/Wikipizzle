@@ -28,23 +28,24 @@ function TopButton({ current, next }) {
   );
 }
 
-export default function Heading({ state, setState }) {
-  console.log("state", state);
+export default function Heading({ state, setState, page }) {
   return (
     <>
       <div className={style["logo-header"]}>
         <div className={style["head-logo-container"]}>
-          <img src={logo} alt="" />
+            <div style={{"height": "100%", "display": "flex", "alignItems": "center"}}>
+            <img src={logo} alt="" />
+            </div>
           <a href="https://www.wikipedia.org/">Wiki{state.pizz}izzle</a>
         </div>
 
         <div className={style["head-button-container"]}>
           <ul>
             <li>
-              <TopButton current={state.current} next={"q"} />{" "}
+              <TopButton current={page} next={"q"} />{" "}
             </li>
             <li>
-              <TopButton current={state.current} next={"e"} />{" "}
+              <TopButton current={page} next={"e"} />{" "}
             </li>
             {/* <li> {this.topbut("LRN", "Learn More")} </li> */}
           </ul>

@@ -2,7 +2,7 @@ import Heading from "./heading";
 import { Tutorial } from "./tutorial";
 import style from "../assets/styles/template.module.css";
 
-export default function Template({ state, setState, children }) {
+export default function Template({ state, setState, page, children }) {
   return (
     <div
       style={{
@@ -16,7 +16,7 @@ export default function Template({ state, setState, children }) {
     >
       <div className={style["container"]}>
         <div className={style["container-head"]}>
-          <Heading state={state} setState={setState} />
+          <Heading state={state} setState={setState} page={page} />
         </div>
         <div className={style["container-scroll"]} id="scroll">
           {children}

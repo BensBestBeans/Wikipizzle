@@ -1,15 +1,10 @@
 import "../assets/styles/App.css";
-import { useEffect } from "react";
 import { Interweave } from "interweave";
-import { PieChart } from 'react-minimal-pie-chart';
+import { PieChart } from "react-minimal-pie-chart";
 import Template from "../components/template";
 import style from "../assets/styles/pizzle.module.css";
 
 function Pizzle({ state, setState, data }) {
-  useEffect(() => {
-    setState((s) => ({ ...s, current: "q" }));
-  }, [setState]);
-
   const subtitle = (
     <p className="subtitle">
       Wikipedia or AI-Generated? Take a guess and test your skills!
@@ -52,6 +47,8 @@ function Pizzle({ state, setState, data }) {
     const stats = JSON.parse(localStorage.getItem("stats"));
     const answerbox =
       "answer-box " + (state.page === 1 ? "correct" : "incorrect");
+    const wins = parseInt(state.piedata.win);
+    const loss = parseInt(state.piedata.loss);
     return (
       <div className={style["pizzle"]}>
         {subtitle}
@@ -76,14 +73,14 @@ function Pizzle({ state, setState, data }) {
                 <Interweave content={data.html} />
               </div>
             </div>
-            <div>
+            <div className={style["learn-more"]}>
               Want to find out more about this topic?
               <a
                 target="_blank"
                 rel="noreferrer"
                 href={`https://letmegooglethat.com/?q=${data.title}`}
               >
-                Click here
+                <span> Click here </span>
               </a>
             </div>
           </div>
@@ -92,25 +89,28 @@ function Pizzle({ state, setState, data }) {
             <div className={style["stats"]}>
               <h2> people deceived </h2>
               <div className={style["pie"]}>
-              <PieChart
-                style={{"grid-area": "1 / 1", "z-index": "1"}}
-                data={[
-                  { title: 'One', value: 10, color: '#D8D9DB' },
-                  { title: 'Two', value: 15, color: '#554F9C' },
-                ]} 
-                lineWidth={40}
-                startAngle={270}
-              />
-              <h1 style={{"grid-area": "1 / 1", "z-index": "2"}}>40%</h1>
+                <PieChart
+                  style={{ "gridArea": "2 / 1 / 1" }}
+                  data={[
+                    { title: "Deceived!", value: loss, color: "#D8D9DB" },
+                    { title: "NotDeceived!", value: wins, color: "#554F9C" },
+                  ]}
+                  lineWidth={40}
+                  startAngle={270}
+                />
+                <h1 style={{ "gridArea": "2 / 1 / 1" }}>{Math.round(100 - 100 * wins / (wins + loss))}%</h1>
               </div>
               <h3> your win rate </h3>
-              <div className={style["bar"]}> 
-              <div style={{
-                "width": `${(stats.win / (stats.loss + stats.win)) * 100}%`, 
-                "height": "100%",
-                "background": '#554F9C',
-                "borderRadius": '2px'
-                }} />
+              <div className={style["bar"]}>
+                <div
+                  style={{
+                    "width": `${(stats.win / (stats.loss + stats.win)) * 100}%`,
+                    "margin": "0",
+                    "height": "100%",
+                    "background": "#554F9C",
+                    "borderRadius": "2px",
+                  }}
+                />
               </div>
               <h3> Correct Streak of {stats.streak} </h3>
             </div>
@@ -120,7 +120,7 @@ function Pizzle({ state, setState, data }) {
     );
   };
 
-  function guessed(x) {
+  async function guessed(x) {
     console.log(x);
     console.log(data.contentType);
     let stats = JSON.parse(localStorage.getItem("stats"));
@@ -138,10 +138,22 @@ function Pizzle({ state, setState, data }) {
       localStorage.setItem("stats", JSON.stringify(stats));
       setState((s) => ({ ...s, page: 2 }));
     }
+
+    fetch(`http://localhost:3001/stats?answer=${(x === data.contentType) ? "win" : "loss"}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Something went wrong ...");
+        }
+      })
+      .then((data) => {
+        setState((s) => ({ ...s, piedata: data }));
+      });
   }
 
   return (
-    <Template state={state} setState={setState}>
+    <Template state={state} setState={setState} page={"q"}>
       <div className={style["page-container-pizzle"]} id="guess">
         {state.page === 0 ? choose() : chosen()}
       </div>

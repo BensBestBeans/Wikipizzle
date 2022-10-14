@@ -7,6 +7,8 @@
   margin: 0px 5% 0px 5%;
   display: flex;
 
+  overflow: hidden;
+
   border-bottom: 1px solid #5851a2;
   /* overflow: hidden; */
 }
@@ -14,11 +16,11 @@
 .logo-header img {
   padding-left: 20px;
   /* top: 50%; */
-  padding-top: 9px;
-  padding-bottom: 9px;
+/*  padding-top: 9px;*/
+/*  padding-bottom: 9px;*/
   /* height: 60px; */
-  height: 80%;
-  float: left;
+  height: 60px;
+  width: 60px;
 }
 
 .question-mark {
@@ -47,11 +49,12 @@
 }
 
 .head-logo-container a {
-  float: left;
   text-decoration: none;
-  /* height: 100%; */
-  padding: 28px 0px 28px 20px;
-  justify-content: center;
+  height: 100%;
+  padding: 0px 0px 0px 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
   margin: 0px;
 
   color: #5851a2;
@@ -66,6 +69,7 @@
   margin: 0px;
   padding: 0px;
   text-align: center;
+  background: transparent;
 }
 
 .head-button {
@@ -74,10 +78,9 @@
 
   transition: all 0.15s;
   line-height: 24px;
-
-  background-color: #ffffff;
   /* color: #000; */
   width: 100%;
+  min-width: 80px;
   height: 100%;
 
   /* outline: 0; */
@@ -137,7 +140,7 @@ ul {
   /* overflow: hidden; */
   height: 100%;
   width: 100%;
-
+  background: transparent;
   justify-content: center;
   /* background-color: #333; */
 }
@@ -148,6 +151,7 @@ li {
   margin: 0;
   height: 100%;
   width: 33.33333333333%;
+  min-width: 100px;
 }
 
 .head-logo-container {
@@ -155,8 +159,14 @@ li {
   height: 100%;
   margin: 0px;
   /* padding: 0px 30px; */
-  text-align: left;
-  overflow: hidden;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+
+  overflow-y: clip;
+  overflow-x: visible;
 }
 
 .header {

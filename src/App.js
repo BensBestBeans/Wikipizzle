@@ -4,7 +4,7 @@ import Explore from "./pages/Explore";
 import Pizzle from "./pages/Pizzle";
 
 export default function App() {
-  const ops = ["p", "fr", "d", "w"];
+  const ops = ["p", "fr", "d", "w", 's', 'n', 'tr', 'sh', 'b', 'z', 'x', 'ph'];
   const l = ops[Math.floor(Math.random() * ops.length)];
   const [state, setState] = useState({
     pizz: l,

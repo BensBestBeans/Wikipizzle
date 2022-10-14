@@ -139,7 +139,7 @@
 }
 
 .blue-box {
-  background-color: #FFEBA0;
+  background-color: #A3EBD9;
 }
 
 .blue-box p {
@@ -147,18 +147,18 @@
 }
 
 .pink-box {
-  background-color: paleturquoise;
+  background-color: #EDD9FF;
 }
 
 .pink-box p {
   text-align: center;
 }
 
-.green-box {
-  background-color: #EDD9FF;
+.yellow-box {
+  background-color: #FFEBA0;
 }
 
-.green-box p {
+.yellow-box p {
   text-align: center;
 }
 

@@ -9,10 +9,20 @@ export default function Explore({ state, setState }) {
   }
 
   function handleSubmit(event) {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
     setState((s) => ({ ...s, explorePage: "Generating" }));
-    fetch("http://localhost:3001/req/?title=" + state.searchValue + "&type=p")
+    fetch("http://localhost:3001/req/", {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify({ title: state.searchValue, type: "p" }),
+    })
       .then((response) => response.text())
-      .then((data) => setState((s) => ({ ...s, explorePage: data })));
+      .then((data) => setState((s) => ({ ...s, explorePage: data })))
+      .catch((err) => {
+        // console.log(err);
+        setState((s) => ({ ...s, explorePage: "Error" }));
+      });
     event.preventDefault();
   }
 
@@ -56,6 +66,13 @@ export default function Explore({ state, setState }) {
                 <div>
                   <h1>Generating</h1>
                   <h2>this may take a hot minute</h2>
+                </div>
+              </div>
+            ) : state.explorePage === "Error" ? (
+              <div className={style["generating"]}>
+                <div>
+                  <h1>Oops</h1>
+                  <h2>Something went wrong, please try again</h2>
                 </div>
               </div>
             ) : (

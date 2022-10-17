@@ -31,7 +31,7 @@ export default function Explore({ state, setState }) {
               className={` ${style["explore-search-bar"]}`}
               type="text"
               value={state.searchValue}
-              placeholder="Scott Morrison"
+              placeholder="e.g. Scott Morrison"
               onChange={handleChange}
             />
           </div>

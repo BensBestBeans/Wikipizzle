@@ -14,7 +14,7 @@ export default function Explore({ state, setState }) {
     setState((s) => ({ ...s, explorePage: "Generating" }));
     fetch("http://localhost:3001/req/", {
       method: "POST",
-      headers: headers,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: state.searchValue, type: "p" }),
     })
       .then((response) => response.text())

@@ -26,7 +26,14 @@ function Pizzle({ state, setState, data }) {
         <div className={style["button-container"]}>
           <button
             className={style["choice-button"]}
-            onClick={() => guessed(true)}
+            style={data.loaded ? { opacity: "100%" } : { opacity: "70%" }}
+            onClick={() =>
+              data.html === "loading..."
+                ? () => {
+                    return;
+                  }
+                : guessed(true)
+            }
           >
             <span>WIKIPEDIA</span>
           </button>
@@ -34,7 +41,14 @@ function Pizzle({ state, setState, data }) {
         <div className={style["button-container"]}>
           <button
             className={style["choice-button"]}
-            onClick={() => guessed(false)}
+            style={data.loaded ? { opacity: "100%" } : { opacity: "70%" }}
+            onClick={() =>
+              data.html === "loading..."
+                ? () => {
+                    return;
+                  }
+                : guessed(false)
+            }
           >
             <span>AI GENERATED</span>
           </button>

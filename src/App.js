@@ -21,6 +21,7 @@ export default function App() {
     html: "loading...",
     title: "",
     contentType: false,
+    loaded: false,
   });
 
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
           html: art.html,
           title: art.title,
           contentType: art.type === "w",
+          loaded: true,
         });
       })
       .catch((error) =>

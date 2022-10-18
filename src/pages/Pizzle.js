@@ -26,7 +26,11 @@ function Pizzle({ state, setState, data }) {
         <div className={style["button-container"]}>
           <button
             className={style["choice-button"]}
-            style={data.loaded ? { opacity: "100%" } : { opacity: "70%" }}
+            style={
+              data.loaded
+                ? { backgroundColor: "" }
+                : { backgroundColor: "#5851a2c7" }
+            }
             onClick={() =>
               data.html === "loading..."
                 ? () => {
@@ -41,7 +45,11 @@ function Pizzle({ state, setState, data }) {
         <div className={style["button-container"]}>
           <button
             className={style["choice-button"]}
-            style={data.loaded ? { opacity: "100%" } : { opacity: "70%" }}
+            style={
+              data.loaded
+                ? { backgroundColor: "" }
+                : { backgroundColor: "#5851a2c7" }
+            }
             onClick={() =>
               data.html === "loading..."
                 ? () => {
@@ -104,7 +112,7 @@ function Pizzle({ state, setState, data }) {
               <h2> people deceived </h2>
               <div className={style["pie"]}>
                 <PieChart
-                  style={{ "gridArea": "2 / 1 / 1" }}
+                  style={{ gridArea: "2 / 1 / 1" }}
                   data={[
                     { title: "Deceived!", value: loss, color: "#D8D9DB" },
                     { title: "NotDeceived!", value: wins, color: "#554F9C" },
@@ -112,17 +120,19 @@ function Pizzle({ state, setState, data }) {
                   lineWidth={40}
                   startAngle={270}
                 />
-                <h1 style={{ "gridArea": "2 / 1 / 1" }}>{Math.round(100 - 100 * wins / (wins + loss))}%</h1>
+                <h1 style={{ gridArea: "2 / 1 / 1" }}>
+                  {Math.round(100 - (100 * wins) / (wins + loss))}%
+                </h1>
               </div>
               <h3> your win rate </h3>
               <div className={style["bar"]}>
                 <div
                   style={{
-                    "width": `${(stats.win / (stats.loss + stats.win)) * 100}%`,
-                    "margin": "0",
-                    "height": "100%",
-                    "background": "#554F9C",
-                    "borderRadius": "2px",
+                    width: `${(stats.win / (stats.loss + stats.win)) * 100}%`,
+                    margin: "0",
+                    height: "100%",
+                    background: "#554F9C",
+                    borderRadius: "2px",
                   }}
                 />
               </div>

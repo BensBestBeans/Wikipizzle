@@ -33,9 +33,11 @@ export default function Heading({ state, setState, page }) {
     <>
       <div className={style["logo-header"]}>
         <div className={style["head-logo-container"]}>
-            <div style={{"height": "100%", "display": "flex", "alignItems": "center"}}>
+          <div
+            style={{ height: "100%", display: "flex", alignItems: "center" }}
+          >
             <img src={logo} alt="" />
-            </div>
+          </div>
           <a href="https://www.wikipedia.org/">Wiki{state.pizz}izzle</a>
         </div>
 
@@ -52,14 +54,12 @@ export default function Heading({ state, setState, page }) {
         </div>
 
         <div className={style["head-tute-container"]}>
-          <button
-            className={style["question-mark"]}
-            style={{ margin: "20px" }}
+          <Link
+            className={style["head-button"]}
             onClick={() => setState((s) => ({ ...s, popup: !s.popup }))}
           >
-            {" "}
-            ?{" "}
-          </button>
+            Help
+          </Link>
         </div>
       </div>
     </>

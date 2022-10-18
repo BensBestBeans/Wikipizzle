@@ -177,6 +177,10 @@ function Pizzle({ state, setState, data }) {
       })
       .then((data) => {
         setState((s) => ({ ...s, piedata: data }));
+      })
+      .catch((err) => {
+        // console.log(err);
+        setState((s) => ({ ...s, piedata: { win: 1, loss: 1 } }));
       });
   }
 

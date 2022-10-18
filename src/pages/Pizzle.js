@@ -144,9 +144,10 @@ function Pizzle({ state, setState, data }) {
     );
   };
 
-  async function guessed(x) {
+  function guessed(x) {
     console.log(x);
     console.log(data.contentType);
+    localStorage.setItem("lastGuess", new Date().getTime());
     let stats = JSON.parse(localStorage.getItem("stats"));
     if (stats === null) {
       stats = { win: 0, loss: 0, streak: 0 };
@@ -155,11 +156,13 @@ function Pizzle({ state, setState, data }) {
       stats["win"] += 1;
       stats["streak"] += 1;
       localStorage.setItem("stats", JSON.stringify(stats));
+      localStorage.setItem("guess", "true");
       setState((s) => ({ ...s, page: 1 }));
     } else {
       stats["loss"] += 1;
       stats["streak"] = 0;
       localStorage.setItem("stats", JSON.stringify(stats));
+      localStorage.setItem("guess", "false");
       setState((s) => ({ ...s, page: 2 }));
     }
 

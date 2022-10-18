@@ -40,7 +40,7 @@ export default function App() {
       new Date(parseInt(localStorage.getItem("dataTime"))).toDateString() !==
         new Date().toDateString()
     ) {
-      fetch("http://localhost:3001/art")
+      fetch("/art")
         .then((response) => {
           if (response.ok) {
             return response.json();

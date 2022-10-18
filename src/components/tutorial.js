@@ -100,7 +100,7 @@ const page1 = () => (
     </div>
 
     <div>
-      <h1>6 ways to spot a generated or fake article</h1>
+      <h1>4 ways to spot a generated or fake article</h1>
     </div>
 
     <div className={style["learn-flexbox"]}>

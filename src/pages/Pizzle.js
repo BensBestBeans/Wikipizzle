@@ -32,7 +32,7 @@ function Pizzle({ state, setState, data }) {
                 : { backgroundColor: "#5851a2c7" }
             }
             onClick={() =>
-              data.html === "loading..."
+              !data.loaded
                 ? () => {
                     return;
                   }
@@ -51,7 +51,7 @@ function Pizzle({ state, setState, data }) {
                 : { backgroundColor: "#5851a2c7" }
             }
             onClick={() =>
-              data.html === "loading..."
+              !data.loaded
                 ? () => {
                     return;
                   }
@@ -145,8 +145,6 @@ function Pizzle({ state, setState, data }) {
   };
 
   function guessed(x) {
-    console.log(x);
-    console.log(data.contentType);
     localStorage.setItem("lastGuess", new Date().getTime());
     let stats = JSON.parse(localStorage.getItem("stats"));
     if (stats === null) {

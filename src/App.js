@@ -49,22 +49,23 @@ export default function App() {
           }
         })
         .then((art) => {
-          console.log(art);
           setData({
             html: art.html,
             title: art.title,
             contentType: art.type === "w",
-            loaded: true,
+            loaded: art.type !== "error",
           });
-          localStorage.setItem(
-            "data",
-            JSON.stringify({
-              html: art.html,
-              title: art.title,
-              contentType: art.type === "w",
-              loaded: true,
-            })
-          );
+          art.type !== "error"
+            ? localStorage.setItem(
+                "data",
+                JSON.stringify({
+                  html: art.html,
+                  title: art.title,
+                  contentType: art.type === "w",
+                  loaded: true,
+                })
+              )
+            : (() => {})();
           localStorage.setItem("dataTime", new Date().getTime());
         })
         .catch((error) =>

@@ -26,7 +26,18 @@ function Pizzle({ state, setState, data }) {
         <div className={style["button-container"]}>
           <button
             className={style["choice-button"]}
-            onClick={() => guessed(true)}
+            style={
+              data.loaded
+                ? { backgroundColor: "" }
+                : { backgroundColor: "#5851a2c7" }
+            }
+            onClick={() =>
+              data.html === "loading..."
+                ? () => {
+                    return;
+                  }
+                : guessed(true)
+            }
           >
             <span>WIKIPEDIA</span>
           </button>
@@ -34,7 +45,18 @@ function Pizzle({ state, setState, data }) {
         <div className={style["button-container"]}>
           <button
             className={style["choice-button"]}
-            onClick={() => guessed(false)}
+            style={
+              data.loaded
+                ? { backgroundColor: "" }
+                : { backgroundColor: "#5851a2c7" }
+            }
+            onClick={() =>
+              data.html === "loading..."
+                ? () => {
+                    return;
+                  }
+                : guessed(false)
+            }
           >
             <span>AI GENERATED</span>
           </button>
@@ -90,7 +112,7 @@ function Pizzle({ state, setState, data }) {
               <h2> people deceived </h2>
               <div className={style["pie"]}>
                 <PieChart
-                  style={{ "gridArea": "2 / 1 / 1" }}
+                  style={{ gridArea: "2 / 1 / 1" }}
                   data={[
                     { title: "Deceived!", value: loss, color: "#D8D9DB" },
                     { title: "NotDeceived!", value: wins, color: "#554F9C" },
@@ -98,17 +120,19 @@ function Pizzle({ state, setState, data }) {
                   lineWidth={40}
                   startAngle={270}
                 />
-                <h1 style={{ "gridArea": "2 / 1 / 1" }}>{Math.round(100 - 100 * wins / (wins + loss))}%</h1>
+                <h1 style={{ gridArea: "2 / 1 / 1" }}>
+                  {Math.round(100 - (100 * wins) / (wins + loss))}%
+                </h1>
               </div>
               <h3> your win rate </h3>
               <div className={style["bar"]}>
                 <div
                   style={{
-                    "width": `${(stats.win / (stats.loss + stats.win)) * 100}%`,
-                    "margin": "0",
-                    "height": "100%",
-                    "background": "#554F9C",
-                    "borderRadius": "2px",
+                    width: `${(stats.win / (stats.loss + stats.win)) * 100}%`,
+                    margin: "0",
+                    height: "100%",
+                    background: "#554F9C",
+                    borderRadius: "2px",
                   }}
                 />
               </div>
@@ -120,9 +144,10 @@ function Pizzle({ state, setState, data }) {
     );
   };
 
-  async function guessed(x) {
+  function guessed(x) {
     console.log(x);
     console.log(data.contentType);
+    localStorage.setItem("lastGuess", new Date().getTime());
     let stats = JSON.parse(localStorage.getItem("stats"));
     if (stats === null) {
       stats = { win: 0, loss: 0, streak: 0 };
@@ -131,15 +156,21 @@ function Pizzle({ state, setState, data }) {
       stats["win"] += 1;
       stats["streak"] += 1;
       localStorage.setItem("stats", JSON.stringify(stats));
+      localStorage.setItem("guess", "true");
       setState((s) => ({ ...s, page: 1 }));
     } else {
       stats["loss"] += 1;
       stats["streak"] = 0;
       localStorage.setItem("stats", JSON.stringify(stats));
+      localStorage.setItem("guess", "false");
       setState((s) => ({ ...s, page: 2 }));
     }
 
-    fetch(`http://localhost:3001/stats?answer=${(x === data.contentType) ? "win" : "loss"}`)
+    fetch("http://localhost:3001/stats", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ answer: x === data.contentType ? "win" : "loss" }),
+    })
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -149,6 +180,10 @@ function Pizzle({ state, setState, data }) {
       })
       .then((data) => {
         setState((s) => ({ ...s, piedata: data }));
+      })
+      .catch((err) => {
+        // console.log(err);
+        setState((s) => ({ ...s, piedata: { win: 1, loss: 1 } }));
       });
   }
 

@@ -6,6 +6,7 @@
   width: 90%;
   margin: 0px 5% 0px 5%;
   display: flex;
+  justify-content: center;
 
   overflow: hidden;
 
@@ -16,8 +17,8 @@
 .logo-header img {
   padding-left: 20px;
   /* top: 50%; */
-/*  padding-top: 9px;*/
-/*  padding-bottom: 9px;*/
+  /*  padding-top: 9px;*/
+  /*  padding-bottom: 9px;*/
   /* height: 60px; */
   height: 60px;
   width: 60px;
@@ -41,11 +42,16 @@
 }
 
 .head-tute-container {
-  width: 25%;
+  min-width: 10%;
   height: 100%;
   display: flex;
-  justify-content: right;
+  flex: 1;
   align-items: center;
+}
+
+.head-tute-container a {
+  margin-left: auto;
+  max-width: fit-content;
 }
 
 .head-logo-container a {
@@ -56,6 +62,7 @@
   justify-content: start;
   align-items: center;
   margin: 0px;
+  margin-right: auto;
 
   color: #5851a2;
   font-weight: normal;
@@ -65,6 +72,9 @@
 
 .head-button-container {
   width: 50%;
+  min-width: 200px;
+  display: flex;
+  flex: 1;
   height: 100%;
   margin: 0px;
   padding: 0px;
@@ -85,6 +95,7 @@
 
   /* outline: 0; */
   border: none;
+  border-bottom: 1px solid #fff;
   box-sizing: border-box;
 
   display: flex;
@@ -99,18 +110,20 @@
   text-align: center;
 
   padding: 0px;
-  padding-bottom: 5px;
+  padding-bottom: 4px;
   /* color: #000; */
 }
 
 .head-button:hover {
   background-color: #c4c1ec80;
+  /* border-color: #c4c1ec80; */
 }
 
 .head-button:active {
   background-color: #c4c1ec80;
   font-weight: 900;
   border-bottom: 5px solid #5851a2;
+  padding-bottom: 0px;
 }
 
 .head-button-active {
@@ -155,12 +168,13 @@ li {
 }
 
 .head-logo-container {
-  width: 25%;
+  min-width: 25%;
   height: 100%;
   margin: 0px;
   /* padding: 0px 30px; */
 
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
   justify-content: start;
   align-items: center;

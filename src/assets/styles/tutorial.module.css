@@ -61,6 +61,10 @@
   padding: 10px 30px;
 }
 
+.intro img {
+  width: 50%;
+}
+
 /*////////////////////////////////
 ----------TUTORIAL-PAGES----------
 ////////////////////////////////*/
@@ -264,4 +268,22 @@
 
 .pressed {
   background-color: #393377;
+}
+
+.logo {
+  width: 100%;
+  margin: 20px;
+}
+
+.logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.logo p {
+  text-align: center;
+  font-size: 1.2em;
+  margin: 10px;
 }

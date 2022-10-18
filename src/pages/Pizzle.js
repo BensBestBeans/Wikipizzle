@@ -164,7 +164,7 @@ function Pizzle({ state, setState, data }) {
       setState((s) => ({ ...s, page: 2 }));
     }
 
-    fetch("http://localhost:3001/stats", {
+    fetch("/stats", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ answer: x === data.contentType ? "win" : "loss" }),

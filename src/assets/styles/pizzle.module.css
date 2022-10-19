@@ -109,13 +109,16 @@
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0px;
+  /* padding-right: 10px; */
   /* min-height: 40vh; */
   width: 80%;
   height: 60vh;
   /* background-color: rgb(237, 237, 237); */
   border: 1px solid #c0c0c0;
-  overflow-y: scroll;
-  scrollbar-width: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* scrollbar-width: none; */
   transition: all 1s;
   transition-delay: revert 2s;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
@@ -125,10 +128,7 @@
 
 .article-container:hover {
   box-shadow: 0 4px 12px 1px rgba(0, 0, 0, 0.1);
-}
-
-.article-container::-webkit-scrollbar {
-  display: none;
+  padding-right: 0px;
 }
 
 .page-container-pizzle {

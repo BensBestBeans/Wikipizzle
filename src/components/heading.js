@@ -55,7 +55,7 @@ export default function Heading({ state, setState, page }) {
 
         <div className={style["head-tute-container"]}>
           <Link
-            className={style["head-button"]}
+            className={style["help-button"]}
             onClick={() => setState((s) => ({ ...s, popup: !s.popup }))}
           >
             Help

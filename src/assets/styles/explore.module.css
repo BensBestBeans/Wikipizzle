@@ -84,7 +84,7 @@
   /* height: 55vh; */
   /* background-color: rgb(237, 237, 237); */
   border: 1px solid #c0c0c0;
-  overflow-y: scroll;
+  overflow: hidden;
   scrollbar-width: none;
   transition: all 1s;
   transition-delay: revert 2s;

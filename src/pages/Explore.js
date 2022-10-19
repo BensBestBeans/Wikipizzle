@@ -59,8 +59,8 @@ export default function Explore({ state, setState }) {
           >
             CLEAR
           </button>
-
-          <div className={`${style["explore-article"]} ${"chosen-article"}`}>
+          {/* ${"chosen-article"} */}
+          <div className={`${style["explore-article"]}`}> 
             {state.explorePage === "Generating" ? (
               <div className={style["generating"]}>
                 <div>

@@ -109,7 +109,7 @@ function Pizzle({ state, setState, data }) {
 
           <div className={style["right-wrapper"]}>
             <div className={style["stats"]}>
-              <h2> people deceived </h2>
+              <h2> People Deceived </h2>
               <div className={style["pie"]}>
                 <PieChart
                   style={{ gridArea: "2 / 1 / 1" }}
@@ -124,19 +124,37 @@ function Pizzle({ state, setState, data }) {
                   {Math.round(100 - (100 * wins) / (wins + loss))}%
                 </h1>
               </div>
-              <h3> your win rate </h3>
-              <div className={style["bar"]}>
-                <div
-                  style={{
-                    width: `${(stats.win / (stats.loss + stats.win)) * 100}%`,
-                    margin: "0",
-                    height: "100%",
-                    background: "#554F9C",
-                    borderRadius: "2px",
-                  }}
-                />
+              <h2> Your Win Rate </h2>
+
+              <div style={{
+                display: "flex",
+                flexDirection: "row",
+                width: "80%",
+                margin: "auto"
+              }}>
+                
+
+                <div className={style["bar"]}>
+                  <div
+                    style={{
+                      width: `${(stats.win / (stats.loss + stats.win)) * 100}%`,
+                      margin: "0",
+                      height: "100%",
+                      background: "#554F9C",
+                      borderRadius: "2px",
+                    }}
+                  />
               </div>
-              <h3> Correct Streak of {stats.streak} </h3>
+
+              <h2 style={{
+                  flexBasis: "0",
+                  margin: "0",
+                  marginLeft: "10px",
+                  display: "grid",
+                  placeItems: "center"
+                }}>{Math.round((stats.win / (stats.loss + stats.win)) * 100)}%</h2>
+            </div>
+            <h3 style={{marginTop: "20px"}}> with a streak of {stats.streak} </h3>
             </div>
           </div>
         </div>

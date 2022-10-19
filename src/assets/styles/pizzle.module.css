@@ -145,10 +145,12 @@
 
 .bar {
   background: #D8D9DB;
-  width: 75%;
+  flex: 2;
+  /* width: 55%; */
   height: 40px;
   border-radius: 4px;
-  margin: auto;
+
+  /* margin-left: 50%; */
   padding: 0;
 }
 

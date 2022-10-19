@@ -96,14 +96,16 @@ function Pizzle({ state, setState, data }) {
               </div>
             </div>
             <div className={style["learn-more"]}>
-              Want to find out more about this topic?
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={`https://letmegooglethat.com/?q=${data.title}`}
-              >
-                <span> Click here </span>
-              </a>
+              <p>
+                {"Want to find out more about this topic? "}
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://en.wikipedia.org/wiki/${data.title}`}
+                >
+                  <span> Click here </span>
+                </a>
+              </p>
             </div>
           </div>
 
